@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0979f0631b0e0cf4c9ebcbe445fd6877, type: 3}
+  m_Name: ItemMaster
+  m_EditorClassIdentifier: 
+  ItemParamDatas:
+  - Name: "\u3084\u304F\u305D\u3046"
+    ID: 100
+    Effect: recovery
+    Subject: HP
+    Power: 30
+    Explanation: "HP\u309230\u304B\u3044\u3075\u304F\u3055\u305B\u308B"
+    Price: 10
+    sprite: {fileID: 21300000, guid: 3cde012011910db4688423a275baee05, type: 3}
+    num: 3
+  - Name: "\u307E\u307B\u3046\u306E\u3053\u3073\u3093"
+    ID: 101
+    Effect: recovery
+    Subject: MP
+    Power: 10
+    Explanation: "\uFF2D\uFF30\u309210\u304B\u3044\u3075\u304F\u3055\u305B\u308B"
+    Price: 10
+    sprite: {fileID: 21300000, guid: 623d1fc14be91f54ca9ae128eaab9b63, type: 3}
+    num: 1

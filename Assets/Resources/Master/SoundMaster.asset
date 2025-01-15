@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7619cc976dcc5aa458e4ab875cb1a284, type: 3}
+  m_Name: SoundMaster
+  m_EditorClassIdentifier: 
+  SoundData:
+  - place: 0
+    clip: {fileID: 8300000, guid: 3aca73d3b4acc904f88f3b2609e04ef6, type: 3}
+    volume: 0.8
+  - place: 1
+    clip: {fileID: 8300000, guid: 08d8faa52fb5181418456984a114ae52, type: 3}
+    volume: 0.5
+  - place: 2
+    clip: {fileID: 8300000, guid: 85f4184d9a02f454587cb9d4ac2cfcb8, type: 3}
+    volume: 0.3
+  - place: 3
+    clip: {fileID: 8300000, guid: 881e2676c42e3b4409a4aa3881bc0e55, type: 3}
+    volume: 0.5
+  - place: 4
+    clip: {fileID: 8300000, guid: f79cc5e6b3be773448fd0a7cc5891e8b, type: 3}
+    volume: 1
+  - place: 5
+    clip: {fileID: 8300000, guid: 1249db09cb05a204c8def34f0de43dbe, type: 3}
+    volume: 0.1
+  - place: 6
+    clip: {fileID: 8300000, guid: bc6447079ba3f424688a0a8cb9652588, type: 3}
+    volume: 0.5
+  - place: 7
+    clip: {fileID: 8300000, guid: 8e66c8667ae1ab743a7144122f2614eb, type: 3}
+    volume: 1
+  - place: 8
+    clip: {fileID: 8300000, guid: 8c1a4f5ae4cbbad4e965ca358398ba66, type: 3}
+    volume: 1
