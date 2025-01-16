@@ -23,6 +23,19 @@ public class PlayerDataRepository
 
     public int gold = 100000;
 
+    public bool DeathCheck()
+    {
+        foreach (var ps in playersState)
+        {
+            if (!ps.DethFlag)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public int GetWeaponArmorSetCount(WeaponArmorEquipment.Part part, int id)
     {
         switch(part)

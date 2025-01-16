@@ -31,21 +31,3 @@ MonoBehaviour:
       DefFlag: 0
     startLevel: 3
     loadTateName: player1State
-  - name: "\u306A\u304B\u307E\uFF11"
-    intParam:
-      MaxHp: 100
-      MaxMp: 50
-      Hp: 100
-      Mp: 0
-      str: 0
-      Res: 0
-      Mga: 0
-      Mgd: 0
-      Atk: 100
-      Def: 3
-      Qui: 10
-      Luc: 0
-      Exp: 0
-      DefFlag: 0
-    startLevel: 1
-    loadTateName: player1State

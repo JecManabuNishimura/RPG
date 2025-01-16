@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.sprite = back;
             GameManager.Instance.countStep += 1;
         };
+
         InputManager.Instance.SetKeyEvent(UseButtonType.Player, InputMaster.Entity.FieldKey.Up, upAction);
         InputManager.Instance.SetKeyboardEvent(UseButtonType.Player,KeyCode.UpArrow,upAction,false);
 

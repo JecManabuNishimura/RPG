@@ -3,6 +3,7 @@ using Interface;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using GameData.Item;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -21,7 +22,7 @@ public class CharacterState: MonoBehaviour, ICharacter
     
     public virtual void Damage(int damage,bool criticalFlag)
     {
-        parameter.Hp -= damage;
+        parameter.Hp = Mathf.Max(parameter.Hp - damage, 0);
     }
 
     public bool UseItem(ItemParam item)
@@ -75,6 +76,7 @@ public class Parameter
     public int Def;
     public int Qui;
     public int Luc;
+    public string attribute;
     public int Exp;
     public bool DefFlag;     // 防御
     

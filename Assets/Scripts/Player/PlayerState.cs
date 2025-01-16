@@ -33,21 +33,27 @@ public class PlayerStateField : IPlayerState
     
     public void Entry()
     {
+
         Action talk = () =>
         {
-            if (_player.hitObj != null && GameManager.Instance.eventFlag)
+            if (_player.hitObj != null && !GameManager.Instance.eventFlag)
             {
+                //===============================================================================
+                // 会話開始
+                //===============================================================================
                 GameManager.Instance.mode = Now_Mode.Menu;
                 GameManager.Instance.eventFlag = true;
                 _player.hitObj.GetComponent<INpc>()?.Talking();
             }
             else
             {
-                if (!_menuFlag && GameManager.Instance.eventFlag)
+                if (!_menuFlag && !GameManager.Instance.eventFlag)
                 {
                     if (GameManager.Instance.mode == Now_Mode.Field)
                     {
-
+                        //===============================================================================
+                        // メニューオープン
+                        //===============================================================================
                         MenuManager.Instance.OpenMenu(MenuList.Main);
                         _menuFlag = true;
 

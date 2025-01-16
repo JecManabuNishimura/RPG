@@ -97,6 +97,16 @@ public class BttleStep : IBattleState
             yield return BattleManager.Instance.StartCoroutine(currentCharacter.PerformAction());
             
             yield return  BattleManager.Instance.StartCoroutine(BattleManager.Instance.DestroyEnemy());
+            if (PlayerDataRepository.Instance.DeathCheck())
+            {
+                // 戦い終了
+                endFlag = true;
+                foreach (var t in PlayerDataRepository.Instance.playersState)
+                {
+                    t.BattleDataReset();
+                }
+                yield break;
+            }
             if (BattleManager.Instance.EnemyList.Count == 0)
             {
                 // 戦い終了
@@ -109,6 +119,7 @@ public class BttleStep : IBattleState
                 PlayerDataRepository.Instance.PlusGold(BattleManager.Instance.GetGold);
                 yield break;
             }
+            
         }
         
         Debug.Log("行動終了");
@@ -119,17 +130,24 @@ public class BttleStep : IBattleState
     }
 }
 
-public class BttleEnd : IBattleState
+public class BattleEnd : IBattleState
 {
     public BattleList State => BattleList.End;
     private BattleStateController _battle;
-    public BttleEnd(BattleStateController battle) => _battle = battle;
+    public BattleEnd(BattleStateController battle) => _battle = battle;
     public void Entry()
     {
         SoundMaster.Entity.StopBgmSound();
-        SoundMaster.Entity.PlaySESound(PlaceOfSound.BattleEndSe);
-        // リザルトメッセージ
-        MessageManager.Instance.StartDialogMessage("", "ResultMessage");
+        if (PlayerDataRepository.Instance.DeathCheck())
+        {
+            MessageManager.Instance.StartDialogMessage("パーティーがぜんめつした");
+        }
+        else
+        {
+            SoundMaster.Entity.PlaySESound(PlaceOfSound.BattleEndSe);
+            // リザルトメッセージ
+            MessageManager.Instance.StartDialogMessage("", "ResultMessage");    
+        }
     }
     
     public void Update()

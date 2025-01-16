@@ -208,7 +208,12 @@ public class MenuStateSelectCharacter : MenuData, IMenuState
                     PlayerDataRepository.Instance.PlayerState.ActionFlag = true;
                     BattleManager.Instance.BattleDatas.Add(PlayerDataRepository.Instance.PlayerState);
                     MenuManager.Instance.cursorPos.Pop();       // アイテムリストからの抜け出し
-                }
+					PlayerDataRepository.Instance.NextCharacter();
+					var itemwindow = MenuManager.Instance.GetWindow(MenuList.ItemList);
+					itemwindow.transform.gameObject.SetActive(false);
+					_menu.ChangeMenu(MenuList.Battle);
+                    return;
+				}
 
                 break;
         }

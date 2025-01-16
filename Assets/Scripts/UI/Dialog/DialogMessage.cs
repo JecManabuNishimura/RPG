@@ -65,11 +65,11 @@ public class DialogMessage : MonoBehaviour
         }
         if(boxPosButtom != null && boxPosTop != null)
             window.transform.position = PlayerDataRepository.Instance.PlayerCamPos < 1 ? boxPosButtom.position : boxPosTop.position;
-        if (NameText.text == "")
+        /*if (NameText.text == "")
         {
             NameTextBox.SetActive(false);
             
-        }
+        }*/
 		StartCoroutine(CreateMessage(message,fileName));
     }
     
@@ -95,7 +95,7 @@ public class DialogMessage : MonoBehaviour
             MessageManager.Instance.OnDialogMessage -= StartMessage;
         }
 
-        NameText.text = "";
+        //NameText.text = "";
         window.SetActive(false);
     }
 

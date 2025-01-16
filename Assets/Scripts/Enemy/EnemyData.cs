@@ -49,6 +49,7 @@ public class EnemyData :CharacterState
             case AttackScope.All:
                 playerTo = PlayerDataRepository.Instance.playersState;
                 MessageManager.Instance.StartDialogMessage(CharaName+ "はぜんたいこうげき");
+                yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
                 break;
         }
         ActionCommand = "こうげき";
@@ -88,7 +89,7 @@ public class EnemyData :CharacterState
         StartCoroutine(DamageImageChange());
         int random = Random.Range(0, 255);
 
-        int calcDamage = Mathf.Clamp(damage - parameter.Def, 0, damage);
+        int calcDamage = Mathf.Clamp(damage, 0, damage);
         
         base.Damage(calcDamage,criticalFlag);
         MessageManager.Instance.StartDialogMessage(CharaName + "に" +

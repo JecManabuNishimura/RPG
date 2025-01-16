@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using GameData.Item;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -103,13 +104,19 @@ public class PlayerCharacter : CharacterState
     }
     public override void Damage(int damage,bool criticalFlag)
     {
-        int calcDamage = Mathf.Clamp(damage - (TotalParam.Def*defencePower), 0, damage);
+        int calcDamage = Mathf.Clamp(damage, 0, damage);
         base.Damage(calcDamage,criticalFlag);
         MessageManager.Instance.StartDialogMessage(CharaName + "は" +
                                                    (criticalFlag ? "クリティカル":"") +
-                                                   calcDamage.ToString().ConvertToFullWidth() + "のダメージうけた");
+                                                   calcDamage.ToString().ConvertToFullWidth() + "のダメージうけた\n" +
+                                                   ((parameter.Hp <= 0) ? CharaName + "は しぼうした" : ""));
         SoundMaster.Entity.PlaySESound(PlaceOfSound.Damage);
 		Debug.Log(CharaName + "は" +　calcDamage + "のダメージうけた");
+        
+        if (parameter.Hp <= 0)
+        {
+            DethFlag = true;
+        }
         BattleManager.Instance.ParamChange(); // 表示パラメーター更新
     }
     
@@ -167,7 +174,8 @@ public class PlayerCharacter : CharacterState
             param.Parameter.Atk = int.Parse(playerLevel[i][3]);
             param.Parameter.Def = int.Parse(playerLevel[i][4]);
             param.Parameter.Qui = int.Parse(playerLevel[i][5]);
-
+            param.Parameter.Hp = param.Parameter.MaxHp;
+            param.Parameter.Mp = param.Parameter.MaxMp;
             if(i < playerExp.Count - 1 )
                 param.Experience = int.Parse(playerExp[i + 1][index + 1]);
 

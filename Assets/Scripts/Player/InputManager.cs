@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour
 {
     public static InputManager Instance;
 
+
     private List<KeyCode> downKeyCode = new();
     private void Awake()
     {
@@ -85,7 +86,6 @@ public class InputManager : MonoBehaviour
             MenuAction.AxisData[type]?.Invoke();
         if (PlayerAction.AxisData.ContainsKey(type))
             PlayerAction.AxisData[type]?.Invoke();
-        
     }
 
     public bool CheckActionPress(UseButtonType useTYpe, ButtonType type)

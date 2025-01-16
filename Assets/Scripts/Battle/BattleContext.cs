@@ -18,7 +18,7 @@ namespace Battle
                 { BattleList.Start, new BattleStart(battle) },
                 { BattleList.PlayerCommand, new BattlePlayerCommand(battle) },
                 { BattleList.Battle, new BttleStep(battle) },
-                { BattleList.End, new BttleEnd(battle) },
+                { BattleList.End, new BattleEnd(battle) },
             };
             _stateTable = table;
             _currentState = _stateTable[initState];

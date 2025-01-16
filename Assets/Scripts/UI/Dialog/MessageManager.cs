@@ -44,11 +44,11 @@ public class MessageManager : MonoBehaviour
     {
         string newName = name switch
         {
-            "p1" => CharacterStateSetting.Entity.CharacterParam[0].name,
-            "p2" => CharacterStateSetting.Entity.CharacterParam[1].name,
-            "p3" => CharacterStateSetting.Entity.CharacterParam[2].name,
-            "p4" => CharacterStateSetting.Entity.CharacterParam[3].name,
-            "p5" => CharacterStateSetting.Entity.CharacterParam[4].name,
+            "p1" => CharacterStateSetting.Entity.CharacterParam.Count > 0 ? CharacterStateSetting.Entity.CharacterParam[0].name : name,
+            "p2" => CharacterStateSetting.Entity.CharacterParam.Count > 1 ? CharacterStateSetting.Entity.CharacterParam[1].name : name,
+            "p3" => CharacterStateSetting.Entity.CharacterParam.Count > 2 ? CharacterStateSetting.Entity.CharacterParam[2].name : name,
+            "p4" => CharacterStateSetting.Entity.CharacterParam.Count > 3 ? CharacterStateSetting.Entity.CharacterParam[3].name : name,
+            "p5" => CharacterStateSetting.Entity.CharacterParam.Count > 4 ? CharacterStateSetting.Entity.CharacterParam[4].name : name,
             _ => name,
         };
         OnSetNameDialogMessage?.Invoke(newName.ConvertToFullWidth());

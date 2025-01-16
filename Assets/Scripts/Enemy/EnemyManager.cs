@@ -28,7 +28,8 @@ public class EnemyManager : MonoBehaviour
             param.Atk = int.Parse(val[3]);
             param.Def = int.Parse(val[4]);
             param.Qui = int.Parse(val[5]);
-            param.Exp = int.Parse(val[6]);
+            param.attribute = val[6];
+            param.Exp = int.Parse(val[7]);
         }
 
         return param;
@@ -40,7 +41,7 @@ public class EnemyManager : MonoBehaviour
         int gold = 0;
         foreach (var val in result)
         {
-            gold = int.Parse(val[7]);
+            gold = int.Parse(val[8]);
         }
 
         return gold;
