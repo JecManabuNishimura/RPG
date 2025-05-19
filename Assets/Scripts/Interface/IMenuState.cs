@@ -26,7 +26,7 @@ public enum MenuList : int
     Main,
     SelectChara,
     Talk,
-    Spell,
+    Magic,
     ItemList,
     Check,
     Strength,

@@ -1124,6 +1124,82 @@ public class EquipmentMenu : MenuData, IMenuState
         
     }
 }
+
+public class MagicMenu : MenuData, IMenuState
+{
+    private MenuController _menu;
+    public MagicMenu(MenuController menu) => _menu = menu;
+    public MenuList State => MenuList.Magic;
+    public void Entry()
+    {
+        WindowObj = MenuManager.Instance.GetWindow(State);
+        if (WindowObj is not null)
+        {
+            WindowObj.transform.gameObject.SetActive(true);
+            SetCursorObject(MenuManager.Instance.GetCursorObj(State), State);
+            selectedIndex = veriIndex * 2 + horiIndex;
+        }
+
+        // 1 / (プレイヤーのアイテム総数 / 2) - 画面のアイテム表示数
+        WindowObj.ResetItemData();
+        foreach (var item in PlayerDataRepository.Instance.ItemList)
+        {
+            WindowObj.CreateItemData(item.Value);
+        }
+
+        // 一番初めのアイテムを表示
+        var data = PlayerDataRepository.Instance.GetItemList(selectedIndex);
+        switch (GameManager.Instance.mode)
+        {
+            // バトル中は説明なし
+            case Now_Mode.Field:
+                WindowObj.SetExpText(data != null ? data.Explanation.ConvertToFullWidth() : "");
+                break;
+        }
+    }
+
+    public void Update()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Exit()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void SelectMenu()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void CloseMenu()
+    {
+        Initialize();
+        MenuManager.Instance.prevSelect = State;
+    }
+
+    public void CursorUp()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void CursorDown()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void CursorRight()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void CursorLeft()
+    {
+        throw new NotImplementedException();
+    }
+}
+
 public class EquipmentMenu1 : MenuData, IMenuState
 {
     private MenuController _menu;
@@ -1165,6 +1241,10 @@ public class EquipmentMenu1 : MenuData, IMenuState
         MenuManager.Instance.prevSelect = State;
         _menu.ChangeMenu(MenuList.EquipmentMenu);
         PlayerDataRepository.Instance.SelectIndex = 0;
+        InputManager.Instance.SetKeyEvent(UseButtonType.Menu,InputMaster.Entity.MenuKey.CharaSelectLeft,
+            SelectPrevChara,true);
+        InputManager.Instance.SetKeyEvent(UseButtonType.Menu,InputMaster.Entity.MenuKey.CharaSelectRight,
+            SelectNextChara,true);
     }
 
     public void CursorUp()
@@ -1445,3 +1525,4 @@ public class EquipmentMenu2 : MenuData, IMenuState
         WindowObj.scrollrect.content.anchoredPosition += new Vector2(0, 50 * VerticalDirection);
     }
 }
+

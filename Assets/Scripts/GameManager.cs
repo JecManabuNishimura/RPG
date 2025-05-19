@@ -1,5 +1,6 @@
 using UnityEngine;
 using Cinemachine;
+using UnityEditor;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     public bool battleFlag = true;
     public bool eventFlag = false;
 	public CinemachineVirtualCamera cCam;
+    public GameObject playerStartPos;
 
     private async void Update()
     {
@@ -52,8 +54,11 @@ public class GameManager : MonoBehaviour
         }
 
         ReadEventData.Instance = new ReadEventData();
-        
+
+        PlayerDataRepository.Instance.playerPos = playerStartPos.transform.position;
+        Destroy(playerStartPos);
         FieldIn();
+        
     }
 
     private void Start()
@@ -66,7 +71,6 @@ public class GameManager : MonoBehaviour
         SoundMaster.Entity.SetBGMAudio(gameObject.AddComponent<AudioSource>());
         
         SoundMaster.Entity.PlayBGMSound(PlaceOfSound.FieldMusic);
-        
         
     }
 

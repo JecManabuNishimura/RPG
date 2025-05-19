@@ -97,12 +97,14 @@ public class BttleStep : IBattleState
             yield return BattleManager.Instance.StartCoroutine(currentCharacter.PerformAction());
             
             yield return  BattleManager.Instance.StartCoroutine(BattleManager.Instance.DestroyEnemy());
+            // プレイヤー全滅
             if (PlayerDataRepository.Instance.DeathCheck())
             {
                 // 戦い終了
                 endFlag = true;
                 foreach (var t in PlayerDataRepository.Instance.playersState)
                 {
+                    t.parameter.Hp = t.parameter.MaxHp;
                     t.BattleDataReset();
                 }
                 yield break;

@@ -29,6 +29,7 @@ namespace UI
                 { MenuList.EquipmentMenu, new EquipmentMenu(menu) },
                 { MenuList.EquipmentMenu1, new EquipmentMenu1(menu) },
                 { MenuList.EquipmentMenu2, new EquipmentMenu2(menu) },
+                { MenuList.Magic, new MagicMenu(menu) },
             };
             _stateTable = table;
             _currentState = _stateTable[initState];
