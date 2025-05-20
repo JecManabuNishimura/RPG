@@ -255,8 +255,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30A2\u30A4\u30C6\u30E0\u306E\u305B\u3064\u3081\u3044\u304C\u306F\u3044\u3063\u3066\u304D\u307E\u3059\n\u306B\u3060\u3093\u304C\u3044\u3063\u3071\u3044\u3068\u3059\u308B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -296,15 +296,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -571,8 +573,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3059\u3067"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -612,15 +614,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -885,8 +889,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3059\u3070\u3084\u3055"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -926,15 +930,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -1019,8 +1025,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3053\u3046\u3052\u304D"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1060,15 +1066,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -1153,8 +1161,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3061\u304B\u3089\uFF1A\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1194,15 +1202,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -1287,8 +1297,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30A2\u30A4\u30C6\u30E0"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1328,15 +1338,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -1613,8 +1625,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u307C\u3046\u304E\u3087\u307E\u308A\u3087\u304F\uFF1A\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1654,15 +1666,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -1783,8 +1797,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3061\u304B\u3089"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1824,15 +1838,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -2306,8 +2322,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3053\u3093\u307C\u3046"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2347,15 +2363,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -2440,8 +2458,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u307C\u3046\u304E\u3087"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2481,15 +2499,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -2612,8 +2632,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3086\u3046\u3057\u3083"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2653,15 +2673,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -2887,8 +2909,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF2D\uFF10\uFF10\uFF10"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2928,15 +2950,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -3057,8 +3081,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF2C\uFF36\uFF1A\uFF10\uFF10"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3098,15 +3122,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -3191,8 +3217,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3058\u3085\u3082\u3093"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3232,15 +3258,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -3632,8 +3660,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF28\uFF10\uFF10\uFF10"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3673,15 +3701,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -3766,8 +3796,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3053\u3046\u3052\u304D"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3807,15 +3837,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -3900,8 +3932,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF28\uFF10\uFF10\uFF10"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3941,15 +3973,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -4319,8 +4353,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF2D\uFF10\uFF10\uFF10"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4360,15 +4394,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -4453,8 +4489,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u306A\u307E\u3048"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4494,15 +4530,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -4651,8 +4689,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30FC\u3000\uFF11\u3072\u304D"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4692,15 +4730,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -5111,8 +5151,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u305F\u3066"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5152,15 +5192,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -5393,8 +5435,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3055\u304F\u305B\u3093"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5434,15 +5476,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -5642,8 +5686,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF28\uFF30\uFF1A\uFF15\uFF10\uFF10"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5683,15 +5727,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -5889,8 +5935,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF2C\uFF36\uFF1A\uFF10\uFF10"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5930,15 +5976,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -6023,8 +6071,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF2D\uFF10\uFF10\uFF10"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6064,15 +6112,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -6220,8 +6270,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u306A\u307E\u3048"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6261,15 +6311,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -6354,8 +6406,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u305D\u3046\u3073"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6395,15 +6447,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -6524,8 +6578,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF28\uFF10\uFF10\uFF10"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6565,15 +6619,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -6994,8 +7050,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u306A\u307E\u3048"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7035,15 +7091,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -7128,8 +7186,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u306A\u307E\u3048"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7169,15 +7227,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -7262,8 +7322,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3069\u3046\u3050"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7303,15 +7363,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -7472,8 +7534,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF2C\uFF36\uFF1A\uFF10\uFF10"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7513,15 +7575,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -7606,8 +7670,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30B9\u30E9\u30A4\u30E0"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7647,15 +7711,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -7815,8 +7881,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u305B\u3044\u3079\u3064\uFF1A\uFF1F\uFF1F\uFF1F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7856,15 +7922,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -8145,8 +8213,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3088\u308D\u3044"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8186,15 +8254,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -8279,8 +8349,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3057\u3085\u3058\u3093\u3053\u3046"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8320,15 +8390,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -8413,8 +8485,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3069\u3046\u3050"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8454,15 +8526,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -8841,8 +8915,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3055\u3044\u3060\u3044\uFF28\uFF30\uFF1A\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8882,15 +8956,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -8975,8 +9051,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3058\u3085\u3082\u3093"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9016,15 +9092,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -9211,8 +9289,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3057\u3085\u3058\u3093\u3053\u3046"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9252,15 +9330,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -9421,8 +9501,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF2D\uFF30\uFF1A\uFF10"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9462,15 +9542,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -9555,8 +9637,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF2C\uFF36\uFF1A\uFF10\uFF10"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9596,15 +9678,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -9689,8 +9773,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30D8\u30EB\u30E0"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9730,15 +9814,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -10029,8 +10115,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF28\uFF10\uFF10\uFF10"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10070,15 +10156,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -10238,8 +10326,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF2D\uFF10\uFF10\uFF10"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10279,15 +10367,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -10409,8 +10499,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3051\u3093"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10450,15 +10540,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -10543,8 +10635,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3064\u3088\u3055"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10584,15 +10676,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -10827,8 +10921,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u306F\u306A\u3059"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10868,15 +10962,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -11453,8 +11549,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11494,15 +11590,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -11624,8 +11722,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11665,15 +11763,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -11758,8 +11858,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11799,15 +11899,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -12246,8 +12348,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3059\u3067"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12287,15 +12389,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -12380,8 +12484,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u307C\u3046\u304E\u3087\u307E\u308A\u3087\u304F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12421,15 +12525,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -12648,8 +12754,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12689,15 +12795,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -12820,8 +12928,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u307C\u3046\u304E\u3087\u308A\u3087\u304F\uFF1A\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12861,15 +12969,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -12954,8 +13064,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u307F\u306E\u307E\u3082\u308A"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12995,15 +13105,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -13088,8 +13200,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13129,15 +13241,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -13298,8 +13412,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u305F\u3066"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13339,15 +13453,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -13490,8 +13606,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3051\u3093"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13531,15 +13647,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -13624,8 +13742,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u307F\u306E\u307E\u3082\u308A\uFF1A\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13665,15 +13783,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -13758,8 +13878,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3053\u3046\u3052\u304D\u307E\u308A\u3087\u304F\uFF1A\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13799,15 +13919,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -13892,8 +14014,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u304B\u3089\u3060"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13933,15 +14055,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -14293,8 +14417,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3072\u3060\u308A\u3066"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14334,15 +14458,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -14497,8 +14623,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3059\u3070\u3084\u3055\uFF1A\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14538,15 +14664,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -14822,8 +14950,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u307C\u3046\u304E\u3087\u308A\u3087\u304F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14863,15 +14991,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -15014,8 +15144,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3088\u308D\u3044"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15055,15 +15185,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -15148,8 +15280,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3053\u3053\u306B\u305B\u3064\u3081\u3044\u3076\u3093\u304C\u306F\u3044\u308A\u307E\u3059"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15189,15 +15321,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -15461,8 +15595,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3053\u3046\u3052\u304D\u308A\u3087\u304F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15502,15 +15636,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -15671,8 +15807,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15712,15 +15848,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -15880,8 +16018,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u307E\u307B\u3046\u3053\u3046\u3052\u304D"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15921,15 +16059,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -16087,8 +16227,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3082\u3063\u3066\u3044\u308B\u304B\u305A"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16128,15 +16268,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -16361,8 +16503,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16402,15 +16544,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -16721,8 +16865,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16762,15 +16906,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -16855,8 +17001,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF2C\uFF36\uFF1A\uFF10"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16896,15 +17042,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -16989,8 +17137,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3046\u3093"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17030,15 +17178,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -17176,8 +17326,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u307E\u307B\u3046\u307C\u3046\u304E\u3087"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17217,15 +17367,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -17347,8 +17499,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17388,15 +17540,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -17556,8 +17710,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17597,15 +17751,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -17842,8 +17998,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3053\u3053\u306B\u305B\u3064\u3081\u3044\u3076\u3093\u304C\u306F\u3044\u308A\u307E\u3059"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17883,15 +18039,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -18051,8 +18209,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3057\u3085\u3058\u3093\u3053\u3046"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18092,15 +18250,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -18338,8 +18498,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u307F\u304E\u3066"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18379,15 +18539,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -18684,8 +18846,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3042\u305F\u307E"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18725,15 +18887,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -18960,8 +19124,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3059\u3067"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19001,15 +19165,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -19094,8 +19260,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19135,15 +19301,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -19319,8 +19487,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19360,15 +19528,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -19506,8 +19676,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3046\u3093\uFF1A\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19547,15 +19717,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -19640,8 +19812,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3059\u3067"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19681,15 +19853,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -19810,8 +19984,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u307C\u3046\u304E\u3087"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19851,15 +20025,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -19944,8 +20120,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF10\uFF27"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19985,15 +20161,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -20279,8 +20457,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3059\u3070\u3084\u3055"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20320,15 +20498,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -20488,8 +20668,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20529,15 +20709,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -20622,8 +20804,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20663,15 +20845,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -20832,8 +21016,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3053\u3046\u3052\u304D\u307E\u308A\u3087\u304F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20873,15 +21057,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -21041,8 +21227,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3053\u3046\u3052\u304D\u308A\u3087\u304F\uFF1A\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -21082,15 +21268,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -21212,8 +21400,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3055\u3044\u3060\u3044\uFF2D\uFF30\uFF1A\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -21253,15 +21441,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -21714,8 +21904,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u306D\u3060\u3093"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -21755,15 +21945,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -22067,8 +22259,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u307F\u304E\u3066"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -22108,15 +22300,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -22201,8 +22395,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -22242,15 +22436,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -22373,8 +22569,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uFF12\uFF15\uFF15"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -22414,15 +22610,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -22448,6 +22646,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 898764173429174628}
     m_Modifications:
+    - target: {fileID: 3928365449368928229, guid: 4de43b10f12188d45b26c0445a4ea211, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+    - target: {fileID: 3928365449368928229, guid: 4de43b10f12188d45b26c0445a4ea211, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
     - target: {fileID: 3928365449451847529, guid: 4de43b10f12188d45b26c0445a4ea211, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -22566,6 +22772,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8467063652671629621}
     m_Modifications:
+    - target: {fileID: 3928365449368928229, guid: 4de43b10f12188d45b26c0445a4ea211, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+    - target: {fileID: 3928365449368928229, guid: 4de43b10f12188d45b26c0445a4ea211, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
     - target: {fileID: 3928365449451847529, guid: 4de43b10f12188d45b26c0445a4ea211, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

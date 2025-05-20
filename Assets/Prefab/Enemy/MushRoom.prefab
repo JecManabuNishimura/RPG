@@ -169,8 +169,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u304D\u306E\u3053"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
-  m_sharedMaterial: {fileID: 2601937849176140488, guid: 35248c59168f6bc44a7e30629cf2ec81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
+  m_sharedMaterial: {fileID: 651977711353910358, guid: 939d6ad1e0f7aac4ea59f6e38b9b399b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -194,8 +194,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1.28
-  m_fontSizeBase: 1.28
+  m_fontSize: 0.8
+  m_fontSizeBase: 0.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -210,15 +210,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -288,6 +290,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -331,6 +335,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7787486218121672409}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -354,7 +359,8 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,7 +371,6 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 4.03, y: 3.6601534}
   m_EdgeRadius: 0
 --- !u!114 &4276426859697964983
@@ -393,6 +398,7 @@ MonoBehaviour:
     Def: 0
     Qui: 0
     Luc: 0
+    attribute: 
     Exp: 0
     DefFlag: 0
   CharaName: "\u30DE\u30C3\u30B7\u30E5\u30EB\u30FC\u30E0"

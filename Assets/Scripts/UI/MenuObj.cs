@@ -15,11 +15,14 @@ public class MenuObj : MonoBehaviour
     public Vector3 tranInitPos;
     public RectTransform rect = null;
     public ScrollRect scrollrect;
+    public bool notCloseMenu = false;
+    public bool openMenu = false;
 
     [Header("ショップメニューの場合")] 
     public ShopMenu shopMenu;
     [Header("アイテムリストの場合&装備メニュー")]
     public ItemSetData data;
+    
     private List<GameObject> objList = new();
 
     public EquipmentMenuData equData = new();
@@ -46,6 +49,14 @@ public class MenuObj : MonoBehaviour
         objList.Add(obj.gameObject);
     }
 
+    public void CreateMagicData(MagicData magic)
+    {
+        var obj = Instantiate(data.itemDataObj).GetComponent<ItemText>();
+        obj.CreateText(magic.magicName, magic.mpCost);
+        obj.transform.parent = data.itemContent.transform;
+        objList.Add(obj.gameObject);
+    }
+
     public void ResetItemData()
     {
         foreach (var obj in objList)
@@ -63,8 +74,6 @@ public class MenuObj : MonoBehaviour
 		}
         
     }
-    
-    
 }
 [Serializable]
 public class ItemSetData

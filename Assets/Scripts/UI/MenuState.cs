@@ -101,8 +101,13 @@ public class MenuStateMain : MenuData,IMenuState
         {
             
             case 0:    // メイン
-
                 break;
+            case 1:     // 魔法
+                MenuManager.Instance.nowSelect = MenuList.Magic;
+                MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
+                _menu.ChangeMenu(MenuList.SelectChara);
+                break;
+
             case 2:     // 道具
                 MenuManager.Instance.nowSelect = MenuList.ItemList;
                 MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
@@ -164,6 +169,7 @@ public class MenuStateSelectCharacter : MenuData, IMenuState
         if (WindowObj is not null)
         {
             WindowObj.transform.gameObject.SetActive(true);
+            WindowObj.openMenu = true;
             SetCursorObject(MenuManager.Instance.GetCursorObj(State),State);
         }
     }
@@ -230,11 +236,13 @@ public class MenuStateSelectCharacter : MenuData, IMenuState
         {
             case MenuList.ItemList:
                 WindowObj.transform.gameObject.SetActive(false);
+                WindowObj.openMenu = false;
                 //MenuManager.Instance.cursorPos.Pop();
                 _menu.ChangeMenu(MenuList.ItemList);
                 break;
             default:
                 WindowObj.transform.gameObject.SetActive(false);
+                WindowObj.openMenu = false;
                 _menu.ChangeMenu(MenuList.Main);
                 break;
         }
@@ -384,18 +392,26 @@ public class MenuStateBattle : MenuData,IMenuState
 			switch (selectedIndex)
             {
                 case 0:     // こうげき
+                    PlayerDataRepository.Instance.PlayerState.attackType = AttackType.Attack;
+                    MenuManager.Instance.nowSelect = MenuList.Battle;
                     _menu.ChangeMenu(MenuList.Battle_Enemy);
                     break;
                 case 1:     // じゅもん
+                    PlayerDataRepository.Instance.PlayerState.attackType = AttackType.Magic;
+                    MenuManager.Instance.nowSelect = MenuList.Magic;
+                    MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
+                    _menu.ChangeMenu(MenuList.Magic);
                     break;
                 case 2:     // ぼうぎょ
-					PlayerDataRepository.Instance.PlayerState.to.Clear();
+                    PlayerDataRepository.Instance.PlayerState.attackType = AttackType.Guard;
+                    PlayerDataRepository.Instance.PlayerState.to.Clear();
 					PlayerDataRepository.Instance.PlayerState.ActionFlag = true;
 					BattleManager.Instance.BattleDatas.Add(PlayerDataRepository.Instance.PlayerState);
                     PlayerDataRepository.Instance.NextCharacter();
                     BattleManager.Instance.ParamChange(); // 表示パラメーター更新
 					break;
                 case 3:     // どうぐ
+                    PlayerDataRepository.Instance.PlayerState.attackType = AttackType.Item;
                     MenuManager.Instance.nowSelect = MenuList.ItemList;
                     MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
                     _menu.ChangeMenu(MenuList.ItemList);
@@ -477,6 +493,7 @@ public class MenuStateBattle_EnemySelect : MenuData,IMenuState
         BattleManager.Instance.BattleDatas.Add(PlayerDataRepository.Instance.PlayerState);
         PlayerDataRepository.Instance.NextCharacter();
         BattleManager.Instance.ParamChange();
+        MenuManager.Instance.CloseOpenMenu();
         _menu.ChangeMenu(MenuList.Battle);
     }
 
@@ -485,7 +502,7 @@ public class MenuStateBattle_EnemySelect : MenuData,IMenuState
         //WindowObj.transform.gameObject.SetActive(false);
         SetCursorActive(false);
         BattleManager.Instance.SelectEnemy(-1);
-        _menu.ChangeMenu(MenuList.Battle);
+        _menu.ChangeMenu(MenuManager.Instance.nowSelect);
     }
 
     public void CursorUp()
@@ -583,6 +600,7 @@ public class MenuStateItemList : MenuData, IMenuState
             WindowObj = MenuManager.Instance.GetWindow(State);
             if (WindowObj is not null)
             {
+                WindowObj.openMenu = true;
                 WindowObj.transform.gameObject.SetActive(true);
                 SetCursorObject(MenuManager.Instance.GetCursorObj(State), State);
                 selectedIndex = veriIndex * 2 + horiIndex;
@@ -731,11 +749,13 @@ public class MenuStateItemList : MenuData, IMenuState
             case Now_Mode.Field:
                 Initialize();
                 WindowObj.transform.gameObject.SetActive(false);
+                WindowObj.openMenu = false;
                 _menu.ChangeMenu(MenuList.Main);
                 break;
             case Now_Mode.Battle:
                 Initialize();
                 WindowObj.transform.gameObject.SetActive(false);
+                WindowObj.openMenu = false;
                 _menu.ChangeMenu(MenuList.Battle);
                 break;
         }
@@ -1120,8 +1140,6 @@ public class EquipmentMenu : MenuData, IMenuState
         {
             _menu.ChangeMenu(MenuList.EquipmentMenu1);
         }
-
-        
     }
 }
 
@@ -1130,73 +1148,155 @@ public class MagicMenu : MenuData, IMenuState
     private MenuController _menu;
     public MagicMenu(MenuController menu) => _menu = menu;
     public MenuList State => MenuList.Magic;
+    private float ypos;
+    private const int MaxViewCount = 12; // 何個表示されるのか
     public void Entry()
     {
         WindowObj = MenuManager.Instance.GetWindow(State);
         if (WindowObj is not null)
         {
             WindowObj.transform.gameObject.SetActive(true);
+            WindowObj.openMenu = true;
             SetCursorObject(MenuManager.Instance.GetCursorObj(State), State);
             selectedIndex = veriIndex * 2 + horiIndex;
         }
 
         // 1 / (プレイヤーのアイテム総数 / 2) - 画面のアイテム表示数
         WindowObj.ResetItemData();
-        foreach (var item in PlayerDataRepository.Instance.ItemList)
+        foreach (var item in PlayerDataRepository.Instance.PlayerState.magicData)
         {
-            WindowObj.CreateItemData(item.Value);
+            if(item == null)
+            {
+                break;
+            }
+            WindowObj.CreateMagicData(MagicMaster.Entity.GetMagicData(item));
         }
 
         // 一番初めのアイテムを表示
-        var data = PlayerDataRepository.Instance.GetItemList(selectedIndex);
+        var data = PlayerDataRepository.Instance.GetMagicData(selectedIndex);
         switch (GameManager.Instance.mode)
         {
             // バトル中は説明なし
             case Now_Mode.Field:
-                WindowObj.SetExpText(data != null ? data.Explanation.ConvertToFullWidth() : "");
+                WindowObj.SetExpText(data != null ? data.explanation.ConvertToFullWidth() : "");
                 break;
         }
     }
 
     public void Update()
     {
-        throw new NotImplementedException();
+        var data = PlayerDataRepository.Instance.GetMagicData(selectedIndex);
+        WindowObj.SetExpText(data != null ? data.explanation.ConvertToFullWidth() : "");
     }
 
     public void Exit()
     {
-        throw new NotImplementedException();
+        
     }
 
     public void SelectMenu()
     {
-        throw new NotImplementedException();
+        switch(GameManager.Instance.mode)
+        {
+            case Now_Mode.Field:
+                /*
+                WindowObj.transform.gameObject.SetActive(false);
+                MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
+                _menu.ChangeMenu(MenuList.SelectChara);
+                */
+                break;
+            case Now_Mode.Battle:
+                MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
+                _menu.ChangeMenu(MenuList.Battle_Enemy);
+                break;
+        }
     }
 
     public void CloseMenu()
     {
-        Initialize();
-        MenuManager.Instance.prevSelect = State;
+        switch (GameManager.Instance.mode)
+        {
+            case Now_Mode.Field:
+                Initialize();
+                WindowObj.transform.gameObject.SetActive(false);
+                _menu.ChangeMenu(MenuList.SelectChara);
+                break;
+            case Now_Mode.Battle:
+                Initialize();
+                WindowObj.transform.gameObject.SetActive(false);
+                _menu.ChangeMenu(MenuList.Battle);
+                break;
+        }
+        WindowObj.openMenu = false;
     }
 
     public void CursorUp()
     {
-        throw new NotImplementedException();
+        MoveCursor(-1, 0);
     }
 
     public void CursorDown()
     {
-        throw new NotImplementedException();
+        MoveCursor(1, 0);
     }
 
     public void CursorRight()
     {
-        throw new NotImplementedException();
+        MoveCursor(0, 1);
     }
 
     public void CursorLeft()
     {
-        throw new NotImplementedException();
+        MoveCursor(0, -1);
+    }
+    protected override void MoveCursor(int verticalDirection, int horizontalDirection)
+    {
+        double maxIndex = PlayerDataRepository.Instance.PlayerState.magicData.Count / 2.0;
+        if (Math.Abs(maxIndex - Math.Floor(maxIndex)) > 0.01)
+        {
+            maxIndex = Math.Ceiling(maxIndex);
+        }
+        else
+        {
+            maxIndex = Math.Round(maxIndex);
+        }
+
+        if (maxIndex == 0) return;
+
+        veriIndex = Mathf.Clamp((veriIndex + verticalDirection), 0, (int)maxIndex - 1);
+        ypos = Mathf.Clamp((ypos + verticalDirection), -1, ypos < veriIndex ? MaxViewCount : veriIndex);
+
+        horiIndex = Mathf.Clamp((horiIndex + horizontalDirection), 0, 1);
+        switch (ypos)
+        {
+            case 12 when verticalDirection == 1:
+                if (veriIndex < (int)maxIndex - 1)
+                {
+                    SetScrollPos(verticalDirection);
+                    ypos -= 1;
+                }
+                break;
+            case -1 when verticalDirection == -1:
+                {
+                    if (veriIndex > -1)
+                    {
+                        SetScrollPos(verticalDirection);
+                        ypos += 1;
+                    }
+
+
+                    break;
+                }
+        }
+        selectedIndex = veriIndex * 2 + horiIndex;
+        float yOffset = ypos * 50.0f;
+        float xOffset = (selectedIndex % 2) * 440;
+        UpdateCursorPosition(xOffset, yOffset);
+    }
+
+    void SetScrollPos(int VerticalDirection)
+    {
+        WindowObj.scrollrect.content.anchoredPosition += new Vector2(0, 50 * VerticalDirection);
     }
 }
 
@@ -1218,6 +1318,7 @@ public class EquipmentMenu1 : MenuData, IMenuState
         if (WindowObj is not null)
         {
             WindowObj.transform.gameObject.SetActive(true);
+            WindowObj.openMenu = true;
             SetCursorObject(MenuManager.Instance.GetCursorObj(State),State);
             selectedIndex = veriIndex;
         }
@@ -1245,6 +1346,7 @@ public class EquipmentMenu1 : MenuData, IMenuState
             SelectPrevChara,true);
         InputManager.Instance.SetKeyEvent(UseButtonType.Menu,InputMaster.Entity.MenuKey.CharaSelectRight,
             SelectNextChara,true);
+        WindowObj.openMenu = false;
     }
 
     public void CursorUp()

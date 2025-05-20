@@ -54,7 +54,12 @@ public class GameManager : MonoBehaviour
         }
 
         ReadEventData.Instance = new ReadEventData();
-
+        foreach(var  ev in EventMaster.Entity._eventInfos)
+        {
+            // イベントフラグをすべて初期状態にする
+            // セーブ実装時にはここを変更
+            ev.flag = false;
+        }
         PlayerDataRepository.Instance.playerPos = playerStartPos.transform.position;
         Destroy(playerStartPos);
         FieldIn();

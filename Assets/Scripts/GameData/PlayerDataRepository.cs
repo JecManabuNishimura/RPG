@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class PlayerDataRepository
 {
-    public static PlayerDataRepository Instance = new ();
-    public List<PlayerCharacter> playersState = new ();
+    public static PlayerDataRepository Instance = new();
+    public List<PlayerCharacter> playersState = new();
 
     public PlayerCharacter PlayerState => playersState[SelectIndex];
     public PlayerCharacter RandomPlayer => playersState[Random.Range(0, playersState.Count)];
@@ -38,16 +38,18 @@ public class PlayerDataRepository
 
     public int GetWeaponArmorSetCount(WeaponArmorEquipment.Part part, int id)
     {
-        switch(part)
+        switch (part)
         {
             case WeaponArmorEquipment.Part.Head:
                 return playersState.Count(player => player.WeaponArmorEauip.Head.dataParam.ID == id);
             case WeaponArmorEquipment.Part.Hand1:
                 return playersState.Count(player => player.WeaponArmorEauip.Hand1.dataParam.ID == id);
             case WeaponArmorEquipment.Part.Hand2:
-                return playersState.Count(player => player.WeaponArmorEauip.Hand2.dataParam.ID == id);   
+                return playersState.Count(player => player.WeaponArmorEauip.Hand2.dataParam.ID == id);
             case WeaponArmorEquipment.Part.Body:
                 return playersState.Count(player => player.WeaponArmorEauip.Body.dataParam.ID == id);
+            default:
+                break;
         }
         return 0;
     }
@@ -57,10 +59,14 @@ public class PlayerDataRepository
         gold += num;
     }
 
+    public MagicData GetMagicData(int number)
+    {
+        return MagicMaster.Entity.GetMagicData(PlayerState.magicData[number]);
+    }
     public ItemParam GetItemList(int index)
     {
         var data = ItemList.Values.ToList();
-        if(data.Count > index)
+        if (data.Count > index)
             return data[index];
         return null;
     }
@@ -68,9 +74,9 @@ public class PlayerDataRepository
     public void NextCharacter()
     {
         SelectIndex++;
-        if (SelectIndex > playersState.Count-1)
+        if (SelectIndex > playersState.Count - 1)
         {
-            SelectIndex = playersState.Count-1;
+            SelectIndex = playersState.Count - 1;
         }
     }
     public void PrevCharacter()
@@ -82,22 +88,22 @@ public class PlayerDataRepository
         }
     }
 
-    public ShopStateParameter GetWeaponStateParam(int num,int weaponID)
+    public ShopStateParameter GetWeaponStateParam(int num, int weaponID)
     {
         ShopStateParameter param = new ShopStateParameter(playersState[num].parameter);
         ShopStateParameter weaponParam = new ShopStateParameter(WeaponArmorMaster.Entity.GetWeaponData(weaponID).UpParam);
         ShopStateParameter attachWeaponParam =
             new ShopStateParameter(playersState[num].WeaponArmorEauip.GetWeaponEquipmentData(weaponID).UpParam);
-         
+
         return (param + weaponParam) - (param + attachWeaponParam);
     }
-    
-    public void GetItem(ItemParam item,int num = 1)
+
+    public void GetItem(ItemParam item, int num = 1)
     {
         if (ItemList.ContainsKey(item.ID))
         {
             ItemParam param = ItemList[item.ID];
-            param.num+= num;
+            param.num += num;
             ItemList[item.ID] = param;
         }
         else
@@ -114,7 +120,7 @@ public class PlayerDataRepository
 
     public void UseItem(CharacterState selectChara)
     {
-        if(selectChara.UseItem(ItemList[selectItemId]) || GameManager.Instance.mode == Now_Mode.Battle)
+        if (selectChara.UseItem(ItemList[selectItemId]) || GameManager.Instance.mode == Now_Mode.Battle)
             ItemList[selectItemId].num--;
         if (ItemList[selectItemId].num == 0)
         {
@@ -124,12 +130,12 @@ public class PlayerDataRepository
     public void Initialize()
     {
         playersState.Clear();
-        
+
         int counter = 0;
         foreach (var c in CharacterStateSetting.Entity.CharacterParam)
         {
             playersState.Add(new PlayerCharacter());
-            playersState[counter].Initialize(c.name,c.startLevel, c.intParam,counter,c.loadTateName);
+            playersState[counter].Initialize(c.name, c.startLevel, c.intParam,c.magicLearning, counter, c.loadTateName);
             counter++;
         }
     }

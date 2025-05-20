@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fddb51d69f65daf48a455301fdfc4e48, type: 3}
   m_Name: Fire
   m_EditorClassIdentifier: 
-  magicName: Fire
-  description: 
+  magicName: "\u30D5\u30A1\u30A4\u30E4"
+  explanation: "\u307C\u3049\uFF5E"
   mpCost: 1
   power: 10
   castTime: 0

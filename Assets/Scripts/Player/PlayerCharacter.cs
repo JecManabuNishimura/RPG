@@ -13,6 +13,7 @@ public class PlayerCharacter : CharacterState
     // レベルアップ系
     public LevelParameter[] levelUpParameter = new LevelParameter[100];
     public LevelParameter LevelUpParameter => levelUpParameter[Level-2];
+    public List<string> magicData = new List<string>(); // 魔法データ
     public bool levelUpFlag;
     public Parameter upParam = new();          // レベルアップ時獲得ステータス
     public int defencePower = 1;
@@ -153,7 +154,7 @@ public class PlayerCharacter : CharacterState
         }
     }
     
-    public void Initialize(string name, int level,Parameter state,int index,string LoadTateName)
+    public void Initialize(string name, int level,Parameter state, MagicData[] magicDatas,int index,string LoadTateName)
     {
         CharaName = name;
         parameter = state;
@@ -182,7 +183,13 @@ public class PlayerCharacter : CharacterState
             levelUpParameter[counter] = param;
             counter++;
         }
-        if(playerLevel.Count != 0)
+
+        for(int i=0; i< magicDatas.Length; i++)
+        {
+            magicData.Add(magicDatas[i].magicName);
+        }
+
+        if (playerLevel.Count != 0)
             AdjustmentLevelStatus(level);
 
 	}
@@ -231,8 +238,6 @@ public class WeaponArmorEquipment
         return param.Head.UpParam + param.Hand1.UpParam + param.Hand2.UpParam + param.Body.UpParam;
     }
 
-
-    
     public static Parameter operator +(WeaponArmorEquipment param1, Parameter param2)
     {
         var result = SumParamter(param1) + param2;

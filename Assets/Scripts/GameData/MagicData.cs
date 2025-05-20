@@ -5,7 +5,7 @@ using UnityEngine;
 public class MagicData : ScriptableObject
 {
     public string magicName;
-    public string description;
+    public string explanation;
 
     public int mpCost;
     public float power;

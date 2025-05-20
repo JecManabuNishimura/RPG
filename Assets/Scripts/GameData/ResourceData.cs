@@ -8,6 +8,7 @@ using GameData.Item;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using JetBrains.Annotations;
 
 public class CharacterState: MonoBehaviour, ICharacter
 {
@@ -16,6 +17,7 @@ public class CharacterState: MonoBehaviour, ICharacter
     
     // 攻撃系
     public List<CharacterState> to = new ();
+    public AttackType attackType;
     public string ActionCommand;
     public bool DethFlag;
     public bool ActionFlag;
@@ -58,6 +60,14 @@ public class AttackPattern
     public int id;
 
     public int weight;
+}
+[Serializable]
+public enum AttackType
+{
+    Attack,
+    Magic,
+    Item,
+    Guard,
 }
 
 [Serializable]

@@ -36,6 +36,7 @@ public class CharaInitDataParam
 {
     public string name;
     public Parameter intParam;
+    public MagicData[] magicLearning;
     public int startLevel;
     public string loadTateName;
 }

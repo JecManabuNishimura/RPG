@@ -74,6 +74,18 @@ public class MenuManager : MonoBehaviour
         }
         return null;
     }
+
+    public void CloseOpenMenu()
+    {
+        foreach(var obj in _menuController.menuObjs)
+        {
+            if (obj.openMenu && !obj.notCloseMenu)
+            {
+                obj.openMenu = false;
+                obj.gameObject.SetActive(false);
+            }
+        }
+    }
     public GameObject GetBattleCursorObj(MenuList list)
     {
         foreach (var obj in _menuController.BattleMenuObjs)

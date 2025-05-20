@@ -48,7 +48,7 @@ namespace UI
             SoundMaster.Entity.PlaySESound(PlaceOfSound.MenuSelect);
             _previousState?.Exit();
             _currentState = nextState;
-            
+
             _currentState.Entry();
         }
         public void Update() => _currentState?.Update();

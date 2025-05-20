@@ -27,7 +27,11 @@ MonoBehaviour:
       Def: 3
       Qui: 10
       Luc: 0
+      attribute: 
       Exp: 0
       DefFlag: 0
+    magicLearning:
+    - {fileID: 11400000, guid: d2c49d7fddae7c74ab6a78062350f166, type: 2}
+    - {fileID: 11400000, guid: 63166e4dd91df7049a8b6773e916c3c4, type: 2}
     startLevel: 3
     loadTateName: player1State
