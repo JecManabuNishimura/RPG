@@ -12,16 +12,17 @@ public class PlayerCharacter : CharacterState
     public int experience;  // 取得経験値　（レベルアップ時にリセット）
     // レベルアップ系
     public LevelParameter[] levelUpParameter = new LevelParameter[100];
-    public LevelParameter LevelUpParameter => levelUpParameter[Level-2];
+    public LevelParameter LevelUpParameter => levelUpParameter[Level - 2];
     public List<string> magicData = new List<string>(); // 魔法データ
     public bool levelUpFlag;
     public Parameter upParam = new();          // レベルアップ時獲得ステータス
     public int defencePower = 1;
-    public WeaponArmorEquipment WeaponArmorEauip = new ();
+    public WeaponArmorEquipment WeaponArmorEauip = new();
+    
 
     public Parameter TotalParam => WeaponArmorEauip + parameter; // 装備などした時のパラメーター
 
-    public void SetWaeponArmor(WeaponArmorEquipment.Part part,InfoWeaponArmor weapon)
+    public void SetWaeponArmor(WeaponArmorEquipment.Part part, InfoWeaponArmor weapon)
     {
         switch (part)
         {
@@ -55,9 +56,9 @@ public class PlayerCharacter : CharacterState
 		yield return new WaitForEndOfFrame();
         defencePower = 1;
         parameter.DefFlag = false;
-		switch (ActionCommand)
+		switch (attackType)
         {
-            case "たたかう":
+            case AttackType.Attack:
                 MessageManager.Instance.StartDialogMessage(CharaName + "のこうげき");
                 yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
 				foreach (var t in to)
@@ -77,12 +78,33 @@ public class PlayerCharacter : CharacterState
 					yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
 				}
 				break;
-            case "ぼうぎょ":
+            case AttackType.Magic:
+                string magicName = selectMagicName;
+                MessageManager.Instance.StartDialogMessage(CharaName + "が" + magicName  + "を唱えた");
+                yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
+                foreach (var t in to)
+                {
+                    // ドラクエ風ダメージ計算式
+                    int damage =  TotalParam.Mga + (int)MagicMaster.Entity.GetMagicData(magicName).power;
+                    // クリティカル計算
+                    if (parameter.Luc > Random.Range(0, 255))
+                    {
+                        t.Damage(damage * 2, true);
+                    }
+                    else
+                    {
+                        t.Damage(damage, false);
+                    }
+
+                    yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
+                }
+                break;
+            case AttackType.Guard:
 				MessageManager.Instance.StartDialogMessage(CharaName + "は　ぼうぎょした");
 				defencePower = 2;
 				yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
 				break;
-            case "アイテム":
+            case AttackType.Item:
                 MessageManager.Instance.StartDialogMessage(CharaName + "は" + ItemMaster.Entity.GetItemName(PlayerDataRepository.Instance.selectItemId) +"　しようした");
                 yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
                 foreach (var t in to)
@@ -95,7 +117,6 @@ public class PlayerCharacter : CharacterState
 
                 // アイテム番号初期化
                 PlayerDataRepository.Instance.selectItemId = 0;
-                
                 
                 yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
                 break;

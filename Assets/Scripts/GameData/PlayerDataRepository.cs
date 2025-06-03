@@ -20,6 +20,7 @@ public class PlayerDataRepository
     public int SelectIndex;
     public readonly Dictionary<int, ItemParam> ItemList = new();
     public int selectItemId;
+    
 
     public int gold = 100000;
 

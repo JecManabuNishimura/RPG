@@ -83,6 +83,11 @@ public class MenuManager : MonoBehaviour
             {
                 obj.openMenu = false;
                 obj.gameObject.SetActive(false);
+                obj.Cursor.transform.position = obj.tranInitPos;
+            }
+            else if(obj.notCloseMenu)
+            {
+                obj.Cursor.transform.position = obj.tranInitPos;
             }
         }
     }

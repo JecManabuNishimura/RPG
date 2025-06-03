@@ -2455,6 +2455,8 @@ MonoBehaviour:
   tranInitPos: {x: 0, y: 0, z: 0}
   rect: {fileID: 0}
   scrollrect: {fileID: 0}
+  notCloseMenu: 0
+  openMenu: 0
   shopMenu: {fileID: 880195396}
   data:
     itemContent: {fileID: 0}
@@ -10302,6 +10304,8 @@ MonoBehaviour:
   tranInitPos: {x: 0, y: 0, z: 0}
   rect: {fileID: 0}
   scrollrect: {fileID: 1626812612}
+  notCloseMenu: 0
+  openMenu: 0
   shopMenu: {fileID: 0}
   data:
     itemContent: {fileID: 352191251}
@@ -10973,6 +10977,8 @@ MonoBehaviour:
   tranInitPos: {x: 0, y: 0, z: 0}
   rect: {fileID: 0}
   scrollrect: {fileID: 0}
+  notCloseMenu: 0
+  openMenu: 0
   shopMenu: {fileID: 0}
   data:
     itemContent: {fileID: 0}
@@ -31082,6 +31088,8 @@ MonoBehaviour:
   tranInitPos: {x: 0, y: 0, z: 0}
   rect: {fileID: 0}
   scrollrect: {fileID: 0}
+  notCloseMenu: 0
+  openMenu: 0
   shopMenu: {fileID: 0}
   data:
     itemContent: {fileID: 0}
@@ -33310,6 +33318,8 @@ MonoBehaviour:
   tranInitPos: {x: 0, y: 0, z: 0}
   rect: {fileID: 0}
   scrollrect: {fileID: 290276291}
+  notCloseMenu: 0
+  openMenu: 0
   shopMenu: {fileID: 0}
   data:
     itemContent: {fileID: 831526546}

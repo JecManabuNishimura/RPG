@@ -28,7 +28,15 @@ public class MenuData
         else
         {
             offsetCursor = _cursor.transform.position;
+            veriIndex = 0;
         }
+    }
+
+    public void InitCursor()
+    {
+        offsetCursor = WindowObj.tranInitPos;
+        veriIndex = 0;
+        _cursor.transform.position = offsetCursor;
     }
 
     public void SetCursorActive(bool flag)

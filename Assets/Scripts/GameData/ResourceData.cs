@@ -21,7 +21,8 @@ public class CharacterState: MonoBehaviour, ICharacter
     public string ActionCommand;
     public bool DethFlag;
     public bool ActionFlag;
-    
+    public string selectMagicName;
+
     public virtual void Damage(int damage,bool criticalFlag)
     {
         parameter.Hp = Mathf.Max(parameter.Hp - damage, 0);
