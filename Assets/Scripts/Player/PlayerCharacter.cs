@@ -68,11 +68,11 @@ public class PlayerCharacter : CharacterState
                     // クリティカル計算
                     if (parameter.Luc > Random.Range(0, 255))
                     {
-                        t.Damage(damage * 2,true);                            
+                        t.Damage(damage * 2,ElementType.None,true);                            
                     }
                     else
                     {
-                        t.Damage(damage,false);
+                        t.Damage(damage,ElementType.None,false);
                     }
 					
 					yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
@@ -84,18 +84,10 @@ public class PlayerCharacter : CharacterState
                 yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
                 foreach (var t in to)
                 {
+                    var magic = MagicMaster.Entity.GetMagicData(magicName);
                     // ドラクエ風ダメージ計算式
-                    int damage =  TotalParam.Mga + (int)MagicMaster.Entity.GetMagicData(magicName).power;
-                    // クリティカル計算
-                    if (parameter.Luc > Random.Range(0, 255))
-                    {
-                        t.Damage(damage * 2, true);
-                    }
-                    else
-                    {
-                        t.Damage(damage, false);
-                    }
-
+                    int damage =  TotalParam.Mga + (int)magic.power;
+                    t.Damage(damage,magic.elementType ,false);
                     yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
                 }
                 break;
@@ -124,10 +116,10 @@ public class PlayerCharacter : CharacterState
 
         BattleDataReset();
     }
-    public override void Damage(int damage,bool criticalFlag)
+    public override void Damage(int damage,ElementType eType,bool criticalFlag)
     {
         int calcDamage = Mathf.Clamp(damage, 0, damage);
-        base.Damage(calcDamage,criticalFlag);
+        base.Damage(calcDamage,eType,criticalFlag);
         MessageManager.Instance.StartDialogMessage(CharaName + "は" +
                                                    (criticalFlag ? "クリティカル":"") +
                                                    calcDamage.ToString().ConvertToFullWidth() + "のダメージうけた\n" +
@@ -175,13 +167,14 @@ public class PlayerCharacter : CharacterState
         }
     }
     
-    public void Initialize(string name, int level,Parameter state, MagicData[] magicDatas,int index,string LoadTateName)
+    //public void Initialize(string name, int level,Parameter state, MagicData[] magicDatas,int index,string LoadTateName)
+    public void Initialize(CharaInitDataParam initDataParam,int index)
     {
-        CharaName = name;
-        parameter = state;
-        Level = level;
+        CharaName = initDataParam.name;
+        parameter = initDataParam.intParam;
+        Level = initDataParam.startLevel;
         
-        var playerLevel    = DataReader.ReadData(LoadTateName);
+        var playerLevel    = DataReader.ReadData(initDataParam.loadTateName);
         var playerExp = DataReader.ReadData("RequiredExperiencePoints");
         
         
@@ -205,14 +198,22 @@ public class PlayerCharacter : CharacterState
             counter++;
         }
 
-        for(int i=0; i< magicDatas.Length; i++)
+        foreach (var t in initDataParam.itemList)
         {
-            magicData.Add(magicDatas[i].magicName);
+            PlayerDataRepository.Instance.ItemList.Add(ItemMaster.Entity.FindItemData(t.name).ID,
+                new PlayerDataRepository.HubItemData
+                {
+                    ID = ItemMaster.Entity.FindItemData(t.name).ID,
+                    num = t.count
+                });
+        }
+        for(int i=0; i< initDataParam.magicLearning.Length; i++)
+        {
+            magicData.Add(initDataParam.magicLearning[i].magicName);
         }
 
         if (playerLevel.Count != 0)
-            AdjustmentLevelStatus(level);
-
+            AdjustmentLevelStatus(Level);
 	}
 }
 

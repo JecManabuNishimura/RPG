@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -8,6 +9,7 @@ public class Player : MonoBehaviour
     
     public PlayerMovement _playerMovement;
     private PlayerContext _context;
+    public List<PlayerDataRepository.HubItemData> hubItems = new ();
     public GameObject hitObj;
 
     private void Start()
@@ -19,14 +21,20 @@ public class Player : MonoBehaviour
     }
     
     void Update() => _context.Update();
-
+    void FixedUpdate()
+    {
+        hubItems = PlayerDataRepository.Instance.ItemList.Values.ToList();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         hitObj = other.gameObject;
-        var itemdata = other.GetComponent<IItem>();
-        if(itemdata != null)
-            PlayerDataRepository.Instance.GetItem(itemdata.GetItem());
 
+        var fieldItem = other.GetComponent<FieldItem>();
+        if (fieldItem != null)
+        {
+            int itemId = fieldItem.GetItem();
+            PlayerDataRepository.Instance.GetItem(itemId);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

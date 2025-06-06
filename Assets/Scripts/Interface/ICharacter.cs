@@ -7,7 +7,7 @@ namespace Interface
     public interface ICharacter
     {
 
-        void Damage(int damage,bool criticalFlag);
-        bool UseItem(ItemParam item);
+        void Damage(int damage,ElementType eType, bool criticalFlag);
+        bool UseItem(ItemData item);
     }
 }

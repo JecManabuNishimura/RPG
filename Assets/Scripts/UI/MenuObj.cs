@@ -34,10 +34,12 @@ public class MenuObj : MonoBehaviour
         tranInitPos = Cursor.transform.position;
     }
 
-    public void CreateItemData(ItemParam item)
+    public void CreateItemData(int id)
     {
         var obj =  Instantiate(data.itemDataObj).GetComponent<ItemText>();
-        obj.CreateText(item.Name,item.num,item.sprite);
+        PlayerDataRepository.Instance.ItemList.TryGetValue(id, out var item);
+        var  itemdata = ItemMaster.Entity.GetItemData(id);
+        obj.CreateText(itemdata.Name,item.num,itemdata.sprite);
         obj.transform.parent = data.itemContent.transform;
         objList.Add(obj.gameObject);
     }

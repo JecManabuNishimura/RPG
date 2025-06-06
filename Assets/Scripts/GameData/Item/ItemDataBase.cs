@@ -32,15 +32,14 @@ public class ItemDataBase : ScriptableObject
 
     public List<DropItemData> itemParams = new();
     
-    public void AddData(ItemData itemData)
+    public void AddData(FieldItem itemData)
     {
-        if (!IsOriginalIDExist(itemData.ID))
+        if (!IsOriginalIDExist(itemData.AllID))
         {
             DropItemData data = new();
-            ItemParam param = ItemMaster.Entity.GetItemData(int.Parse(itemData.ID.Substring(3)));
-            data.ItemName = param.Name;
-            data.originalID = itemData.ID;
-            data.isCollection = itemData.isCollected;
+            data.ItemName = itemData.name;
+            data.originalID = itemData.AllID;
+            data.isCollection = false;
             itemParams.Add(data);
             itemParams = itemParams.OrderBy(item => item.originalID, StringComparer.OrdinalIgnoreCase).ToList();
         }
@@ -68,7 +67,7 @@ public class ItemDataBase : ScriptableObject
     
     public bool IsOriginalIDExist(string id)
     {
-        return itemParams.Any(item => string.Equals(item.originalID, id));
+        return itemParams.Any(item => Equals(item.originalID,id));
     }
 }
 
@@ -76,6 +75,9 @@ public class ItemDataBase : ScriptableObject
 public class DropItemData
 {
     public string ItemName;
+    // 先頭一桁　：MapID
+    // ２～３　：固有ID
+    // ４～　　：アイテムID
     public string originalID;
     public bool isCollection;
 }
@@ -110,16 +112,15 @@ public class ItemReaderEditor : Editor
     private void RegisterObject()
     {
         GameObject[] obj = GameObject.FindGameObjectsWithTag("Item");
-        
+        itemReader.itemParams.Clear();
         foreach (var o in obj)
         {
-            ItemData itData = o.GetComponent<ItemData>();
-            //ItemDataBase idb = (ItemDataBase)itemReader.itemDataBase;
+            FieldItem itData = o.GetComponent<FieldItem>();
             itemReader.AddData(itData);
         }
     }
 
-    
+    /*
     // 重複しているoriginalIDを取得するメソッド
     public IEnumerable<string> GetDuplicateOriginalIDs(ItemData[] obj)
     {
@@ -127,5 +128,5 @@ public class ItemReaderEditor : Editor
             .GroupBy(item => item.ID, StringComparer.OrdinalIgnoreCase)
             .Where(group => group.Count() > 1)
             .Select(group => group.Key);
-    }
+    }*/
 }

@@ -23,16 +23,16 @@ public class CharacterState: MonoBehaviour, ICharacter
     public bool ActionFlag;
     public string selectMagicName;
 
-    public virtual void Damage(int damage,bool criticalFlag)
+    public virtual void Damage(int damage,ElementType eType, bool criticalFlag)
     {
         parameter.Hp = Mathf.Max(parameter.Hp - damage, 0);
     }
 
-    public bool UseItem(ItemParam item)
+    public bool UseItem(ItemData item)
     {
         switch (item.Subject)
         {
-            case "HP":
+            case SubjectType.HP:
                 if (parameter.Hp == parameter.MaxHp)
                 {
                     return false;
@@ -40,7 +40,7 @@ public class CharacterState: MonoBehaviour, ICharacter
                 parameter.Hp = Mathf.Clamp(parameter.Hp + item.Power,0,parameter.MaxHp);
                 
                 break;
-            case "MP":
+            case SubjectType.MP:
                 parameter.Mp += item.Power;
                 break;
         }
@@ -87,7 +87,7 @@ public class Parameter
     public int Def;
     public int Qui;
     public int Luc;
-    public string attribute;
+    public ElementType attribute;
     public int Exp;
     public bool DefFlag;     // 防御
     

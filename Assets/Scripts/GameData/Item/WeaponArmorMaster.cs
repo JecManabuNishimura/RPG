@@ -63,7 +63,6 @@ public class WeaponMasterEditor : Editor
         {
             InfoWeaponArmor wad = new();
             wad.UpParam = new();
-            wad.dataParam.Effect = "Weapon";
             wad.dataParam.ID = int.Parse(data[i][0]);
             wad.dataParam.Name = data[i][1];
             wad.equipment = data[i][2] switch
@@ -82,7 +81,16 @@ public class WeaponMasterEditor : Editor
             wad.UpParam.Mgd = int.Parse(data[i][8]);
             wad.UpParam.Qui = int.Parse(data[i][9]);
             // 運が入る
-            wad.dataParam.Effect = data[i][11];
+            if (Enum.TryParse<EffectType>(data[i][11], true, out var parsedEffect))
+            {
+                wad.dataParam.Effect = parsedEffect;
+            }
+            else
+            {
+                // 変換に失敗した場合のフォールバック（例：noneにする）
+                wad.dataParam.Effect = EffectType.none;
+                Debug.LogWarning($"未定義のEffectType: {data[i][11]} を none に置き換えました。");
+            }
             wad.dataParam.Price = int.Parse(data[i][12]);
             
             itemReader.WeaponArmorDatas.Add(wad);
@@ -94,7 +102,7 @@ public class WeaponMasterEditor : Editor
 public class InfoWeaponArmor
 {
     public WeaponArmorEquipment.Part equipment;
-    public ItemParam dataParam = new();
+    public ItemData dataParam = new();
     public Parameter UpParam = new();
     public bool isSet = false;
 

@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using GameData.Item;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerDataRepository
 {
@@ -18,7 +20,14 @@ public class PlayerDataRepository
     public int ItemCount => ItemList.Count;
 
     public int SelectIndex;
-    public readonly Dictionary<int, ItemParam> ItemList = new();
+
+    [Serializable]
+    public class HubItemData
+    {
+        public int ID;
+        public int num;
+    }
+    public readonly Dictionary<int, HubItemData> ItemList = new();// IDと個数がわかるようにする
     public int selectItemId;
     
 
@@ -62,13 +71,17 @@ public class PlayerDataRepository
 
     public MagicData GetMagicData(int number)
     {
-        return MagicMaster.Entity.GetMagicData(PlayerState.magicData[number]);
+        if(number >= 0 && number < PlayerState.magicData.Count)
+        {
+            return MagicMaster.Entity.GetMagicData(PlayerState.magicData[number]);
+        }
+        return null;
     }
-    public ItemParam GetItemList(int index)
+    public ItemData GetItemList(int index)
     {
         var data = ItemList.Values.ToList();
         if (data.Count > index)
-            return data[index];
+            return ItemMaster.Entity.GetItemData(data[index].ID);
         return null;
     }
 
@@ -99,17 +112,19 @@ public class PlayerDataRepository
         return (param + weaponParam) - (param + attachWeaponParam);
     }
 
-    public void GetItem(ItemParam item, int num = 1)
+    public void GetItem(int id, int num = 1)
     {
-        if (ItemList.ContainsKey(item.ID))
+        if (ItemList.ContainsKey(id))
         {
-            ItemParam param = ItemList[item.ID];
-            param.num += num;
-            ItemList[item.ID] = param;
+            ItemList[id].num += num;
         }
         else
         {
-            item.num = num;
+            HubItemData item = new HubItemData
+            {
+                ID = id,
+                num = num
+            };
             ItemList.Add(item.ID, item);
         }
     }
@@ -121,7 +136,7 @@ public class PlayerDataRepository
 
     public void UseItem(CharacterState selectChara)
     {
-        if (selectChara.UseItem(ItemList[selectItemId]) || GameManager.Instance.mode == Now_Mode.Battle)
+        if (selectChara.UseItem(ItemMaster.Entity.GetItemData(selectItemId)) || GameManager.Instance.mode == Now_Mode.Battle)
             ItemList[selectItemId].num--;
         if (ItemList[selectItemId].num == 0)
         {
@@ -136,7 +151,7 @@ public class PlayerDataRepository
         foreach (var c in CharacterStateSetting.Entity.CharacterParam)
         {
             playersState.Add(new PlayerCharacter());
-            playersState[counter].Initialize(c.name, c.startLevel, c.intParam,c.magicLearning, counter, c.loadTateName);
+            playersState[counter].Initialize(c, counter);
             counter++;
         }
     }

@@ -74,8 +74,17 @@ public class BattleManager : MonoBehaviour
             .ToList();
     }
 
-    public void SelectEnemy(int index)
+    public void SelectEnemy(int index,bool all = false)
     {
+        if (all)
+        {
+            foreach (var t in EnemyList)
+            {
+                t.GetComponent<EnemyCharactor>().Select(true);
+            }
+
+            return;
+        }
         for (int i = 0; i < EnemyList.Count; i++)
         {
             EnemyList[i].GetComponent<EnemyCharactor>().Select(index == i);

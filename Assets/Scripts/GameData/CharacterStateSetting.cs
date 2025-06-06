@@ -37,6 +37,14 @@ public class CharaInitDataParam
     public string name;
     public Parameter intParam;
     public MagicData[] magicLearning;
+    public ParamItemData[] itemList; // アイテム名と個数のタプル
     public int startLevel;
     public string loadTateName;
+}
+
+[Serializable]
+public class ParamItemData
+{
+    public string name;
+    public int count;
 }

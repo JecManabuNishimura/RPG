@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: ItemDataBase
   m_EditorClassIdentifier: 
   itemParams:
-  - ItemName: "\u3084\u304F\u305D\u3046"
-    originalID: 101100
-    isCollection: 0
-  - ItemName: "\u307E\u307B\u3046\u306E\u3053\u3073\u3093"
-    originalID: 102101
-    isCollection: 0
-  - ItemName: "\u3084\u304F\u305D\u3046"
-    originalID: 103100
-    isCollection: 0
-  - ItemName: "\u3084\u304F\u305D\u3046"
-    originalID: 104100
-    isCollection: 0
+  - ItemName: MedicinalHerbs
+    originalID: 11100
+    isCollection: 1
+  - ItemName: MedicinalHerbs (1)
+    originalID: 12100
+    isCollection: 1
+  - ItemName: MedicinalHerbs (2)
+    originalID: 13100
+    isCollection: 1
+  - ItemName: MedicinalHerbs (3)
+    originalID: 14100
+    isCollection: 1

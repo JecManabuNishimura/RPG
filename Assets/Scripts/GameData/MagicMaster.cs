@@ -29,6 +29,11 @@ public class MagicMaster : ScriptableObject
     
     public MagicData GetMagicData(string name)
     {
-        return magicList.Find(m => m.magicName == name);
+        if (name != null)
+        {
+            return magicList.Find(m => m.magicName == name);
+        }
+
+        return null;
     }
 }

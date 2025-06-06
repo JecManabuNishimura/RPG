@@ -24,7 +24,15 @@ public enum ElementType
     Ice,
     Lightning,
     Heal,
-    
+    Wind,
+    Earth,
+    Light,
+    Dark,
+    Poison,
+    Holy,
+    Curse,
+    Physical,
+    Water,
 }
 
 public enum MagicTargetType { 

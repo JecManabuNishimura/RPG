@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -65,11 +66,11 @@ public class EnemyData :CharacterState
             int damage = (parameter.Atk / 2) - (t.TotalParam.Def / 4);
             if (parameter.Luc > Random.Range(0, 255))
             {
-                t.Damage(damage * 2,true);                            
+                t.Damage(damage * 2,ElementType.None,true);                            
             }
             else
             {
-                t.Damage(damage,false);
+                t.Damage(damage,ElementType.None,false);
             }
 			yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
             
@@ -78,20 +79,76 @@ public class EnemyData :CharacterState
         yield break;
     }
 
-    public override void Damage(int damage,bool criticalFlag)
+    public override void Damage(int damage,ElementType eType,bool criticalFlag)
     {
         if (DethFlag)
         {
             MessageManager.Instance.StartDialogMessage("ミス");
             return;
         }
-
+        
         StartCoroutine(DamageImageChange());
         int random = Random.Range(0, 255);
-
+        // 攻撃属性相性設定
+        switch (parameter.attribute)
+        {
+            case ElementType.Fire:
+                switch (eType)
+                {
+                    case ElementType.Water:
+                        damage = Mathf.Clamp(damage * 2, 0, damage);
+                        break;
+                    case ElementType.Earth:
+                        damage = Mathf.Clamp(damage / 2, 0, damage);
+                        break;
+                }
+                break;
+            case ElementType.Ice:
+                break;
+            case ElementType.Water:
+                switch (eType)
+                {
+                    case ElementType.Fire:
+                        damage = Mathf.Clamp(damage / 2, 0, damage);
+                        break;
+                    case ElementType.Earth:
+                        damage = Mathf.Clamp(damage * 2, 0, damage);
+                        break;
+                }
+                break;
+            case ElementType.Dark:
+                switch (eType)
+                {
+                    case ElementType.Light:
+                        damage = Mathf.Clamp(damage * 2, 0, damage);
+                        break;
+                }
+                break;
+            case ElementType.Light:
+                switch (eType)
+                {
+                    case ElementType.Dark:
+                        damage = Mathf.Clamp(damage * 2, 0, damage);
+                        break;
+                }
+                break;
+            case ElementType.Earth:
+                switch (eType)
+                {
+                    case ElementType.Fire:
+                        damage = Mathf.Clamp(damage * 2, 0, damage);
+                        break;
+                    case ElementType.Water:
+                        damage = Mathf.Clamp(damage / 2, 0, damage);
+                        break;
+                }
+                break;
+            case ElementType.Wind:
+                break;
+        }
         int calcDamage = Mathf.Clamp(damage, 0, damage);
         
-        base.Damage(calcDamage,criticalFlag);
+        base.Damage(calcDamage,eType,criticalFlag);
         MessageManager.Instance.StartDialogMessage(CharaName + "に" +
                                                    (criticalFlag ? "クリティカル":"") +
                                                    calcDamage.ToString().ConvertToFullWidth() + "のダメージ");

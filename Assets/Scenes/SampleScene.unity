@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -1234,6 +1234,7 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1581,8 +1582,8 @@ GameObject:
   m_Component:
   - component: {fileID: 138060710}
   - component: {fileID: 138060709}
-  - component: {fileID: 138060708}
   - component: {fileID: 138060707}
+  - component: {fileID: 138060711}
   m_Layer: 0
   m_Name: MedicinalHerbs (3)
   m_TagString: Item
@@ -1636,30 +1637,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.9230769, y: 0.9230769}
   m_EdgeRadius: 0
---- !u!114 &138060708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138060706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 192a15c333dff8a4b99129741af86ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 104100
-  param:
-    Name: "\u3084\u304F\u305D\u3046"
-    ID: 0
-    Effect: 
-    Subject: 
-    Power: 0
-    Explanation: 
-    Price: 0
-    sprite: {fileID: 0}
-    num: 1
-  isCollected: 0
 --- !u!212 &138060709
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1679,6 +1656,7 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1729,6 +1707,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &138060711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138060706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7467341526dee2a4898f17d6a38e6c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapId: 1
+  originalId: 4
+  itemName: "\u3084\u304F\u305D\u3046"
+  isCollected: 0
 --- !u!1 &142935105 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7065669351681610998, guid: c6da2924878e195438ef38a04b1a62e2, type: 3}
@@ -2078,8 +2072,8 @@ GameObject:
   m_Component:
   - component: {fileID: 197329919}
   - component: {fileID: 197329918}
-  - component: {fileID: 197329917}
   - component: {fileID: 197329916}
+  - component: {fileID: 197329920}
   m_Layer: 0
   m_Name: MedicinalHerbs (1)
   m_TagString: Item
@@ -2133,30 +2127,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.9230769, y: 0.9230769}
   m_EdgeRadius: 0
---- !u!114 &197329917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 197329915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 192a15c333dff8a4b99129741af86ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 102101
-  param:
-    Name: "\u307E\u307B\u3046\u306E\u3053\u3073\u3093"
-    ID: 0
-    Effect: 
-    Subject: 
-    Power: 0
-    Explanation: 
-    Price: 0
-    sprite: {fileID: 0}
-    num: 1
-  isCollected: 0
 --- !u!212 &197329918
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2176,6 +2146,7 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2226,6 +2197,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &197329920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197329915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7467341526dee2a4898f17d6a38e6c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapId: 1
+  originalId: 2
+  itemName: "\u3084\u304F\u305D\u3046"
+  isCollected: 0
 --- !u!1 &201367462
 GameObject:
   m_ObjectHideFlags: 0
@@ -3702,8 +3689,8 @@ GameObject:
   m_Component:
   - component: {fileID: 395302557}
   - component: {fileID: 395302556}
-  - component: {fileID: 395302555}
   - component: {fileID: 395302554}
+  - component: {fileID: 395302558}
   m_Layer: 0
   m_Name: MedicinalHerbs (2)
   m_TagString: Item
@@ -3757,30 +3744,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.9230769, y: 0.9230769}
   m_EdgeRadius: 0
---- !u!114 &395302555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395302553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 192a15c333dff8a4b99129741af86ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 103100
-  param:
-    Name: "\u3084\u304F\u305D\u3046"
-    ID: 0
-    Effect: 
-    Subject: 
-    Power: 0
-    Explanation: 
-    Price: 0
-    sprite: {fileID: 0}
-    num: 1
-  isCollected: 0
 --- !u!212 &395302556
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3800,6 +3763,7 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3850,6 +3814,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &395302558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395302553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7467341526dee2a4898f17d6a38e6c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapId: 1
+  originalId: 3
+  itemName: "\u3084\u304F\u305D\u3046"
+  isCollected: 0
 --- !u!1 &404126912
 GameObject:
   m_ObjectHideFlags: 0
@@ -4573,6 +4553,7 @@ TilemapRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -10404,6 +10385,7 @@ TilemapRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -11650,6 +11632,7 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -12175,6 +12158,7 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13763,6 +13747,7 @@ TilemapRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15582,6 +15567,7 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -16579,6 +16565,7 @@ TilemapRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -19553,8 +19540,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1342248255}
   - component: {fileID: 1342248254}
-  - component: {fileID: 1342248257}
   - component: {fileID: 1342248258}
+  - component: {fileID: 1342248259}
   m_Layer: 0
   m_Name: MedicinalHerbs
   m_TagString: Item
@@ -19581,6 +19568,7 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -19631,30 +19619,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1342248257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342248253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 192a15c333dff8a4b99129741af86ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 101100
-  param:
-    Name: "\u3084\u304F\u305D\u3046"
-    ID: 0
-    Effect: 
-    Subject: 
-    Power: 0
-    Explanation: 
-    Price: 0
-    sprite: {fileID: 0}
-    num: 1
-  isCollected: 0
 --- !u!61 &1342248258
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19701,6 +19665,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.9230769, y: 0.9230769}
   m_EdgeRadius: 0
+--- !u!114 &1342248259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342248253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7467341526dee2a4898f17d6a38e6c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapId: 1
+  originalId: 1
+  itemName: "MP\u3084\u304F\u305D\u3046"
+  isCollected: 0
 --- !u!1 &1350039742
 GameObject:
   m_ObjectHideFlags: 0
@@ -20023,6 +20003,7 @@ TilemapRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -25640,6 +25621,7 @@ TilemapRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -28566,6 +28548,7 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -28814,8 +28797,12 @@ Light:
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!4 &1658607552
 Transform:
   m_ObjectHideFlags: 0
@@ -29688,6 +29675,7 @@ TilemapRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -32926,6 +32914,7 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

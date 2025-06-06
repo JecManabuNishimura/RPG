@@ -460,29 +460,18 @@ public class MenuStateBattle_EnemySelect : MenuData,IMenuState
     
     public void Entry()
     {
-        switch(PlayerDataRepository.Instance.PlayerState.attackType)
-        {
-            case AttackType.Attack:
-
-                break;
-            case AttackType.Magic:
-                var magic = MagicMaster.Entity.GetMagicData(PlayerDataRepository.Instance.PlayerState.selectMagicName);
-                switch(magic.targetType)
-                {
-                    case MagicTargetType.SingleEnemy:
-
-                        break;
-                    case MagicTargetType.AllEnemies:
-
-                        break;
-                }
-
-                break;
-        }
         SetCursorObject(_menu._BattleCursor.gameObject,State);
         SetCursorActive(true);
         BattleManager.Instance.SortEnemyList();
         MoveCursor(0, 0);
+        if (PlayerDataRepository.Instance.PlayerState.attackType == AttackType.Magic)
+        {
+            if (MagicMaster.Entity.GetMagicData(PlayerDataRepository.Instance.PlayerState.selectMagicName).targetType ==
+                MagicTargetType.AllEnemies)
+            {
+                BattleManager.Instance.SelectEnemy(0, true);
+            }
+        }
     }
 
     public void Update()
@@ -497,14 +486,36 @@ public class MenuStateBattle_EnemySelect : MenuData,IMenuState
 
     public void SelectMenu()
     {
-		PlayerDataRepository.Instance.PlayerState.to.Clear();
-		PlayerDataRepository.Instance.PlayerState.ActionFlag = true;
-		PlayerDataRepository.Instance.PlayerState.to.Add(BattleManager.Instance.EnemyList[selectedIndex]);
+        PlayerDataRepository.Instance.PlayerState.to.Clear();
+        PlayerDataRepository.Instance.PlayerState.ActionFlag = true;
         BattleManager.Instance.BattleDatas.Add(PlayerDataRepository.Instance.PlayerState);
+        switch (PlayerDataRepository.Instance.PlayerState.attackType)
+        {
+            case AttackType.Attack:
+                PlayerDataRepository.Instance.PlayerState.to.Add(BattleManager.Instance.EnemyList[selectedIndex]);
+                break;
+            case AttackType.Magic:
+                var magic = MagicMaster.Entity.GetMagicData(PlayerDataRepository.Instance.PlayerState.selectMagicName);
+                switch (magic.targetType)
+                {
+                    case MagicTargetType.SingleEnemy:
+                        PlayerDataRepository.Instance.PlayerState.to.Add(BattleManager.Instance.EnemyList[selectedIndex]);
+                        break;
+                    case MagicTargetType.AllEnemies:
+                        for (int i = 0; i < BattleManager.Instance.enemyNum; i++)
+                        {
+                            PlayerDataRepository.Instance.PlayerState.to.Add(BattleManager.Instance.EnemyList[i]);
+                        }
+                        break;
+                }
+                break;
+        }
         PlayerDataRepository.Instance.NextCharacter();
         BattleManager.Instance.ParamChange();
         MenuManager.Instance.CloseOpenMenu();
         _menu.ChangeMenu(MenuList.Battle);
+
+        
     }
 
     public void CloseMenu()
@@ -531,14 +542,39 @@ public class MenuStateBattle_EnemySelect : MenuData,IMenuState
 
     protected override void MoveCursor(int verticalDirection, int horizontalDirection)
     {
-       
-        horiIndex = Mathf.Clamp((horiIndex + horizontalDirection),0,BattleManager.Instance.enemyNum - 1);
-        selectedIndex = horiIndex;
-        EnemyCharactor selectEnemy = BattleManager.Instance.EnemyList[selectedIndex].GetComponent<EnemyCharactor>();    
-        Vector3 enePos = BattleManager.Instance.EnemyList[selectedIndex].transform.position;
-        BattleManager.Instance.SelectEnemy(selectedIndex);
-        enePos.y += 1.5f; 
-        UpdateCursorPosition(enePos);
+        switch (PlayerDataRepository.Instance.PlayerState.attackType)
+        {
+            case AttackType.Attack:
+            {
+                horiIndex = Mathf.Clamp((horiIndex + horizontalDirection), 0, BattleManager.Instance.enemyNum - 1);
+                selectedIndex = horiIndex;
+                EnemyCharactor selectEnemy =
+                    BattleManager.Instance.EnemyList[selectedIndex].GetComponent<EnemyCharactor>();
+                Vector3 enePos = BattleManager.Instance.EnemyList[selectedIndex].transform.position;
+                BattleManager.Instance.SelectEnemy(selectedIndex);
+                enePos.y += 1.5f;
+                UpdateCursorPosition(enePos);
+                break;
+            }
+            case AttackType.Magic:
+                var magic = MagicMaster.Entity.GetMagicData(PlayerDataRepository.Instance.PlayerState.selectMagicName);
+                switch (magic.targetType)
+                {
+                    case MagicTargetType.SingleEnemy:
+                        horiIndex = Mathf.Clamp((horiIndex + horizontalDirection),0,BattleManager.Instance.enemyNum - 1);
+                        selectedIndex = horiIndex;
+                        EnemyCharactor selectEnemy = BattleManager.Instance.EnemyList[selectedIndex].GetComponent<EnemyCharactor>();    
+                        Vector3 enePos = BattleManager.Instance.EnemyList[selectedIndex].transform.position;
+                        BattleManager.Instance.SelectEnemy(selectedIndex);
+                        enePos.y += 1.5f; 
+                        UpdateCursorPosition(enePos);
+                        break;
+                    case MagicTargetType.AllEnemies:
+                        break;
+                }
+                break;
+        }
+
     }
 }
 
@@ -621,7 +657,7 @@ public class MenuStateItemList : MenuData, IMenuState
             WindowObj.ResetItemData();
             foreach (var item in PlayerDataRepository.Instance.ItemList)
             {
-                WindowObj.CreateItemData(item.Value);
+                WindowObj.CreateItemData(item.Value.ID);
             }
 
             // 一番初めのアイテムを表示
@@ -663,8 +699,8 @@ public class MenuStateItemList : MenuData, IMenuState
         {
             switch (data.Effect)
             {
-                case "recovery":
-                case "Weapon":
+                case EffectType.Recovery:
+                case EffectType.Weapon:
                     PlayerDataRepository.Instance.selectItemId = data.ID;
                     MenuManager.Instance.nowSelect = MenuList.ItemList;
                     MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
@@ -981,13 +1017,13 @@ public class ShopBuyMenu : MenuData, IMenuState
             var iData = ItemMaster.Entity.GetItemData(data.Item1);
             if (iData != null)
             {
-                PlayerDataRepository.Instance.GetItem(iData,data.Item2);        
+                PlayerDataRepository.Instance.GetItem(iData.ID,data.Item2);        
             }
             else
             {
                 var wData = WeaponArmorMaster.Entity.GetWeaponData(data.Item1);
                 if(wData != null)
-                    PlayerDataRepository.Instance.GetItem(wData.dataParam,data.Item2);
+                    PlayerDataRepository.Instance.GetItem(wData.dataParam.ID,data.Item2);
             }
             
             PlayerDataRepository.Instance.ChangeGold(-data.Item3);
@@ -1389,7 +1425,7 @@ public class EquipmentMenu2 : MenuData, IMenuState
                 int num = PlayerDataRepository.Instance.GetWeaponArmorSetCount(part, item.Value.ID);
                 if (num >= item.Value.num) return;
                 itemCounter++;
-                WindowObj.CreateItemData(item.Value);
+                WindowObj.CreateItemData(item.Value.ID);
                 weaponData.Add(WeaponArmorMaster.Entity.GetWeaponData(item.Value.ID));
             }
         }
