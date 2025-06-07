@@ -113,7 +113,7 @@ public class ShopMenu : MonoBehaviour
         else
         {
             var wData = WeaponArmorMaster.Entity.GetWeaponData(itemList[num].ID);
-            explanationText.text = wData != null ? wData.dataParam.Explanation.ConvertToFullWidth() : "データーベースにありません";
+            explanationText.text = wData != null ? wData.Explanation.ConvertToFullWidth() : "データーベースにありません";
         }
     }
 

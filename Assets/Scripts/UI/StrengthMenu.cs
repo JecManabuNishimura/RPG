@@ -16,7 +16,7 @@ namespace UI
             level.text = "ＬＶ："+ state.Level.ToString().ConvertToFullWidth();
             atk.text = "こうげきりょく：" + state.TotalParam.Atk.ToString().ConvertToFullWidth();
             maxHp.text = "さいだいＨＰ：" + state.TotalParam.MaxHp.ToString().ConvertToFullWidth();
-            hand1.text =　state.WeaponArmorEauip.Hand1.isSet ? state.WeaponArmorEauip.Hand1.dataParam.Name.ConvertToFullWidth():"すで";
+            hand1.text =　state.WeaponArmorEauip.Hand1.isSet ? state.WeaponArmorEauip.Hand1.name.ConvertToFullWidth():"すで";
         }
     }
 }

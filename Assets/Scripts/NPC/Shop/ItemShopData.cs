@@ -51,8 +51,8 @@ public class ItemShopDataEditor : Editor
                 var wData = WeaponArmorMaster.Entity.GetWeaponData(itemReader.ShopItemDatas[i].ID); 
                 if (wData != null)
                 {
-                    itemReader.ShopItemDatas[i].name = wData.dataParam.Name;
-                    itemReader.ShopItemDatas[i].price = wData.dataParam.Price;
+                    itemReader.ShopItemDatas[i].name = wData.name;
+                    itemReader.ShopItemDatas[i].price = wData.price;
                 }
             }
         }

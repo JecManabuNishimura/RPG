@@ -51,13 +51,13 @@ public class PlayerDataRepository
         switch (part)
         {
             case WeaponArmorEquipment.Part.Head:
-                return playersState.Count(player => player.WeaponArmorEauip.Head.dataParam.ID == id);
+                return playersState.Count(player => player.WeaponArmorEauip.Head.ID == id);
             case WeaponArmorEquipment.Part.Hand1:
-                return playersState.Count(player => player.WeaponArmorEauip.Hand1.dataParam.ID == id);
+                return playersState.Count(player => player.WeaponArmorEauip.Hand1.ID == id);
             case WeaponArmorEquipment.Part.Hand2:
-                return playersState.Count(player => player.WeaponArmorEauip.Hand2.dataParam.ID == id);
+                return playersState.Count(player => player.WeaponArmorEauip.Hand2.ID == id);
             case WeaponArmorEquipment.Part.Body:
-                return playersState.Count(player => player.WeaponArmorEauip.Body.dataParam.ID == id);
+                return playersState.Count(player => player.WeaponArmorEauip.Body.ID == id);
             default:
                 break;
         }

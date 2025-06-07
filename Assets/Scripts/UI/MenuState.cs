@@ -1023,7 +1023,7 @@ public class ShopBuyMenu : MenuData, IMenuState
             {
                 var wData = WeaponArmorMaster.Entity.GetWeaponData(data.Item1);
                 if(wData != null)
-                    PlayerDataRepository.Instance.GetItem(wData.dataParam.ID,data.Item2);
+                    PlayerDataRepository.Instance.GetItem(wData.ID,data.Item2);
             }
             
             PlayerDataRepository.Instance.ChangeGold(-data.Item3);
@@ -1175,6 +1175,10 @@ public class MagicMenu : MenuData, IMenuState
                 */
                 break;
             case Now_Mode.Battle:
+                if(PlayerDataRepository.Instance.PlayerState.parameter.Mp < PlayerDataRepository.Instance.GetMagicData(selectedIndex).mpCost)
+                {
+                    return;
+                }
                 MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
                 PlayerDataRepository.Instance.PlayerState.selectMagicName = PlayerDataRepository.Instance.GetMagicData(selectedIndex).magicName; 
                 _menu.ChangeMenu(MenuList.Battle_Enemy);
@@ -1301,10 +1305,10 @@ public class EquipmentMenu1 : MenuData, IMenuState
     {
         WindowObj.equData.Select.SetText(
             PlayerDataRepository.Instance.PlayerState.CharaName,
-            PlayerDataRepository.Instance.PlayerState.WeaponArmorEauip.Hand1.dataParam.Name,
-            PlayerDataRepository.Instance.PlayerState.WeaponArmorEauip.Hand2.dataParam.Name,
-            PlayerDataRepository.Instance.PlayerState.WeaponArmorEauip.Head.dataParam.Name,
-            PlayerDataRepository.Instance.PlayerState.WeaponArmorEauip.Body.dataParam.Name
+            PlayerDataRepository.Instance.PlayerState.WeaponArmorEauip.Hand1.name,
+            PlayerDataRepository.Instance.PlayerState.WeaponArmorEauip.Hand2.name,
+            PlayerDataRepository.Instance.PlayerState.WeaponArmorEauip.Head.name,
+            PlayerDataRepository.Instance.PlayerState.WeaponArmorEauip.Body.name
         );
     }
     public void CloseMenu()
@@ -1447,10 +1451,10 @@ public class EquipmentMenu2 : MenuData, IMenuState
 
     private void SetEquipmentData()
     {
-        string hand1 = PlayerDataRepository.Instance.PlayerState.WeaponArmorEauip.Hand1.dataParam.Name;
-        string hand2 = PlayerDataRepository.Instance.PlayerState.WeaponArmorEauip.Hand2.dataParam.Name;
-        string head = PlayerDataRepository.Instance.PlayerState.WeaponArmorEauip.Head.dataParam.Name;
-        string body = PlayerDataRepository.Instance.PlayerState.WeaponArmorEauip.Body.dataParam.Name;
+        string hand1 = PlayerDataRepository.Instance.PlayerState.WeaponArmorEauip.Hand1.name;
+        string hand2 = PlayerDataRepository.Instance.PlayerState.WeaponArmorEauip.Hand2.name;
+        string head = PlayerDataRepository.Instance.PlayerState.WeaponArmorEauip.Head.name;
+        string body = PlayerDataRepository.Instance.PlayerState.WeaponArmorEauip.Body.name;
         // 現在の装備品の表示更新
         WindowObj.equData.Data.SetEquipmentData(
             part switch
@@ -1544,7 +1548,7 @@ public class EquipmentMenu2 : MenuData, IMenuState
         }
         else
         {
-            PlayerDataRepository.Instance.PlayerState.SetWaeponArmor(part,WeaponArmorMaster.Entity.GetWeaponData(weaponData[selectedIndex - 1 ].dataParam.ID));
+            PlayerDataRepository.Instance.PlayerState.SetWaeponArmor(part,WeaponArmorMaster.Entity.GetWeaponData(weaponData[selectedIndex - 1 ].ID));
             WindowObj.equData.Parameter.SetBeAFParameter(
                 PlayerDataRepository.Instance.SelectIndex,
                 weaponData[selectedIndex -1].UpParam,
