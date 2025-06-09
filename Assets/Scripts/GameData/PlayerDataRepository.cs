@@ -27,7 +27,7 @@ public class PlayerDataRepository
         public int ID;
         public int num;
     }
-    public readonly Dictionary<int, HubItemData> ItemList = new();// IDと個数がわかるようにする
+    public List<HubItemData> ItemList = new();// IDと個数がわかるようにする
     public int selectItemId;
     
 
@@ -77,11 +77,18 @@ public class PlayerDataRepository
         }
         return null;
     }
-    public ItemData GetItemList(int index)
+    public ItemData GetItemData(int index)
     {
-        var data = ItemList.Values.ToList();
-        if (data.Count > index)
-            return ItemMaster.Entity.GetItemData(data[index].ID);
+        return ItemMaster.Entity.GetItemData(index);
+    }
+
+    public InfoWeaponArmor GetWeaponData(int index)
+    {
+        if (ItemList.Count > index)
+        {
+            return WeaponArmorMaster.Entity.GetWeaponData(ItemList[index].ID);
+        }
+
         return null;
     }
 
@@ -114,7 +121,7 @@ public class PlayerDataRepository
 
     public void GetItem(int id, int num = 1)
     {
-        if (ItemList.ContainsKey(id))
+        if (ItemList.Find(_ => _.ID == id) != null)
         {
             ItemList[id].num += num;
         }
@@ -125,7 +132,7 @@ public class PlayerDataRepository
                 ID = id,
                 num = num
             };
-            ItemList.Add(item.ID, item);
+            ItemList.Add(item);
         }
     }
 
@@ -136,11 +143,20 @@ public class PlayerDataRepository
 
     public void UseItem(CharacterState selectChara)
     {
-        if (selectChara.UseItem(ItemMaster.Entity.GetItemData(selectItemId)) || GameManager.Instance.mode == Now_Mode.Battle)
-            ItemList[selectItemId].num--;
-        if (ItemList[selectItemId].num == 0)
+        int index = -1;
+        if (selectChara.UseItem(ItemMaster.Entity.GetItemData(selectItemId)) ||
+            GameManager.Instance.mode == Now_Mode.Battle)
         {
-            ItemList.Remove(selectItemId);
+            index = ItemList.FindIndex(x => x.ID == selectItemId);
+        }
+        else
+        {
+            return;
+        }
+
+        if (ItemList[index].num == 0)
+        {
+            ItemList.RemoveAt(index);
         }
     }
     public void Initialize()

@@ -86,6 +86,7 @@ public class PlayerCharacter : CharacterState
                 {
                     var magic = MagicMaster.Entity.GetMagicData(magicName);
                     // ドラクエ風ダメージ計算式
+                    if(magic.targetType )
                     int damage =  TotalParam.Mga + (int)magic.power;
                     t.Damage(damage,magic.elementType ,false);
                     yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
@@ -200,16 +201,21 @@ public class PlayerCharacter : CharacterState
 
         foreach (var t in initDataParam.itemList)
         {
-            PlayerDataRepository.Instance.ItemList.Add(ItemMaster.Entity.FindItemData(t.name).ID,
+            
+            var data = ItemMaster.Entity.FindItemData(t.name);
+            InfoWeaponArmor equipment = null;
+            var id = !data ? WeaponArmorMaster.Entity.FindWeaponData(t.name).ID : data.ID;
+            
+            PlayerDataRepository.Instance.ItemList.Add(
                 new PlayerDataRepository.HubItemData
                 {
-                    ID = ItemMaster.Entity.FindItemData(t.name).ID,
+                    ID = id,
                     num = t.count
                 });
         }
-        for(int i=0; i< initDataParam.magicLearning.Length; i++)
+        foreach (var t in initDataParam.magicLearning)
         {
-            magicData.Add(initDataParam.magicLearning[i].magicName);
+            magicData.Add(t.magicName);
         }
 
         if (playerLevel.Count != 0)

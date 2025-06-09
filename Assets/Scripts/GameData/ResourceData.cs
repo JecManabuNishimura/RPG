@@ -27,6 +27,10 @@ public class CharacterState: MonoBehaviour, ICharacter
     {
         parameter.Hp = Mathf.Max(parameter.Hp - damage, 0);
     }
+    public virtual void Healing(int healing)
+    {
+        parameter.Hp = Mathf.Min(parameter.Hp + healing, parameter.MaxHp);
+    }
 
     public bool UseItem(ItemData item)
     {

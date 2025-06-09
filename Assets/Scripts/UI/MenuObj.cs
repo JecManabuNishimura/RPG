@@ -37,11 +37,24 @@ public class MenuObj : MonoBehaviour
     public void CreateItemData(int id)
     {
         var obj =  Instantiate(data.itemDataObj).GetComponent<ItemText>();
-        PlayerDataRepository.Instance.ItemList.TryGetValue(id, out var item);
-        var  itemdata = ItemMaster.Entity.GetItemData(id);
-        obj.CreateText(itemdata.Name,item.num,itemdata.sprite);
-        obj.transform.parent = data.itemContent.transform;
-        objList.Add(obj.gameObject);
+        var item = PlayerDataRepository.Instance.ItemList.Find(x => x.ID == id) ;
+
+        if (id >= 100 )
+        {
+            ItemData itemdata = ItemMaster.Entity.GetItemData(id);
+            obj.CreateText(itemdata.Name, item.num, itemdata.sprite);
+            obj.transform.parent = data.itemContent.transform;
+            objList.Add(obj.gameObject);
+        }
+        else
+        {
+            var weaponData = WeaponArmorMaster.Entity.GetWeaponData(id);
+            obj.CreateText(weaponData.name, item.num, weaponData.sprite);
+            obj.transform.parent = data.itemContent.transform;
+            objList.Add(obj.gameObject);
+        }
+        
+        
     }
     public void CreateItemData()
     {

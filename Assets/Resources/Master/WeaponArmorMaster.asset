@@ -13,21 +13,13 @@ MonoBehaviour:
   m_Name: WeaponArmorMaster
   m_EditorClassIdentifier: 
   WeaponArmorDatas:
-  - equipment: 1
-    dataParam:
-      Name: "\u3072\u306E\u304D\u306E\u307C\u3046"
-      ID: 1
-      Effect: 
-      Subject: 
-      Power: 0
-      Explanation: 
-      Price: 100
-      sprite: {fileID: 21300000, guid: 64ec682cf12e6a843adf2434dc95aaaa, type: 3}
-      num: 1
+  - name: "\u3072\u306E\u304D\u306E\u307C\u3046"
+    ID: 1
+    equipment: 1
     UpParam:
-      Hp: 0
       MaxHp: 0
       MaxMp: 0
+      Hp: 0
       Mp: 0
       str: 0
       Res: 0
@@ -37,24 +29,20 @@ MonoBehaviour:
       Def: 0
       Qui: 0
       Luc: 0
+      attribute: 0
       Exp: 0
       DefFlag: 0
-    isSet: 1
-  - equipment: 2
-    dataParam:
-      Name: "\u304B\u308F\u306E\u3088\u308D\u3044"
-      ID: 2
-      Effect: 
-      Subject: 
-      Power: 0
-      Explanation: 
-      Price: 200
-      sprite: {fileID: 21300000, guid: dff3a10ec4b3d6245ac0136df9e8cce7, type: 3}
-      num: 1
+    isSet: 0
+    price: 100
+    Explanation: "\u3088\u308F\u3044\u3093\u3060\u3088\u306A\u3041"
+    sprite: {fileID: 21300000, guid: 64ec682cf12e6a843adf2434dc95aaaa, type: 3}
+  - name: "\u304B\u308F\u306E\u3088\u308D\u3044"
+    ID: 2
+    equipment: 2
     UpParam:
-      Hp: 0
       MaxHp: 0
       MaxMp: 0
+      Hp: 0
       Mp: 0
       str: 0
       Res: 0
@@ -64,24 +52,20 @@ MonoBehaviour:
       Def: 5
       Qui: 0
       Luc: 0
+      attribute: 0
       Exp: 0
       DefFlag: 0
     isSet: 0
-  - equipment: 3
-    dataParam:
-      Name: "\u306A\u3079\u3076\u305F"
-      ID: 3
-      Effect: 
-      Subject: 
-      Power: 0
-      Explanation: 
-      Price: 100
-      sprite: {fileID: 21300000, guid: dff3a10ec4b3d6245ac0136df9e8cce7, type: 3}
-      num: 1
+    price: 200
+    Explanation: "\u307E\u3082\u308C\u308B\u306E\u304B\u306A\u3041"
+    sprite: {fileID: 21300000, guid: dff3a10ec4b3d6245ac0136df9e8cce7, type: 3}
+  - name: "\u306A\u3079\u3076\u305F"
+    ID: 3
+    equipment: 3
     UpParam:
-      Hp: 0
       MaxHp: 0
       MaxMp: 0
+      Hp: 0
       Mp: 0
       str: 0
       Res: 0
@@ -91,6 +75,10 @@ MonoBehaviour:
       Def: 3
       Qui: 0
       Luc: 0
+      attribute: 0
       Exp: 0
       DefFlag: 0
     isSet: 0
+    price: 100
+    Explanation: "\u934B\u306E\u3075\u305F\u3067\u306F\u53D7\u3051\u6B62\u3081\u304D\u308C\u306A\u3044\u3088\u306D"
+    sprite: {fileID: 21300000, guid: dff3a10ec4b3d6245ac0136df9e8cce7, type: 3}

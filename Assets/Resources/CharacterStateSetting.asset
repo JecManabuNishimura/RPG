@@ -37,5 +37,7 @@ MonoBehaviour:
     itemList:
     - name: "\u3084\u304F\u305D\u3046"
       count: 1
+    - name: "\u3072\u306E\u304D\u306E\u307C\u3046"
+      count: 1
     startLevel: 3
     loadTateName: player1State

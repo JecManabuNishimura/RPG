@@ -73,7 +73,7 @@ public class ShopMenu : MonoBehaviour
             if (mList != MenuList.Shop_Buy )
             {
                 int itemCount = 0;
-                if (PlayerDataRepository.Instance.ItemList.TryGetValue(data.ID, out var value))
+                if (PlayerDataRepository.Instance.ItemList.Find(x => x.ID == data.ID) is PlayerDataRepository.HubItemData value)
                 {
                     itemCount = value.num;
                 }

@@ -13,10 +13,10 @@ public class EquipmentSelectMenu : MonoBehaviour
 
     public void SetText(string charaName, string hand1, string hand2, string head, string body)
     {
-        nameText.text = charaName.ConvertToFullWidth();
-        hand1Text.text = (hand1 != "" ? hand1 : "すで").ConvertToFullWidth();
-        hand2Text.text = (hand2 != "" ? hand2 : "すで").ConvertToFullWidth();
-        headText.text = (head != "" ? head : "そうびなし").ConvertToFullWidth();
-        bodyText.text = (body != "" ? body : "そうびなし").ConvertToFullWidth();
+        nameText.text = charaName;
+        hand1Text.text = (hand1 != "" ? hand1 : "すで");
+        hand2Text.text = (hand2 != "" ? hand2 : "すで");
+        headText.text = (head != "" ? head : "そうびなし");
+        bodyText.text = (body != "" ? body : "そうびなし");
     }
 }

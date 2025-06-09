@@ -37,6 +37,11 @@ public class WeaponArmorMaster : ScriptableObject
         return WeaponArmorDatas.FirstOrDefault(x => x.ID == id);
     }
     
+    public InfoWeaponArmor FindWeaponData(string name)
+    {
+        return WeaponArmorDatas.FirstOrDefault(x => x.name == name);
+    }
+    
 }
 
 [CustomEditor(typeof(WeaponArmorMaster))] //拡張するクラスを指定
@@ -92,12 +97,14 @@ public class WeaponMasterEditor : Editor
 [Serializable]
 public class InfoWeaponArmor
 {
-    public string name;
-    public int ID;
+    public string name = "";
+    public int ID = 0;
     public WeaponArmorEquipment.Part equipment;
     public Parameter UpParam = new();
+    [HideInInspector]
     public bool isSet = false;
-    public int price;
+    public int price = 0;
     public string Explanation;
+    public Sprite sprite;
 
 }

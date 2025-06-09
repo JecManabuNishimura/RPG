@@ -38,6 +38,7 @@ public enum ElementType
 public enum MagicTargetType { 
     SingleEnemy, 
     AllEnemies, 
-    SingleAlly, 
+    SingleAlly,
+    AllAllies,
     Self 
 }

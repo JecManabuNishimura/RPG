@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     void Update() => _context.Update();
     void FixedUpdate()
     {
-        hubItems = PlayerDataRepository.Instance.ItemList.Values.ToList();
+        hubItems = PlayerDataRepository.Instance.ItemList;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

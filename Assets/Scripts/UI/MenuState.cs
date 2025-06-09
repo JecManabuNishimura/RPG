@@ -186,33 +186,26 @@ public class MenuStateSelectCharacter : MenuData, IMenuState
     {
         MenuManager.Instance.cursorPos.Push((State, veriIndex,horiIndex));
         MenuManager.Instance.selectPlayerNum = veriIndex;
+        WindowObj.transform.gameObject.SetActive(false);
+        MenuManager.Instance.cursorPos.Pop();
         switch(MenuManager.Instance.nowSelect)
         {
+            case MenuList.Magic:
             case MenuList.ItemList:
                 if (GameManager.Instance.mode == Now_Mode.Field)
                 {
-                    WindowObj.transform.gameObject.SetActive(false);
-                    MenuManager.Instance.cursorPos.Pop();
                     PlayerDataRepository.Instance.UseItem(PlayerDataRepository.Instance.playersState[veriIndex]
                     );
                 }
                 else if (GameManager.Instance.mode == Now_Mode.Battle)
                 {
-                    WindowObj.transform.gameObject.SetActive(false);
-                    MenuManager.Instance.cursorPos.Pop();       // キャラ選択からの抜け出し
                     // 誰を選択したのか
                     PlayerDataRepository.Instance.PlayerState.to.Add(
                         PlayerDataRepository.Instance.playersState[veriIndex]
                     );
-                    if (MenuManager.Instance.nowSelect == MenuList.ItemList)
-                    {
-                        //PlayerDataRepository.Instance.PlayerState.UseItemParam = ItemMaster.Instance.selectItem;
-                        //PlayerDataRepository.Instance.selectItemId = ItemMaster.Instance.;
-                    }
-
+                    
                     PlayerDataRepository.Instance.PlayerState.ActionFlag = true;
                     BattleManager.Instance.BattleDatas.Add(PlayerDataRepository.Instance.PlayerState);
-                    MenuManager.Instance.cursorPos.Pop();       // アイテムリストからの抜け出し
 					PlayerDataRepository.Instance.NextCharacter();
 					var itemwindow = MenuManager.Instance.GetWindow(MenuList.ItemList);
 					itemwindow.transform.gameObject.SetActive(false);
@@ -657,11 +650,11 @@ public class MenuStateItemList : MenuData, IMenuState
             WindowObj.ResetItemData();
             foreach (var item in PlayerDataRepository.Instance.ItemList)
             {
-                WindowObj.CreateItemData(item.Value.ID);
+                WindowObj.CreateItemData(item.ID);
             }
 
             // 一番初めのアイテムを表示
-            var data = PlayerDataRepository.Instance.GetItemList(selectedIndex);
+            var data = PlayerDataRepository.Instance.GetItemData(PlayerDataRepository.Instance.ItemList[selectedIndex].ID);
             switch (GameManager.Instance.mode)
             {
                 // バトル中は説明なし
@@ -683,8 +676,12 @@ public class MenuStateItemList : MenuData, IMenuState
 
     public void Update()
     {
-        var data = PlayerDataRepository.Instance.GetItemList(selectedIndex);
-        WindowObj.SetExpText(data is not null ? data.Explanation.ConvertToFullWidth() : "");
+        if (PlayerDataRepository.Instance.ItemList.Count > selectedIndex)
+        {
+            var data = PlayerDataRepository.Instance.GetItemData(PlayerDataRepository.Instance.ItemList[selectedIndex]
+                .ID);
+            WindowObj.SetExpText(data is not null ? data.Explanation.ConvertToFullWidth() : "");
+        }
 
     }
 
@@ -694,7 +691,7 @@ public class MenuStateItemList : MenuData, IMenuState
 
     public void SelectMenu()
     {
-        var data = PlayerDataRepository.Instance.GetItemList(selectedIndex);
+        var data = PlayerDataRepository.Instance.GetItemData(PlayerDataRepository.Instance.ItemList[selectedIndex].ID);
         if(data != null)
         {
             switch (data.Effect)
@@ -844,7 +841,7 @@ public class ShopMenu_Tool: MenuData, IMenuState
         Vector3 pos = GetCursorPosition();
         pos.x += 550; 
         WindowObj.shopMenu.SetCursorPos(pos);
-        MenuManager.Instance.nowSelect = MenuList.Shop_Tool;
+        MenuManager.Instance.nowSelect = State;
         MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
         _menu.ChangeMenu(MenuList.Shop_Buy);
     }
@@ -1129,7 +1126,7 @@ public class MagicMenu : MenuData, IMenuState
 
             selectedIndex = veriIndex * 2 + horiIndex;
         }
-
+        MenuManager.Instance.nowSelect = State;
         // 1 / (プレイヤーのアイテム総数 / 2) - 画面のアイテム表示数
         WindowObj.ResetItemData();
         foreach (var item in PlayerDataRepository.Instance.PlayerState.magicData)
@@ -1175,13 +1172,28 @@ public class MagicMenu : MenuData, IMenuState
                 */
                 break;
             case Now_Mode.Battle:
-                if(PlayerDataRepository.Instance.PlayerState.parameter.Mp < PlayerDataRepository.Instance.GetMagicData(selectedIndex).mpCost)
+                var magic = PlayerDataRepository.Instance.GetMagicData(selectedIndex);
+                if(PlayerDataRepository.Instance.PlayerState.parameter.Mp < magic.mpCost)
                 {
                     return;
                 }
                 MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
-                PlayerDataRepository.Instance.PlayerState.selectMagicName = PlayerDataRepository.Instance.GetMagicData(selectedIndex).magicName; 
-                _menu.ChangeMenu(MenuList.Battle_Enemy);
+                PlayerDataRepository.Instance.PlayerState.selectMagicName = magic.magicName;
+                switch (magic.targetType)
+                {
+                    case MagicTargetType.Self:
+                        break;
+                    case MagicTargetType.SingleAlly:
+                        _menu.ChangeMenu(MenuList.SelectChara);
+                        break;
+                    case MagicTargetType.AllAllies:
+                        break;
+                    case MagicTargetType.AllEnemies:
+                    case MagicTargetType.SingleEnemy:
+                        _menu.ChangeMenu(MenuList.Battle_Enemy);
+                        break;
+                }
+                
                 break;
         }
     }
@@ -1393,6 +1405,7 @@ public class EquipmentMenu2 : MenuData, IMenuState
 
     private List<InfoWeaponArmor> weaponData = new ();
     private WeaponArmorEquipment.Part part;
+    private List<PlayerDataRepository.HubItemData> itemIdList = new ();
     public void Entry()
     {
         MenuManager.Instance.nowSelect = State;
@@ -1403,11 +1416,12 @@ public class EquipmentMenu2 : MenuData, IMenuState
             SetCursorObject(MenuManager.Instance.GetCursorObj(State),State);
             selectedIndex = veriIndex;
         }
+        
         // 1 / (プレイヤーのアイテム総数 / 2) - 画面のアイテム表示数
 
         WindowObj.ResetItemData();
-        var oneDigitItems = PlayerDataRepository.Instance.ItemList
-            .Where(item => item.Value.ID is >= 0 and < 10)
+        itemIdList = PlayerDataRepository.Instance.ItemList
+            .Where(item => item.ID <= 99)
             .ToList();
         
         // はずすを追加
@@ -1422,20 +1436,20 @@ public class EquipmentMenu2 : MenuData, IMenuState
             3 => WeaponArmorEquipment.Part.Body,
         };
         
-        foreach (var item in oneDigitItems)
+        foreach (var item in itemIdList)
         {
-            if (WeaponArmorMaster.Entity.GetWeaponData(item.Value.ID).equipment == part)
+            if (WeaponArmorMaster.Entity.GetWeaponData(item.ID).equipment == part)
             {
-                int num = PlayerDataRepository.Instance.GetWeaponArmorSetCount(part, item.Value.ID);
-                if (num >= item.Value.num) return;
+                int num = PlayerDataRepository.Instance.GetWeaponArmorSetCount(part, item.ID);
+                if (num >= item.num) return;
                 itemCounter++;
-                WindowObj.CreateItemData(item.Value.ID);
-                weaponData.Add(WeaponArmorMaster.Entity.GetWeaponData(item.Value.ID));
+                WindowObj.CreateItemData(item.ID);
+                weaponData.Add(WeaponArmorMaster.Entity.GetWeaponData(item.ID));
             }
         }
 
         // 一番初めのアイテムを表示
-        var data = PlayerDataRepository.Instance.GetItemList(selectedIndex);
+        var data = PlayerDataRepository.Instance.GetWeaponData(selectedIndex);
         switch (GameManager.Instance.mode)
         {
             // バトル中は説明なし
