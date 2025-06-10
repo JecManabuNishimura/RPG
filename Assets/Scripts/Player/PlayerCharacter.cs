@@ -82,14 +82,28 @@ public class PlayerCharacter : CharacterState
                 string magicName = selectMagicName;
                 MessageManager.Instance.StartDialogMessage(CharaName + "が" + magicName  + "を唱えた");
                 yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
+                var magic = MagicMaster.Entity.GetMagicData(magicName);
+
+                parameter.Mp -= magic.mpCost;
                 foreach (var t in to)
                 {
-                    var magic = MagicMaster.Entity.GetMagicData(magicName);
-                    // ドラクエ風ダメージ計算式
-                    if(magic.targetType )
-                    int damage =  TotalParam.Mga + (int)magic.power;
-                    t.Damage(damage,magic.elementType ,false);
-                    yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
+                    switch(magic.targetType)
+                    {
+                        case MagicTargetType.SingleEnemy:
+                        case MagicTargetType.AllEnemies:
+                            // ドラクエ風ダメージ計算式
+                            int damage = TotalParam.Mga + magic.power;
+                            t.Damage(damage, magic.elementType, false);
+                            yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
+                            break;
+                        case MagicTargetType.Self:
+                            break;
+                        case MagicTargetType.SingleAlly:
+                        case MagicTargetType.AllAllies:
+                            t.Healing(magic.power);
+                            yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
+                            break;
+                    }
                 }
                 break;
             case AttackType.Guard:
@@ -134,7 +148,14 @@ public class PlayerCharacter : CharacterState
         }
         BattleManager.Instance.ParamChange(); // 表示パラメーター更新
     }
-    
+
+    public override void Healing(int healing)
+    {
+        MessageManager.Instance.StartDialogMessage(CharaName + "は" + healing.ToString() + "回復した");
+        base.Healing(healing);
+        BattleManager.Instance.ParamChange(); // 表示パラメーター更新
+    }
+
     public void CheckLevelUp()
     {
         var currentLevel = Level;

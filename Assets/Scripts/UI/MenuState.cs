@@ -184,18 +184,42 @@ public class MenuStateSelectCharacter : MenuData, IMenuState
 
     public void SelectMenu()
     {
-        MenuManager.Instance.cursorPos.Push((State, veriIndex,horiIndex));
-        MenuManager.Instance.selectPlayerNum = veriIndex;
-        WindowObj.transform.gameObject.SetActive(false);
-        MenuManager.Instance.cursorPos.Pop();
+        
         switch(MenuManager.Instance.nowSelect)
         {
             case MenuList.Magic:
+                switch(GameManager.Instance.mode)
+                {
+                    case Now_Mode.Field:
+                        _menu.ChangeMenu(MenuManager.Instance.nowSelect);
+                        break;
+                    case Now_Mode.Battle:
+                        MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
+                        MenuManager.Instance.selectPlayerNum = veriIndex;
+                        WindowObj.transform.gameObject.SetActive(false);
+                        MenuManager.Instance.cursorPos.Pop();
+                        // 誰を選択したのか
+                        PlayerDataRepository.Instance.PlayerState.to.Add(
+                            PlayerDataRepository.Instance.playersState[veriIndex]
+                        );
+
+                        PlayerDataRepository.Instance.PlayerState.ActionFlag = true;
+                        BattleManager.Instance.BattleDatas.Add(PlayerDataRepository.Instance.PlayerState);
+                        PlayerDataRepository.Instance.NextCharacter();
+                        MenuManager.Instance.CloseOpenMenu();
+                        _menu.ChangeMenu(MenuList.Battle);
+                        return;
+                }
+                break;
             case MenuList.ItemList:
+                MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
+                MenuManager.Instance.selectPlayerNum = veriIndex;
+                WindowObj.transform.gameObject.SetActive(false);
+                MenuManager.Instance.cursorPos.Pop();
+
                 if (GameManager.Instance.mode == Now_Mode.Field)
                 {
-                    PlayerDataRepository.Instance.UseItem(PlayerDataRepository.Instance.playersState[veriIndex]
-                    );
+                    PlayerDataRepository.Instance.UseItem(PlayerDataRepository.Instance.playersState[veriIndex]);
                 }
                 else if (GameManager.Instance.mode == Now_Mode.Battle)
                 {
@@ -207,9 +231,8 @@ public class MenuStateSelectCharacter : MenuData, IMenuState
                     PlayerDataRepository.Instance.PlayerState.ActionFlag = true;
                     BattleManager.Instance.BattleDatas.Add(PlayerDataRepository.Instance.PlayerState);
 					PlayerDataRepository.Instance.NextCharacter();
-					var itemwindow = MenuManager.Instance.GetWindow(MenuList.ItemList);
-					itemwindow.transform.gameObject.SetActive(false);
-					_menu.ChangeMenu(MenuList.Battle);
+                    MenuManager.Instance.CloseOpenMenu();
+                    _menu.ChangeMenu(MenuList.Battle);
                     return;
 				}
 

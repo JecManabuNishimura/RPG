@@ -8,7 +8,7 @@ public class MagicData : ScriptableObject
     public string explanation;
 
     public int mpCost;
-    public float power;
+    public int power;
     public float castTime;
 
     public ElementType elementType; 
