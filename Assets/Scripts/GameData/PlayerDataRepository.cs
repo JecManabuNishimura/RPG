@@ -58,6 +58,8 @@ public class PlayerDataRepository
                 return playersState.Count(player => player.WeaponArmorEauip.Hand2.ID == id);
             case WeaponArmorEquipment.Part.Body:
                 return playersState.Count(player => player.WeaponArmorEauip.Body.ID == id);
+            case WeaponArmorEquipment.Part.DoubleHand:
+                return playersState.Count(player => player.WeaponArmorEauip.DoubleHand.ID == id);
             default:
                 break;
         }

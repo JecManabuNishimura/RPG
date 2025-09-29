@@ -76,6 +76,7 @@ public class WeaponMasterEditor : Editor
                 "胴体" => WeaponArmorEquipment.Part.Body,
                 "右手" => WeaponArmorEquipment.Part.Hand1,
                 "左手" => WeaponArmorEquipment.Part.Hand2,
+                "両手" => WeaponArmorEquipment.Part.DoubleHand,
                 _ => throw new ArgumentOutOfRangeException()
             };
             wad.UpParam.Hp = int.Parse(data[i][3]);

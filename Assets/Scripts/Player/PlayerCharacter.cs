@@ -33,14 +33,30 @@ public class PlayerCharacter : CharacterState
             case WeaponArmorEquipment.Part.Hand1:
                 WeaponArmorEauip.Hand1 = weapon;
                 WeaponArmorEauip.Hand1.isSet = true;
+
+                if(WeaponArmorEauip.DoubleHand.isSet)
+                {
+                    WeaponArmorEauip.Hand2 = new InfoWeaponArmor();
+                    WeaponArmorEauip.Hand2.isSet = true;
+                }
                 break;
             case WeaponArmorEquipment.Part.Hand2:
                 WeaponArmorEauip.Hand2 = weapon;
                 WeaponArmorEauip.Hand2.isSet = true;
+                if (WeaponArmorEauip.DoubleHand.isSet)
+                {
+                    WeaponArmorEauip.Hand1 = new InfoWeaponArmor();
+                    WeaponArmorEauip.Hand1.isSet = true;
+                }
                 break;
             case WeaponArmorEquipment.Part.Head:
                 WeaponArmorEauip.Head = weapon;
                 WeaponArmorEauip.Head.isSet = true;
+                break;
+            case WeaponArmorEquipment.Part.DoubleHand:
+                WeaponArmorEauip.Hand1 = weapon;
+                WeaponArmorEauip.Hand2 = weapon;
+                WeaponArmorEauip.DoubleHand.isSet = true;
                 break;
         }
     }
@@ -251,11 +267,13 @@ public class WeaponArmorEquipment
     public InfoWeaponArmor Hand1 = new();
     public InfoWeaponArmor Body = new();
     public InfoWeaponArmor Hand2 = new();
+    public InfoWeaponArmor DoubleHand = new();
 
     public enum Part
     {
         Head,
         Hand1,
+        DoubleHand,
         Body,
         Hand2
     }
@@ -268,6 +286,7 @@ public class WeaponArmorEquipment
             Part.Hand2 => Hand2.UpParam,
             Part.Head => Head.UpParam,
             Part.Body => Body.UpParam,
+            Part.DoubleHand => DoubleHand.UpParam,
         };
     }
 
@@ -279,6 +298,7 @@ public class WeaponArmorEquipment
             Part.Hand1 => Hand1,
             Part.Hand2 => Hand2,
             Part.Head => Head,
+            Part.DoubleHand => DoubleHand,
         };
     }
 

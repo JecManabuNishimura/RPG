@@ -1469,6 +1469,14 @@ public class EquipmentMenu2 : MenuData, IMenuState
                 WindowObj.CreateItemData(item.ID);
                 weaponData.Add(WeaponArmorMaster.Entity.GetWeaponData(item.ID));
             }
+            if (WeaponArmorMaster.Entity.GetWeaponData(item.ID).equipment == WeaponArmorEquipment.Part.DoubleHand && ((part == WeaponArmorEquipment.Part.Hand1) || (part == WeaponArmorEquipment.Part.Hand2)))
+            {
+                int num = PlayerDataRepository.Instance.GetWeaponArmorSetCount(WeaponArmorEquipment.Part.DoubleHand, item.ID);
+                if (num >= item.num) return;
+                itemCounter++;
+                WindowObj.CreateItemData(item.ID);
+                weaponData.Add(WeaponArmorMaster.Entity.GetWeaponData(item.ID));
+            }
         }
 
         // 一番初めのアイテムを表示
@@ -1577,7 +1585,16 @@ public class EquipmentMenu2 : MenuData, IMenuState
         // はずすを選択した場合
         if (selectedIndex == 0)
         {
-            PlayerDataRepository.Instance.PlayerState.SetWaeponArmor(part, new InfoWeaponArmor());
+            if(part == WeaponArmorEquipment.Part.Hand1 || part == WeaponArmorEquipment.Part.Hand2)
+            {
+                PlayerDataRepository.Instance.PlayerState.SetWaeponArmor(WeaponArmorEquipment.Part.Hand1, new InfoWeaponArmor());
+                PlayerDataRepository.Instance.PlayerState.SetWaeponArmor(WeaponArmorEquipment.Part.Hand2, new InfoWeaponArmor());
+            }
+            else
+            {
+                PlayerDataRepository.Instance.PlayerState.SetWaeponArmor(part, new InfoWeaponArmor());
+            }
+                
             WindowObj.equData.Parameter.SetBeAFParameter(
                 PlayerDataRepository.Instance.SelectIndex,
                 new Parameter(),
@@ -1585,7 +1602,16 @@ public class EquipmentMenu2 : MenuData, IMenuState
         }
         else
         {
-            PlayerDataRepository.Instance.PlayerState.SetWaeponArmor(part,WeaponArmorMaster.Entity.GetWeaponData(weaponData[selectedIndex - 1 ].ID));
+            if(weaponData[selectedIndex - 1].equipment == WeaponArmorEquipment.Part.DoubleHand)
+            {
+                PlayerDataRepository.Instance.PlayerState.SetWaeponArmor(WeaponArmorEquipment.Part.Hand1, WeaponArmorMaster.Entity.GetWeaponData(weaponData[selectedIndex - 1].ID));
+                PlayerDataRepository.Instance.PlayerState.SetWaeponArmor(WeaponArmorEquipment.Part.Hand2, WeaponArmorMaster.Entity.GetWeaponData(weaponData[selectedIndex - 1].ID));
+            }
+            else
+            {
+                PlayerDataRepository.Instance.PlayerState.SetWaeponArmor(part, WeaponArmorMaster.Entity.GetWeaponData(weaponData[selectedIndex - 1].ID));
+            }
+                
             WindowObj.equData.Parameter.SetBeAFParameter(
                 PlayerDataRepository.Instance.SelectIndex,
                 weaponData[selectedIndex -1].UpParam,
