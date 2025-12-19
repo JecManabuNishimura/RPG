@@ -63,6 +63,7 @@ public class PlayerCharacter : CharacterState
 
     public void BattleDataReset()
     {
+        DethFlag = false;
         to.Clear();
         ActionFlag = false;
     }

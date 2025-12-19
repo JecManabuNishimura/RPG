@@ -123,9 +123,11 @@ public class PlayerDataRepository
 
     public void GetItem(int id, int num = 1)
     {
-        if (ItemList.Find(_ => _.ID == id) != null)
+        var fItem = ItemList.Find(_ => _.ID == id);
+
+		if (fItem != null)
         {
-            ItemList[id].num += num;
+			fItem.num += num;
         }
         else
         {

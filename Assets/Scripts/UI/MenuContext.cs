@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace UI
 {
     public class MenuContext
     {
+        
         private IMenuState _currentState;
         private IMenuState _previousState;
 
@@ -34,6 +36,7 @@ namespace UI
             _stateTable = table;
             _currentState = _stateTable[initState];
             ChangeState(initState);
+           
         }
         public void ChangeState(MenuList next)
         {

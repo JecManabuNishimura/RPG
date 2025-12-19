@@ -23,7 +23,7 @@ MonoBehaviour:
       Res: 0
       Mga: 0
       Mgd: 0
-      Atk: 10
+      Atk: 100000
       Def: 3
       Qui: 10
       Luc: 0

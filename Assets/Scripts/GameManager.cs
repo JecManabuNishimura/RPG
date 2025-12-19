@@ -45,8 +45,9 @@ public class GameManager : MonoBehaviour
             Instance = this;
             PlayerDataRepository.Instance.Initialize();
             NPCManager.Instance.Initialize();
-            
-            DontDestroyOnLoad(gameObject);
+			PlayerDataRepository.Instance.playerPos = playerStartPos.transform.position;
+			Debug.Log("プレイヤー位置初期化");
+			DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -60,7 +61,7 @@ public class GameManager : MonoBehaviour
             // セーブ実装時にはここを変更
             ev.flag = false;
         }
-        PlayerDataRepository.Instance.playerPos = playerStartPos.transform.position;
+
         Destroy(playerStartPos);
         FieldIn();
         

@@ -200,6 +200,7 @@ public class EnemyData :CharacterState
             {
                 return ap.id;
             }
+            random -= ap.weight;
         }
 
         return -1;
