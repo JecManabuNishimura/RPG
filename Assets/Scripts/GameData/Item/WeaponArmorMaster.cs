@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using GameData.Item;
+using NaughtyAttributes;
 using UnityEditor;
 using UnityEngine;
 [CreateAssetMenu(fileName = "WeaponArmorMaster", menuName="Master/CreateWeaponArmorMaster") ]
@@ -106,6 +107,6 @@ public class InfoWeaponArmor
     public bool isSet = false;
     public int price = 0;
     public string Explanation;
-    public Sprite sprite;
+    [ShowAssetPreview]public Sprite sprite;
 
 }

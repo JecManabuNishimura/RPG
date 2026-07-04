@@ -37,7 +37,7 @@ public class AttackMaster : ScriptableObject
 public class AttackData
 {
     public string name;
-    [Effect]
+    //[Effect]
     public int effectId;
 
     public AttackScope scope;

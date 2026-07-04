@@ -717,15 +717,20 @@ public class MenuStateItemList : MenuData, IMenuState
         var data = PlayerDataRepository.Instance.GetItemData(PlayerDataRepository.Instance.ItemList[selectedIndex].ID);
         if(data != null)
         {
-            switch (data.Effect)
+			PlayerDataRepository.Instance.selectItemId = data.ID;
+			MenuManager.Instance.nowSelect = MenuList.ItemList;
+			MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
+			_menu.ChangeMenu(MenuList.SelectChara);
+			switch (data.Effect)
             {
+                // 変更
+                /*
                 case EffectType.Recovery:
                 case EffectType.Weapon:
-                    PlayerDataRepository.Instance.selectItemId = data.ID;
-                    MenuManager.Instance.nowSelect = MenuList.ItemList;
-                    MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
-                    _menu.ChangeMenu(MenuList.SelectChara);
+                    
+                    
                     break;
+                */
             }
         }
     }

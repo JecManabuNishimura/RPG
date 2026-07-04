@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -110,8 +111,8 @@ public class BattleController : MonoBehaviour
 public class MapEnemyData
 {
     public string groupName;
-    public GameObject enemy;
-    public int weight;
+    [ShowAssetPreview]public GameObject enemy;
+    [MinValue(1)]public int weight;
     public Vector3Int RegionId;
 }
 

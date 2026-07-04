@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
 using UnityEditor;
@@ -135,3 +136,4 @@ public class GeneralAttributeDrawer : PropertyDrawer
         return result;
     }
 }
+#endif

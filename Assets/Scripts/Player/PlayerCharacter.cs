@@ -133,8 +133,21 @@ public class PlayerCharacter : CharacterState
                 yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
                 foreach (var t in to)
                 {
-                    PlayerDataRepository.Instance.UseItem(t);    
-                    MessageManager.Instance.StartDialogMessage(t.CharaName + "は" + ItemMaster.Entity.GetItemData(PlayerDataRepository.Instance.selectItemId).Power.ToString().ConvertToFullWidth() +"　かいふくした");
+                    var item = ItemMaster.Entity.GetItemData(PlayerDataRepository.Instance.selectItemId);
+
+					PlayerDataRepository.Instance.UseItem(t);
+					MessageManager.Instance.StartDialogMessage(t.CharaName + "は" + item.Name.ToString() + "　使用した");
+					
+                    EffectContext con = new EffectContext
+					{
+						User = null,
+						Target = this,
+					};
+					foreach (var e in item.Effect)
+                    {
+                        EffectProcessor.Apply(e, con);
+					}
+                    
                     BattleManager.Instance.ParamChange(); // 表示パラメーター更新
                     yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
                 }

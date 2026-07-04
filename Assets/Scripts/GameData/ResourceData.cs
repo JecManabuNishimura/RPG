@@ -32,23 +32,24 @@ public class CharacterState: MonoBehaviour, ICharacter
         parameter.Hp = Mathf.Min(parameter.Hp + healing, parameter.MaxHp);
     }
 
+    public virtual void RecoverMp(int value)
+    {
+        parameter.Mp = Mathf.Min(parameter.Mp + value, parameter.MaxMp);
+	}
+
+
     public bool UseItem(ItemData item)
     {
-        switch (item.Subject)
+		EffectContext con = new EffectContext
+		{
+			User = null,
+			Target = this,
+		};
+		foreach (var e in item.Effect)
         {
-            case SubjectType.HP:
-                if (parameter.Hp == parameter.MaxHp)
-                {
-                    return false;
-                }
-                parameter.Hp = Mathf.Clamp(parameter.Hp + item.Power,0,parameter.MaxHp);
-                
-                break;
-            case SubjectType.MP:
-                parameter.Mp += item.Power;
-                break;
-        }
-
+			EffectProcessor.Apply(e, con);
+		}
+        
         return true;
     }
 
