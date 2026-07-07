@@ -14,22 +14,7 @@ public class ItemData : ScriptableObject
     public List<EffectRef> Effect;      // 効果の種類
 	public string Explanation = ""; // 説明
     public int Price;               // 売値
-    [Preview]public Sprite sprite;           // アイコン
+    [SpriteSearch("Assets/Sprites/GameData/Icon"), Preview]
+    public Sprite sprite;           // アイコン
 
-}
-
-[Serializable]
-public enum EffectType
-{
-	None,
-	HpRecover,
-	MpRecover,
-	AddPoison,
-}
-[Serializable]
-public enum SubjectType
-{
-    HP,
-    MP,
-    None,
 }

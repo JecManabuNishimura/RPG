@@ -4,14 +4,21 @@ using UnityEngine;
 [Serializable]
 public class EffectRef
 {
-	public EffectType effectType = EffectType.None;
+    public ConditionType conditionType = ConditionType.None;
 
-	public int power = 0;
+    public EffectParameterType parameterTypes = EffectParameterType.None;
 
-	public float rate = 0f;
+    public TargetType targetType;
 
-	public int durationTurn = 0;
+    public int power = 0;
 
-	[Range(0f, 1f)]
-	public float successRate = 1f;
+    public float rate = 0f;
+
+    public int durationTurn = 0;
+
+    [Range(0f, 1f)]
+    public float successRate = 1f;
+
+    
 }
+

@@ -7,199 +7,239 @@ using UnityEngine;
 [CustomPropertyDrawer(typeof(EffectRef))]
 public class EffectRefDrawer : PropertyDrawer
 {
-	private const float Space = 2f;
+    private const float Space = 2f;
 
-	private struct ParamDrawInfo
-	{
-		public EffectParameterType Type;
-		public string PropertyName;
-		public string Label;
+    private struct ParamDrawInfo
+    {
+        public EffectParameterType Type;
+        public string PropertyName;
+        public string Label;
 
-		public ParamDrawInfo(EffectParameterType type, string propertyName, string label)
-		{
-			Type = type;
-			PropertyName = propertyName;
-			Label = label;
-		}
-	}
+        public ParamDrawInfo(EffectParameterType type, string propertyName, string label)
+        {
+            Type = type;
+            PropertyName = propertyName;
+            Label = label;
+        }
+    }
 
-	private static readonly ParamDrawInfo[] ParamDrawInfos =
-	{
-		new ParamDrawInfo(EffectParameterType.Power, "power", "基本値"),
-		new ParamDrawInfo(EffectParameterType.Rate, "rate", "割合"),
-		new ParamDrawInfo(EffectParameterType.DurationTurn, "durationTurn", "継続ターン"),
-		new ParamDrawInfo(EffectParameterType.SuccessRate, "successRate", "成功率"),
-	};
+    private static readonly ParamDrawInfo[] ParamDrawInfos =
+    {
+        new ParamDrawInfo(EffectParameterType.Power, "power", "基本値"),
+        new ParamDrawInfo(EffectParameterType.Rate, "rate", "割合"),
+        new ParamDrawInfo(EffectParameterType.DurationTurn, "durationTurn", "継続ターン"),
+        new ParamDrawInfo(EffectParameterType.SuccessRate, "successRate", "成功率"),
+        new ParamDrawInfo(EffectParameterType.Target, "target", "対象者"),
+    };
 
-	public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
-	{
-		int lineCount = 1;
+    public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+    {
+        int lineCount = 3; // 効果 + 対象 + 使用パラメータ
 
-		EffectDefinition selectedDefinition = FindSelectedDefinition(property);
+        SerializedProperty parameterTypesProp = property.FindPropertyRelative("parameterTypes");
 
-		if (selectedDefinition != null)
-		{
-			foreach (var info in ParamDrawInfos)
-			{
-				if (selectedDefinition.parameterTypes.HasFlag(info.Type))
-				{
-					lineCount++;
-				}
-			}
-		}
+        if (parameterTypesProp != null)
+        {
+            EffectParameterType paramTypes =
+                (EffectParameterType)parameterTypesProp.intValue;
 
-		return lineCount * EditorGUIUtility.singleLineHeight
-			   + (lineCount - 1) * Space;
-	}
+            foreach (var info in ParamDrawInfos)
+            {
+                if (paramTypes.HasFlag(info.Type))
+                {
+                    lineCount++;
+                }
+            }
+        }
 
-	public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
-	{
-		EditorGUI.BeginProperty(position, label, property);
+        return lineCount * EditorGUIUtility.singleLineHeight
+               + (lineCount - 1) * Space;
+    }
 
-		SerializedProperty effectTypeProp = property.FindPropertyRelative("effectType");
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    {
+        EditorGUI.BeginProperty(position, label, property);
 
-		AllEffectMaster master = FindAllEffectMaster();
+        SerializedProperty conditionTypeProp = property.FindPropertyRelative("conditionType");
+        SerializedProperty parameterTypesProp = property.FindPropertyRelative("parameterTypes");
+        SerializedProperty targetTypeProp = property.FindPropertyRelative("targetType");
 
-		Rect lineRect = new Rect(
-			position.x,
-			position.y,
-			position.width,
-			EditorGUIUtility.singleLineHeight
-		);
+        Rect lineRect = new Rect(
+            position.x,
+            position.y,
+            position.width,
+            EditorGUIUtility.singleLineHeight
+        );
 
-		if (master == null)
-		{
-			EditorGUI.PropertyField(lineRect, effectTypeProp, new GUIContent("効果"));
-			EditorGUI.EndProperty();
-			return;
-		}
+        DrawConditionDropdown(lineRect, conditionTypeProp);
 
-		var effects = master.Effects
-			.Where(e => e != null)
-			.ToList();
+        NextLine(ref lineRect);
 
-		EffectType[] effectTypes = new EffectType[effects.Count + 1];
-		string[] displayNames = new string[effects.Count + 1];
+        EditorGUI.PropertyField(
+            lineRect,
+            targetTypeProp,
+            new GUIContent("対象")
+        );
 
-		effectTypes[0] = EffectType.None;
-		displayNames[0] = "なし";
+        // 使用パラメータ
+        NextLine(ref lineRect);
 
-		for (int i = 0; i < effects.Count; i++)
-		{
-			EffectDefinition definition = effects[i];
+        EditorGUI.PropertyField(
+            lineRect,
+            parameterTypesProp,
+            new GUIContent("使用パラメータ")
+        );
 
-			effectTypes[i + 1] = definition.effectType;
+        EffectParameterType paramTypes =
+            (EffectParameterType)parameterTypesProp.intValue;
 
-			if (!string.IsNullOrEmpty(definition.effectName))
-			{
-				displayNames[i + 1] = definition.effectName;
-			}
-			else
-			{
-				displayNames[i + 1] = definition.effectType.ToString();
-			}
-		}
+        EditorGUI.indentLevel++;
 
-		EffectType currentType = (EffectType)effectTypeProp.enumValueIndex;
+        foreach (var info in ParamDrawInfos)
+        {
+            if (!paramTypes.HasFlag(info.Type))
+            {
+                continue;
+            }
 
-		int currentIndex = Array.IndexOf(effectTypes, currentType);
+            SerializedProperty paramProp = property.FindPropertyRelative(info.PropertyName);
 
-		if (currentIndex < 0)
-		{
-			currentIndex = 0;
-		}
+            if (paramProp == null)
+            {
+                continue;
+            }
 
-		int selectedIndex = EditorGUI.Popup(
-			lineRect,
-			"効果",
-			currentIndex,
-			displayNames
-		);
+            NextLine(ref lineRect);
 
-		effectTypeProp.enumValueIndex = (int)effectTypes[selectedIndex];
+            EditorGUI.PropertyField(
+                lineRect,
+                paramProp,
+                new GUIContent(info.Label)
+            );
+        }
 
-		EffectDefinition selectedDefinition = null;
+        EditorGUI.indentLevel--;
 
-		if (selectedIndex > 0)
-		{
-			selectedDefinition = effects[selectedIndex - 1];
-		}
+        EditorGUI.EndProperty();
+    }
 
-		if (selectedDefinition != null)
-		{
-			EditorGUI.indentLevel++;
+    private void DrawConditionDropdown(Rect rect, SerializedProperty conditionTypeProp)
+    {
+        AllEffectMaster master = FindAllEffectMaster();
 
-			foreach (var info in ParamDrawInfos)
-			{
-				if (!selectedDefinition.parameterTypes.HasFlag(info.Type))
-				{
-					continue;
-				}
+        if (master == null)
+        {
+            EditorGUI.PropertyField(rect, conditionTypeProp, new GUIContent("効果"));
+            return;
+        }
 
-				SerializedProperty paramProp = property.FindPropertyRelative(info.PropertyName);
+        var effects = master.Effects
+            .Where(e => e != null)
+            .ToList();
 
-				if (paramProp == null)
-				{
-					continue;
-				}
+        ConditionType currentType = (ConditionType)conditionTypeProp.intValue;
 
-				NextLine(ref lineRect);
-				EditorGUI.PropertyField(lineRect, paramProp, new GUIContent(info.Label));
-			}
+        string currentLabel = "なし";
 
-			EditorGUI.indentLevel--;
-		}
+        foreach (var effect in effects)
+        {
+            if (effect.conditionType == currentType)
+            {
+                currentLabel = string.IsNullOrEmpty(effect.effectName)
+                    ? effect.conditionType.ToString()
+                    : effect.effectName;
 
-		EditorGUI.EndProperty();
-	}
+                break;
+            }
+        }
 
-	private void NextLine(ref Rect rect)
-	{
-		rect.y += EditorGUIUtility.singleLineHeight + Space;
-	}
+        Rect buttonRect = EditorGUI.PrefixLabel(rect, new GUIContent("効果"));
 
-	private EffectDefinition FindSelectedDefinition(SerializedProperty property)
-	{
-		SerializedProperty effectTypeProp = property.FindPropertyRelative("effectType");
+        if (EditorGUI.DropdownButton(buttonRect, new GUIContent(currentLabel), FocusType.Keyboard))
+        {
+            GenericMenu menu = new GenericMenu();
 
-		if (effectTypeProp == null)
-		{
-			return null;
-		}
+            AddConditionMenuItem(
+                menu,
+                "なし",
+                currentType == ConditionType.None,
+                ConditionType.None,
+                conditionTypeProp
+            );
 
-		AllEffectMaster master = FindAllEffectMaster();
+            menu.AddSeparator("");
 
-		if (master == null)
-		{
-			return null;
-		}
+            foreach (var effect in effects.OrderBy(e => e.category).ThenBy(e => e.effectName))
+            {
+                string category = string.IsNullOrEmpty(effect.category)
+                    ? "その他"
+                    : effect.category;
 
-		EffectType currentType = (EffectType)effectTypeProp.enumValueIndex;
+                string effectName = string.IsNullOrEmpty(effect.effectName)
+                    ? effect.conditionType.ToString()
+                    : effect.effectName;
 
-		foreach (EffectDefinition definition in master.Effects)
-		{
-			if (definition == null) continue;
+                string menuPath = $"{category}/{effectName}";
 
-			if (definition.effectType == currentType)
-			{
-				return definition;
-			}
-		}
+                AddConditionMenuItem(
+                    menu,
+                    menuPath,
+                    currentType == effect.conditionType,
+                    effect.conditionType,
+                    conditionTypeProp
+                );
+            }
 
-		return null;
-	}
+            menu.DropDown(buttonRect);
+        }
+    }
 
-	private AllEffectMaster FindAllEffectMaster()
-	{
-		string[] guids = AssetDatabase.FindAssets("t:AllEffectMaster");
+    private void AddConditionMenuItem(
+    GenericMenu menu,
+    string menuPath,
+    bool isSelected,
+    ConditionType selectedType,
+    SerializedProperty conditionTypeProp
+)
+    {
+        SerializedObject serializedObject = conditionTypeProp.serializedObject;
+        string propertyPath = conditionTypeProp.propertyPath;
 
-		if (guids == null || guids.Length == 0)
-		{
-			return null;
-		}
+        menu.AddItem(
+            new GUIContent(menuPath),
+            isSelected,
+            () =>
+            {
+                serializedObject.Update();
 
-		string path = AssetDatabase.GUIDToAssetPath(guids[0]);
-		return AssetDatabase.LoadAssetAtPath<AllEffectMaster>(path);
-	}
+                SerializedProperty property = serializedObject.FindProperty(propertyPath);
+
+                if (property != null)
+                {
+                    property.intValue = (int)selectedType;
+                }
+
+                serializedObject.ApplyModifiedProperties();
+            }
+        );
+    }
+
+    private void NextLine(ref Rect rect)
+    {
+        rect.y += EditorGUIUtility.singleLineHeight + Space;
+    }
+
+    private AllEffectMaster FindAllEffectMaster()
+    {
+        string[] guids = AssetDatabase.FindAssets("t:AllEffectMaster");
+
+        if (guids == null || guids.Length == 0)
+        {
+            return null;
+        }
+
+        string path = AssetDatabase.GUIDToAssetPath(guids[0]);
+        return AssetDatabase.LoadAssetAtPath<AllEffectMaster>(path);
+    }
 }
 #endif

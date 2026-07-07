@@ -483,7 +483,7 @@ public class MenuStateBattle_EnemySelect : MenuData,IMenuState
         if (PlayerDataRepository.Instance.PlayerState.attackType == AttackType.Magic)
         {
             if (MagicMaster.Entity.GetMagicData(PlayerDataRepository.Instance.PlayerState.selectMagicName).targetType ==
-                MagicTargetType.AllEnemies)
+                TargetType.AllEnemies)
             {
                 BattleManager.Instance.SelectEnemy(0, true);
             }
@@ -514,10 +514,10 @@ public class MenuStateBattle_EnemySelect : MenuData,IMenuState
                 var magic = MagicMaster.Entity.GetMagicData(PlayerDataRepository.Instance.PlayerState.selectMagicName);
                 switch (magic.targetType)
                 {
-                    case MagicTargetType.SingleEnemy:
+                    case TargetType.SingleEnemy:
                         PlayerDataRepository.Instance.PlayerState.to.Add(BattleManager.Instance.EnemyList[selectedIndex]);
                         break;
-                    case MagicTargetType.AllEnemies:
+                    case TargetType.AllEnemies:
                         for (int i = 0; i < BattleManager.Instance.enemyNum; i++)
                         {
                             PlayerDataRepository.Instance.PlayerState.to.Add(BattleManager.Instance.EnemyList[i]);
@@ -576,7 +576,7 @@ public class MenuStateBattle_EnemySelect : MenuData,IMenuState
                 var magic = MagicMaster.Entity.GetMagicData(PlayerDataRepository.Instance.PlayerState.selectMagicName);
                 switch (magic.targetType)
                 {
-                    case MagicTargetType.SingleEnemy:
+                    case TargetType.SingleEnemy:
                         horiIndex = Mathf.Clamp((horiIndex + horizontalDirection),0,BattleManager.Instance.enemyNum - 1);
                         selectedIndex = horiIndex;
                         EnemyCharactor selectEnemy = BattleManager.Instance.EnemyList[selectedIndex].GetComponent<EnemyCharactor>();    
@@ -585,7 +585,7 @@ public class MenuStateBattle_EnemySelect : MenuData,IMenuState
                         enePos.y += 1.5f; 
                         UpdateCursorPosition(enePos);
                         break;
-                    case MagicTargetType.AllEnemies:
+                    case TargetType.AllEnemies:
                         break;
                 }
                 break;
@@ -1209,15 +1209,15 @@ public class MagicMenu : MenuData, IMenuState
                 PlayerDataRepository.Instance.PlayerState.selectMagicName = magic.magicName;
                 switch (magic.targetType)
                 {
-                    case MagicTargetType.Self:
+                    case TargetType.Self:
                         break;
-                    case MagicTargetType.SingleAlly:
+                    case TargetType.SingleAlly:
                         _menu.ChangeMenu(MenuList.SelectChara);
                         break;
-                    case MagicTargetType.AllAllies:
+                    case TargetType.AllAllies:
                         break;
-                    case MagicTargetType.AllEnemies:
-                    case MagicTargetType.SingleEnemy:
+                    case TargetType.AllEnemies:
+                    case TargetType.SingleEnemy:
                         _menu.ChangeMenu(MenuList.Battle_Enemy);
                         break;
                 }

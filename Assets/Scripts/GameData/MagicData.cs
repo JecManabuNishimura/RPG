@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,11 +12,13 @@ public class MagicData : ScriptableObject
     public int mpCost;
     public int power;
     public float castTime;
-
+    public List<EffectRef> Effect;      // 効果の種類
     public ElementType elementType; 
-    public MagicTargetType targetType;
+    public TargetType targetType;
 
     public GameObject effectPrefab;
+    [SpriteSearch("Assets/Sprites/GameData/Icon"), Preview]
+    public Sprite icon;
 }
 
 public enum ElementType
@@ -35,10 +39,16 @@ public enum ElementType
     Water,
 }
 
-public enum MagicTargetType { 
-    SingleEnemy, 
-    AllEnemies, 
+[Serializable]
+public enum TargetType {
+    [InspectorName("敵単体")]
+    SingleEnemy,
+    [InspectorName("敵全体")]
+    AllEnemies,
+    [InspectorName("味方単体")]
     SingleAlly,
+    [InspectorName("味方全体")]
     AllAllies,
+    [InspectorName("使用者")]
     Self 
 }

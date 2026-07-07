@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,11 +10,11 @@ public class AllEffectMaster : ScriptableObject
 
 	public IReadOnlyList<EffectDefinition> Effects => effects;
 
-	public EffectDefinition GetDefinition(EffectType effectType)
+	public EffectDefinition GetDefinition(ConditionType effectType)
 	{
 		foreach (var effect in effects)
 		{
-			if (effect.effectType == effectType)
+			if (effect.conditionType == effectType)
 			{
 				return effect;
 			}
@@ -21,4 +22,36 @@ public class AllEffectMaster : ScriptableObject
 
 		return null;
 	}
+}
+
+[Serializable]
+public enum ConditionType
+{
+    [InspectorName("‚È‚µ")]
+    None,
+
+    [InspectorName("HP‰ñ•œ")]
+    HpRecover,
+
+    [InspectorName("MP‰ñ•œ")]
+    MpRecover,
+
+    [InspectorName("“Å•t—^")]
+    AddPoison,
+
+    [InspectorName("€–S")]
+    Death,
+
+    [InspectorName("–ƒáƒ")]
+    Paralysis,
+
+    [InspectorName("ƒXƒ^ƒ“")]
+    Stun,
+
+    [InspectorName("‰Î")]
+    Burn,
+
+    [InspectorName("Î‰»")]
+    Petrification,
+
 }

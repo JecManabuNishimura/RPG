@@ -4,21 +4,21 @@ public static class EffectProcessor
 {
 	public static void Apply(EffectRef effectRef, EffectContext context)
 	{
-		switch (effectRef.effectType)
+		switch (effectRef.conditionType)
 		{
-			case EffectType.HpRecover:
+			case ConditionType.HpRecover:
 				ApplyHpRecover(effectRef, context);
 				break;
 
-			case EffectType.MpRecover:
+			case ConditionType.MpRecover:
 				ApplyMpRecover(effectRef, context);
 				break;
 
-			case EffectType.AddPoison:
+			case ConditionType.AddPoison:
 				ApplyPoison(effectRef, context);
 				break;
 
-			case EffectType.None:
+			case ConditionType.None:
 			default:
 				break;
 		}

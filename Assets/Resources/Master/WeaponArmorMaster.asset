@@ -32,6 +32,14 @@ MonoBehaviour:
       attribute: 0
       Exp: 0
       DefFlag: 0
+    Effect:
+    - conditionType: 0
+      parameterTypes: 16
+      targetType: 0
+      power: 0
+      rate: 0
+      durationTurn: 0
+      successRate: 0
     isSet: 0
     price: 100
     Explanation: "\u3088\u308F\u3044\u3093\u3060\u3088\u306A\u3041"
@@ -55,6 +63,7 @@ MonoBehaviour:
       attribute: 0
       Exp: 0
       DefFlag: 0
+    Effect: []
     isSet: 0
     price: 200
     Explanation: "\u307E\u3082\u308C\u308B\u306E\u304B\u306A\u3041"
@@ -78,6 +87,7 @@ MonoBehaviour:
       attribute: 0
       Exp: 0
       DefFlag: 0
+    Effect: []
     isSet: 0
     price: 100
     Explanation: "\u934B\u306E\u3075\u305F\u3067\u306F\u53D7\u3051\u6B62\u3081\u304D\u308C\u306A\u3044\u3088\u306D"

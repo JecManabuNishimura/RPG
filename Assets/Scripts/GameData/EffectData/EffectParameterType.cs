@@ -1,12 +1,24 @@
 using System;
+using UnityEngine;
 
 [Flags]
 public enum EffectParameterType
 {
-	None = 0,
+    [InspectorName("‚È‚µ")]
+    None = 0,
 
-	Power = 1 << 0,
-	Rate = 1 << 1,
-	DurationTurn = 1 << 2,
-	SuccessRate = 1 << 3,
+    [InspectorName("Œø‰Ê—Í")]
+    Power = 1 << 0,
+
+    [InspectorName("Š„‡")]
+    Rate = 1 << 1,
+
+    [InspectorName("Ž‘±ƒ^[ƒ“")]
+    DurationTurn = 1 << 2,
+
+    [InspectorName("¬Œ÷—¦")]
+    SuccessRate = 1 << 3,
+
+    [InspectorName("‘ÎÛ")]
+    Target = 1 << 4,
 }

@@ -17,6 +17,15 @@ MonoBehaviour:
   mpCost: 1
   power: 30
   castTime: 0
+  Effect:
+  - conditionType: 0
+    parameterTypes: 0
+    targetType: 0
+    power: 0
+    rate: 0
+    durationTurn: 0
+    successRate: 0
   elementType: 4
   targetType: 2
   effectPrefab: {fileID: 0}
+  icon: {fileID: 0}

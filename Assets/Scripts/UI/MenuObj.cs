@@ -87,7 +87,6 @@ public class MenuObj : MonoBehaviour
         {
 			data.expText.text = text;
 		}
-        
     }
 }
 [Serializable]

@@ -103,10 +103,10 @@ public class InfoWeaponArmor
     public int ID = 0;
     public WeaponArmorEquipment.Part equipment;
     public Parameter UpParam = new();
+    public List<EffectRef> Effect;      // 効果の種類
     [HideInInspector]
     public bool isSet = false;
     public int price = 0;
     public string Explanation;
     [ShowAssetPreview]public Sprite sprite;
-
 }

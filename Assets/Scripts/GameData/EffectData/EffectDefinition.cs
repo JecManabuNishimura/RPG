@@ -4,9 +4,8 @@ using UnityEngine;
 [Serializable]
 public class EffectDefinition
 {
-	public EffectType effectType;
+    public ConditionType conditionType = ConditionType.None;
 
-	public string effectName;
-
-	public EffectParameterType parameterTypes;
+    public string effectName;
+    public string category;
 }

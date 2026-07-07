@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cde565ef5c25b3429694ed9cfd061b7, type: 3}
   m_Name: AllEffectMaster
   m_EditorClassIdentifier: Assembly-CSharp::AllEffectMaster
-  effects: []
+  effects:
+  - conditionType: 1
+    effectName: "HP\u56DE\u5FA9"
+    category: "\u56DE\u5FA9"
+  - conditionType: 8
+    effectName: "\u77F3\u5316"
+    category: "\u72B6\u614B\u7570\u5E38"

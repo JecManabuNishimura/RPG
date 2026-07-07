@@ -106,17 +106,17 @@ public class PlayerCharacter : CharacterState
                 {
                     switch(magic.targetType)
                     {
-                        case MagicTargetType.SingleEnemy:
-                        case MagicTargetType.AllEnemies:
+                        case TargetType.SingleEnemy:
+                        case TargetType.AllEnemies:
                             // ドラクエ風ダメージ計算式
                             int damage = TotalParam.Mga + magic.power;
                             t.Damage(damage, magic.elementType, false);
                             yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
                             break;
-                        case MagicTargetType.Self:
+                        case TargetType.Self:
                             break;
-                        case MagicTargetType.SingleAlly:
-                        case MagicTargetType.AllAllies:
+                        case TargetType.SingleAlly:
+                        case TargetType.AllAllies:
                             t.Healing(magic.power);
                             yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
                             break;
@@ -285,10 +285,15 @@ public class WeaponArmorEquipment
 
     public enum Part
     {
+        [InspectorName("頭")]
         Head,
+        [InspectorName("右手")]
         Hand1,
+        [InspectorName("両手")]
         DoubleHand,
+        [InspectorName("体")]
         Body,
+        [InspectorName("左手")]
         Hand2
     }
 
