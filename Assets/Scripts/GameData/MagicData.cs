@@ -50,5 +50,6 @@ public enum TargetType {
     [InspectorName("–¡•û‘S‘Ì")]
     AllAllies,
     [InspectorName("Žg—pŽÒ")]
-    Self 
+    Self,
+    None,
 }

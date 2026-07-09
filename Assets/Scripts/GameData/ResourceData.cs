@@ -40,14 +40,10 @@ public class CharacterState: MonoBehaviour, ICharacter
 
     public bool UseItem(ItemData item)
     {
-		EffectContext con = new EffectContext
-		{
-			User = null,
-			Target = this,
-		};
+		
 		foreach (var e in item.Effect)
         {
-			EffectProcessor.Apply(e, con);
+            EffectProcessor.Apply(e,this);
 		}
         
         return true;

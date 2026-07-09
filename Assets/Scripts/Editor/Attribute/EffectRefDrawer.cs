@@ -29,7 +29,6 @@ public class EffectRefDrawer : PropertyDrawer
         new ParamDrawInfo(EffectParameterType.Rate, "rate", "割合"),
         new ParamDrawInfo(EffectParameterType.DurationTurn, "durationTurn", "継続ターン"),
         new ParamDrawInfo(EffectParameterType.SuccessRate, "successRate", "成功率"),
-        new ParamDrawInfo(EffectParameterType.Target, "target", "対象者"),
     };
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
@@ -62,7 +61,6 @@ public class EffectRefDrawer : PropertyDrawer
 
         SerializedProperty conditionTypeProp = property.FindPropertyRelative("conditionType");
         SerializedProperty parameterTypesProp = property.FindPropertyRelative("parameterTypes");
-        SerializedProperty targetTypeProp = property.FindPropertyRelative("targetType");
 
         Rect lineRect = new Rect(
             position.x,
@@ -72,14 +70,6 @@ public class EffectRefDrawer : PropertyDrawer
         );
 
         DrawConditionDropdown(lineRect, conditionTypeProp);
-
-        NextLine(ref lineRect);
-
-        EditorGUI.PropertyField(
-            lineRect,
-            targetTypeProp,
-            new GUIContent("対象")
-        );
 
         // 使用パラメータ
         NextLine(ref lineRect);

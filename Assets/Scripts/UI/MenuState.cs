@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using UI;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -169,35 +170,42 @@ public class MenuStateSelectCharacter : MenuData, IMenuState
         {
             WindowObj.transform.gameObject.SetActive(true);
             WindowObj.openMenu = true;
-            SetCursorObject(MenuManager.Instance.GetCursorObj(State),State);
+            SetCursorObject(MenuManager.Instance.GetCursorObj(State), State);
         }
     }
 
     public void Update()
     {
+        if (MenuManager.Instance.targetType == TargetType.AllAllies)
+        {
+            float yOffset = selectedIndex * 50; // カーソル間の垂直な間隔（例として50ピクセル）
+            selectedIndex = (selectedIndex + 1) % PlayerDataRepository.Instance.playersState.Count;
+            UpdateCursorPosition(0, yOffset);
+        }
     }
 
     public void Exit()
     {
-        
+        MenuManager.Instance.targetType = TargetType.None;
     }
 
     public void SelectMenu()
     {
-        
-        switch(MenuManager.Instance.nowSelect)
+        MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
+        MenuManager.Instance.selectPlayerNum = veriIndex;
+        switch (MenuManager.Instance.nowSelect)
         {
             case MenuList.Magic:
-                switch(GameManager.Instance.mode)
+                switch (GameManager.Instance.mode)
                 {
                     case Now_Mode.Field:
                         _menu.ChangeMenu(MenuManager.Instance.nowSelect);
                         break;
                     case Now_Mode.Battle:
-                        MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
-                        MenuManager.Instance.selectPlayerNum = veriIndex;
+
                         WindowObj.transform.gameObject.SetActive(false);
                         MenuManager.Instance.cursorPos.Pop();
+
                         // 誰を選択したのか
                         PlayerDataRepository.Instance.PlayerState.to.Add(
                             PlayerDataRepository.Instance.playersState[veriIndex]
@@ -212,29 +220,35 @@ public class MenuStateSelectCharacter : MenuData, IMenuState
                 }
                 break;
             case MenuList.ItemList:
-                MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
-                MenuManager.Instance.selectPlayerNum = veriIndex;
-                WindowObj.transform.gameObject.SetActive(false);
                 MenuManager.Instance.cursorPos.Pop();
+                WindowObj.transform.gameObject.SetActive(false);
+                switch (MenuManager.Instance.targetType)
+                {
+                    case TargetType.AllAllies:
+                        for (int i = 0; i < PlayerDataRepository.Instance.playersState.Count; i++)
+                        {
+                            PlayerDataRepository.Instance.UseItem(PlayerDataRepository.Instance.playersState[i]);
+                        }
+                        break;
 
-                if (GameManager.Instance.mode == Now_Mode.Field)
-                {
-                    PlayerDataRepository.Instance.UseItem(PlayerDataRepository.Instance.playersState[veriIndex]);
+                    case TargetType.SingleAlly:
+                    case TargetType.Self:
+                        PlayerDataRepository.Instance.UseItem(PlayerDataRepository.Instance.playersState[veriIndex]);
+                        break;
                 }
-                else if (GameManager.Instance.mode == Now_Mode.Battle)
+                switch (GameManager.Instance.mode)
                 {
-                    // 誰を選択したのか
-                    PlayerDataRepository.Instance.PlayerState.to.Add(
-                        PlayerDataRepository.Instance.playersState[veriIndex]
-                    );
-                    
-                    PlayerDataRepository.Instance.PlayerState.ActionFlag = true;
-                    BattleManager.Instance.BattleDatas.Add(PlayerDataRepository.Instance.PlayerState);
-					PlayerDataRepository.Instance.NextCharacter();
-                    MenuManager.Instance.CloseOpenMenu();
-                    _menu.ChangeMenu(MenuList.Battle);
-                    return;
-				}
+                    case Now_Mode.Field:
+
+                        break;
+                    case Now_Mode.Battle:
+                        PlayerDataRepository.Instance.PlayerState.ActionFlag = true;
+                        BattleManager.Instance.BattleDatas.Add(PlayerDataRepository.Instance.PlayerState);
+                        PlayerDataRepository.Instance.NextCharacter();
+                        MenuManager.Instance.CloseOpenMenu();
+                        _menu.ChangeMenu(MenuList.Battle);
+                        return;
+                }
 
                 break;
         }
@@ -246,7 +260,7 @@ public class MenuStateSelectCharacter : MenuData, IMenuState
     public void CloseMenu()
     {
         Initialize();
-        
+
         switch (MenuManager.Instance.nowSelect)
         {
             case MenuList.ItemList:
@@ -261,24 +275,24 @@ public class MenuStateSelectCharacter : MenuData, IMenuState
                 _menu.ChangeMenu(MenuList.Main);
                 break;
         }
-        
-        
+
+
     }
 
     public void CursorUp() => MoveCursor(-1, 0);
-    
+
 
     public void CursorDown() => MoveCursor(1, 0);
 
 
     public void CursorRight()
     {
-        
+
     }
 
     public void CursorLeft()
     {
-        
+
     }
 
     protected override void MoveCursor(int verticalDirection, int horizontalDirection)
@@ -718,20 +732,19 @@ public class MenuStateItemList : MenuData, IMenuState
         if(data != null)
         {
 			PlayerDataRepository.Instance.selectItemId = data.ID;
-			MenuManager.Instance.nowSelect = MenuList.ItemList;
+            MenuManager.Instance.targetType = data.targetType;
+            MenuManager.Instance.nowSelect = MenuList.ItemList;
 			MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
-			_menu.ChangeMenu(MenuList.SelectChara);
-			switch (data.Effect)
+            if(data.targetType == TargetType.SingleEnemy ||
+                data.targetType == TargetType.AllEnemies)
             {
-                // 変更
-                /*
-                case EffectType.Recovery:
-                case EffectType.Weapon:
-                    
-                    
-                    break;
-                */
+                // 敵選択の場合
             }
+            else
+            {
+                _menu.ChangeMenu(MenuList.SelectChara);
+            }
+                
         }
     }
 

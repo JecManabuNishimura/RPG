@@ -11,6 +11,7 @@ public class ItemData : ScriptableObject
     [Tooltip("アイテムの名前")]
     public string Name = "";
     public int ID ;
+    public TargetType targetType;
     public List<EffectRef> Effect;      // 効果の種類
 	public string Explanation = ""; // 説明
     public int Price;               // 売値

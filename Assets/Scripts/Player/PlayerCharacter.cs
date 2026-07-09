@@ -111,6 +111,11 @@ public class PlayerCharacter : CharacterState
                             // ドラクエ風ダメージ計算式
                             int damage = TotalParam.Mga + magic.power;
                             t.Damage(damage, magic.elementType, false);
+
+                            foreach(var e in magic.Effect)
+                            {
+                                EffectProcessor.Apply(e, t);
+                            }
                             yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
                             break;
                         case TargetType.Self:
@@ -118,6 +123,10 @@ public class PlayerCharacter : CharacterState
                         case TargetType.SingleAlly:
                         case TargetType.AllAllies:
                             t.Healing(magic.power);
+                            foreach (var e in magic.Effect)
+                            {
+                                EffectProcessor.Apply(e, t);
+                            }
                             yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
                             break;
                     }
@@ -135,18 +144,10 @@ public class PlayerCharacter : CharacterState
                 {
                     var item = ItemMaster.Entity.GetItemData(PlayerDataRepository.Instance.selectItemId);
 
-					PlayerDataRepository.Instance.UseItem(t);
-					MessageManager.Instance.StartDialogMessage(t.CharaName + "は" + item.Name.ToString() + "　使用した");
 					
-                    EffectContext con = new EffectContext
-					{
-						User = null,
-						Target = this,
-					};
-					foreach (var e in item.Effect)
-                    {
-                        EffectProcessor.Apply(e, con);
-					}
+					MessageManager.Instance.StartDialogMessage(t.CharaName + "は" + item.Name.ToString() + "　使用した");
+                    PlayerDataRepository.Instance.UseItem(t);
+
                     
                     BattleManager.Instance.ParamChange(); // 表示パラメーター更新
                     yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);

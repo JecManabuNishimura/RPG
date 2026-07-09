@@ -2,60 +2,66 @@ using UnityEngine;
 
 public static class EffectProcessor
 {
-	public static void Apply(EffectRef effectRef, EffectContext context)
+	public static void Apply(EffectRef effectRef, CharacterState state)
 	{
-		switch (effectRef.conditionType)
-		{
-			case ConditionType.HpRecover:
-				ApplyHpRecover(effectRef, context);
-				break;
+        switch (effectRef.conditionType)
+        {
+            case ConditionType.HpRecover:
+                ApplyHpRecover(effectRef, state);
+                break;
 
-			case ConditionType.MpRecover:
-				ApplyMpRecover(effectRef, context);
-				break;
+            case ConditionType.MpRecover:
+                ApplyMpRecover(effectRef, state);
+                break;
 
-			case ConditionType.AddPoison:
-				ApplyPoison(effectRef, context);
+            case ConditionType.AddPoison:
+                ApplyPoison(effectRef, state);
+                break;
+            case ConditionType.Death:
+				state.DethFlag = true;
+				state.parameter.Hp = 0;
+                break;
+            case ConditionType.Paralysis:
+                break;
+            case ConditionType.Stun:
+                break;
+            case ConditionType.Burn:
+                break;
+            case ConditionType.Petrification:
+                break;
+            case ConditionType.None:
 				break;
+            default:
+                break;
+        }
+    }
 
-			case ConditionType.None:
-			default:
-				break;
-		}
-	}
-
-	private static void ApplyHpRecover(EffectRef effectRef, EffectContext context)
+    private static void ApplyHpRecover(EffectRef effectRef, CharacterState state)
 	{
-		if (context.Target == null) return;
-
 		int value = effectRef.power;
 
 		if (effectRef.rate > 0f)
 		{
-			value += Mathf.RoundToInt(context.Target.parameter.MaxHp * effectRef.rate);
+			value += Mathf.RoundToInt(state.parameter.MaxHp * effectRef.rate);
 		}
 
-		context.Target.Healing(value);
+		state.Healing(value);
 	}
 
-	private static void ApplyMpRecover(EffectRef effectRef, EffectContext context)
+	private static void ApplyMpRecover(EffectRef effectRef, CharacterState state)
 	{
-		if (context.Target == null) return;
-
 		int value = effectRef.power;
 
 		if (effectRef.rate > 0f)
 		{
-			value += Mathf.RoundToInt(context.Target.parameter.MaxMp * effectRef.rate);
+			value += Mathf.RoundToInt(state.parameter.MaxMp * effectRef.rate);
 		}
 
-		context.Target.RecoverMp(value);
+        state.RecoverMp(value);
 	}
 
-	private static void ApplyPoison(EffectRef effectRef, EffectContext context)
+	private static void ApplyPoison(EffectRef effectRef, CharacterState state)
 	{
-		if (context.Target == null) return;
-
 		if (Random.value > effectRef.successRate)
 		{
 			Debug.Log("“Å•t—^‚ÉŽ¸”s");

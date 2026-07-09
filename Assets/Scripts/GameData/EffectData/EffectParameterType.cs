@@ -18,7 +18,4 @@ public enum EffectParameterType
 
     [InspectorName("¬Œ÷—¦")]
     SuccessRate = 1 << 3,
-
-    [InspectorName("‘ÎÛ")]
-    Target = 1 << 4,
 }

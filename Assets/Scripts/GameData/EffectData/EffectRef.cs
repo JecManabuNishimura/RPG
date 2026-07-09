@@ -8,8 +8,6 @@ public class EffectRef
 
     public EffectParameterType parameterTypes = EffectParameterType.None;
 
-    public TargetType targetType;
-
     public int power = 0;
 
     public float rate = 0f;

@@ -20,6 +20,8 @@ public class MenuManager : MonoBehaviour
     public int selectPlayerNum;
     public bool moveFlag = false;
 
+    public TargetType targetType;
+
     private void Awake()
     {
         if (Instance == null)

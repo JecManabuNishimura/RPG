@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\u3084\u304F\u305D\u3046"
   ID: 100
+  targetType: 3
   Effect:
-  - conditionType: 0
-    parameterTypes: 2
-    targetType: 0
-    power: 0
+  - conditionType: 1
+    parameterTypes: 1
+    power: 10
     rate: 0
     durationTurn: 0
     successRate: 0
