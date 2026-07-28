@@ -4,32 +4,32 @@ public static class EffectProcessor
 {
 	public static void Apply(EffectRef effectRef, CharacterState state)
 	{
-        switch (effectRef.conditionType)
+        switch (effectRef.conditionId)
         {
-            case ConditionType.HpRecover:
+            case "hp_recover":
                 ApplyHpRecover(effectRef, state);
                 break;
 
-            case ConditionType.MpRecover:
+            case "mp_recover":
                 ApplyMpRecover(effectRef, state);
                 break;
 
-            case ConditionType.AddPoison:
+            case "add_poison":
                 ApplyPoison(effectRef, state);
                 break;
-            case ConditionType.Death:
-				state.DethFlag = true;
+            case "death":
+                state.DethFlag = true;
 				state.parameter.Hp = 0;
                 break;
-            case ConditionType.Paralysis:
+            case "paralysis":
                 break;
-            case ConditionType.Stun:
+            case "stun":
                 break;
-            case ConditionType.Burn:
+            case "burn":
                 break;
-            case ConditionType.Petrification:
+            case "petrification":
                 break;
-            case ConditionType.None:
+            case "none":
 				break;
             default:
                 break;

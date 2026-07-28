@@ -59,7 +59,8 @@ public class EffectRefDrawer : PropertyDrawer
     {
         EditorGUI.BeginProperty(position, label, property);
 
-        SerializedProperty conditionTypeProp = property.FindPropertyRelative("conditionType");
+        SerializedProperty conditionIdProp = property.FindPropertyRelative("conditionId");
+        SerializedProperty targetTypeProp = property.FindPropertyRelative("targetType");
         SerializedProperty parameterTypesProp = property.FindPropertyRelative("parameterTypes");
 
         Rect lineRect = new Rect(
@@ -69,19 +70,48 @@ public class EffectRefDrawer : PropertyDrawer
             EditorGUIUtility.singleLineHeight
         );
 
-        DrawConditionDropdown(lineRect, conditionTypeProp);
+        if (conditionIdProp == null)
+        {
+            EditorGUI.HelpBox(
+                lineRect,
+                "EffectRef に conditionId がありません",
+                MessageType.Error
+            );
 
-        // 使用パラメータ
+            EditorGUI.EndProperty();
+            return;
+        }
+
+        DrawConditionDropdown(lineRect, conditionIdProp);
+
         NextLine(ref lineRect);
 
-        EditorGUI.PropertyField(
-            lineRect,
-            parameterTypesProp,
-            new GUIContent("使用パラメータ")
-        );
+        if (targetTypeProp != null)
+        {
+            EditorGUI.PropertyField(
+                lineRect,
+                targetTypeProp,
+                new GUIContent("対象")
+            );
+        }
 
-        EffectParameterType paramTypes =
-            (EffectParameterType)parameterTypesProp.intValue;
+        NextLine(ref lineRect);
+
+        if (parameterTypesProp != null)
+        {
+            EditorGUI.PropertyField(
+                lineRect,
+                parameterTypesProp,
+                new GUIContent("使用パラメータ")
+            );
+        }
+
+        EffectParameterType paramTypes = EffectParameterType.None;
+
+        if (parameterTypesProp != null)
+        {
+            paramTypes = (EffectParameterType)parameterTypesProp.intValue;
+        }
 
         EditorGUI.indentLevel++;
 
@@ -113,30 +143,41 @@ public class EffectRefDrawer : PropertyDrawer
         EditorGUI.EndProperty();
     }
 
-    private void DrawConditionDropdown(Rect rect, SerializedProperty conditionTypeProp)
+    private void DrawConditionDropdown(Rect rect, SerializedProperty conditionIdProp)
     {
+        if (conditionIdProp == null)
+        {
+            EditorGUI.HelpBox(rect, "conditionId が見つかりません", MessageType.Error);
+            return;
+        }
+
         AllEffectMaster master = FindAllEffectMaster();
 
         if (master == null)
         {
-            EditorGUI.PropertyField(rect, conditionTypeProp, new GUIContent("効果"));
+            EditorGUI.PropertyField(rect, conditionIdProp, new GUIContent("効果ID"));
             return;
         }
 
-        var effects = master.Effects
-            .Where(e => e != null)
-            .ToList();
+        var effects = master.Effects;
 
-        ConditionType currentType = (ConditionType)conditionTypeProp.intValue;
+        if (effects == null)
+        {
+            EditorGUI.PropertyField(rect, conditionIdProp, new GUIContent("効果ID"));
+            return;
+        }
 
+        string currentId = conditionIdProp.stringValue;
         string currentLabel = "なし";
 
         foreach (var effect in effects)
         {
-            if (effect.conditionType == currentType)
+            if (effect == null) continue;
+
+            if (effect.conditionId == currentId)
             {
                 currentLabel = string.IsNullOrEmpty(effect.effectName)
-                    ? effect.conditionType.ToString()
+                    ? effect.conditionId
                     : effect.effectName;
 
                 break;
@@ -152,21 +193,24 @@ public class EffectRefDrawer : PropertyDrawer
             AddConditionMenuItem(
                 menu,
                 "なし",
-                currentType == ConditionType.None,
-                ConditionType.None,
-                conditionTypeProp
+                string.IsNullOrEmpty(currentId),
+                "",
+                conditionIdProp
             );
 
             menu.AddSeparator("");
 
-            foreach (var effect in effects.OrderBy(e => e.category).ThenBy(e => e.effectName))
+            foreach (var effect in effects
+                         .Where(e => e != null)
+                         .OrderBy(e => e.category)
+                         .ThenBy(e => e.effectName))
             {
                 string category = string.IsNullOrEmpty(effect.category)
                     ? "その他"
                     : effect.category;
 
                 string effectName = string.IsNullOrEmpty(effect.effectName)
-                    ? effect.conditionType.ToString()
+                    ? effect.conditionId
                     : effect.effectName;
 
                 string menuPath = $"{category}/{effectName}";
@@ -174,9 +218,9 @@ public class EffectRefDrawer : PropertyDrawer
                 AddConditionMenuItem(
                     menu,
                     menuPath,
-                    currentType == effect.conditionType,
-                    effect.conditionType,
-                    conditionTypeProp
+                    currentId == effect.conditionId,
+                    effect.conditionId,
+                    conditionIdProp
                 );
             }
 
@@ -185,15 +229,20 @@ public class EffectRefDrawer : PropertyDrawer
     }
 
     private void AddConditionMenuItem(
-    GenericMenu menu,
-    string menuPath,
-    bool isSelected,
-    ConditionType selectedType,
-    SerializedProperty conditionTypeProp
-)
+        GenericMenu menu,
+        string menuPath,
+        bool isSelected,
+        string selectedId,
+        SerializedProperty conditionIdProp
+    )   
     {
-        SerializedObject serializedObject = conditionTypeProp.serializedObject;
-        string propertyPath = conditionTypeProp.propertyPath;
+        if (conditionIdProp == null)
+        {
+            return;
+        }
+
+        SerializedObject serializedObject = conditionIdProp.serializedObject;
+        string propertyPath = conditionIdProp.propertyPath;
 
         menu.AddItem(
             new GUIContent(menuPath),
@@ -206,7 +255,7 @@ public class EffectRefDrawer : PropertyDrawer
 
                 if (property != null)
                 {
-                    property.intValue = (int)selectedType;
+                    property.stringValue = selectedId;
                 }
 
                 serializedObject.ApplyModifiedProperties();

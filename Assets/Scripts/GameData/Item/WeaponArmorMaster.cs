@@ -9,6 +9,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "WeaponArmorMaster", menuName="Master/CreateWeaponArmorMaster") ]
 public class WeaponArmorMaster : ScriptableObject
 {
+    [SerializeField]
+    public TextAsset csvFile;
     private static WeaponArmorMaster _entity;
     public static WeaponArmorMaster Entity
     {
@@ -49,7 +51,8 @@ public class WeaponArmorMaster : ScriptableObject
 public class WeaponMasterEditor : Editor
 {
     private WeaponArmorMaster itemReader;
-
+    const int EffectStartIndex = 14;
+    const int EffectColumnCount = 7;
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
@@ -64,7 +67,7 @@ public class WeaponMasterEditor : Editor
     void ReadWeaponData()
     {
         itemReader.WeaponArmorDatas.Clear();
-        var data = DataReader.ReadData("WeaponsArmor");
+        var data = DataReader.ReadData(itemReader.csvFile.name);
         for (int i = 1; i < data.Count; i++)
         {
             InfoWeaponArmor wad = new();
@@ -90,9 +93,116 @@ public class WeaponMasterEditor : Editor
             // 運が入る
             
             wad.price = int.Parse(data[i][12]);
-            
+            wad.Explanation = data[i][13];
+            wad.Effect = new();
+            ReadEffects(data[i], EffectStartIndex, EffectColumnCount, wad.Effect);
+
             itemReader.WeaponArmorDatas.Add(wad);
         }
+    }
+    private void ReadEffects(
+    string[] row,
+    int startIndex,
+    int columnCount,
+    List<EffectRef> effects
+)
+    {
+        for (int col = startIndex; col < row.Length; col += columnCount)
+        {
+            string conditionId = GetCell(row, col);
+
+            // 効果IDが空なら、その効果枠は無視
+            if (string.IsNullOrWhiteSpace(conditionId))
+            {
+                continue;
+            }
+
+            EffectRef effect = new EffectRef();
+
+            effect.conditionId = conditionId;
+            effect.targetType = ParseTargetType(GetCell(row, col + 1));
+            effect.parameterTypes = ParseEffectParameterTypes(GetCell(row, col + 2));
+
+            effect.power = ParseInt(GetCell(row, col + 3), 0);
+            effect.rate = ParseFloat(GetCell(row, col + 4), 0f);
+            effect.durationTurn = ParseInt(GetCell(row, col + 5), 0);
+            effect.successRate = ParseFloat(GetCell(row, col + 6), 1f);
+
+            effects.Add(effect);
+        }
+    }
+    private EffectParameterType ParseEffectParameterTypes(string text)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            return EffectParameterType.None;
+        }
+
+        EffectParameterType result = EffectParameterType.None;
+
+        string[] parts = text.Split('|');
+
+        foreach (string rawPart in parts)
+        {
+            string part = rawPart.Trim();
+
+            result |= part switch
+            {
+                "基本値" => EffectParameterType.Power,
+                "割合" => EffectParameterType.Rate,
+                "継続ターン" => EffectParameterType.DurationTurn,
+                "成功率" => EffectParameterType.SuccessRate,
+
+                "Power" => EffectParameterType.Power,
+                "Rate" => EffectParameterType.Rate,
+                "DurationTurn" => EffectParameterType.DurationTurn,
+                "SuccessRate" => EffectParameterType.SuccessRate,
+
+                _ => EffectParameterType.None
+            };
+        }
+
+        return result;
+    }
+    private TargetType ParseTargetType(string text)
+    {
+        return text switch
+        {
+            "自分" => TargetType.Self,
+            "敵単体" => TargetType.SingleEnemy,
+            "敵全体" => TargetType.AllEnemies,
+            "味方単体" => TargetType.SingleAlly,
+            "味方全体" => TargetType.AllAllies,
+            _ => TargetType.None
+        };
+    }
+    private int ParseInt(string text, int defaultValue = 0)
+    {
+        if (int.TryParse(text, out int value))
+        {
+            return value;
+        }
+
+        return defaultValue;
+    }
+
+    private float ParseFloat(string text, float defaultValue = 0f)
+    {
+        if (float.TryParse(text, out float value))
+        {
+            return value;
+        }
+
+        return defaultValue;
+    }
+    private string GetCell(string[] row, int index)
+    {
+        if (index < 0 || index >= row.Length)
+        {
+            return "";
+        }
+
+        return row[index].Trim();
     }
 }
 

@@ -12,10 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cde565ef5c25b3429694ed9cfd061b7, type: 3}
   m_Name: AllEffectMaster
   m_EditorClassIdentifier: Assembly-CSharp::AllEffectMaster
+  csvFile: {fileID: 4900000, guid: c609fadfa98911b4ab02414c0cd7032a, type: 3}
   effects:
-  - conditionType: 1
+  - conditionId: hp_recover
     effectName: "HP\u56DE\u5FA9"
     category: "\u56DE\u5FA9"
-  - conditionType: 8
+  - conditionId: mp_recover
+    effectName: "MP\u56DE\u5FA9"
+    category: "\u56DE\u5FA9"
+  - conditionId: add_poison
+    effectName: "\u6BD2\u4ED8\u4E0E"
+    category: "\u72B6\u614B\u7570\u5E38"
+  - conditionId: death
+    effectName: "\u6B7B\u4EA1"
+    category: "\u72B6\u614B\u7570\u5E38"
+  - conditionId: paralysis
+    effectName: "\u9EBB\u75FA"
+    category: "\u72B6\u614B\u7570\u5E38"
+  - conditionId: stun
+    effectName: "\u30B9\u30BF\u30F3"
+    category: "\u72B6\u614B\u7570\u5E38"
+  - conditionId: burn
+    effectName: "\u706B\u50B7"
+    category: "\u72B6\u614B\u7570\u5E38"
+  - conditionId: petrification
     effectName: "\u77F3\u5316"
     category: "\u72B6\u614B\u7570\u5E38"

@@ -2,56 +2,73 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [CreateAssetMenu(fileName = "AllEffectMaster", menuName = "Scriptable Objects/AllEffectMaster")]
 public class AllEffectMaster : ScriptableObject
 {
-	[SerializeField]
-	private List<EffectDefinition> effects = new List<EffectDefinition>();
+    [SerializeField]
+    private TextAsset csvFile;
 
-	public IReadOnlyList<EffectDefinition> Effects => effects;
+    [SerializeField]
+    private List<EffectDefinition> effects = new List<EffectDefinition>();
 
-	public EffectDefinition GetDefinition(ConditionType effectType)
-	{
-		foreach (var effect in effects)
-		{
-			if (effect.conditionType == effectType)
-			{
-				return effect;
-			}
-		}
+    public IReadOnlyList<EffectDefinition> Effects => effects;
 
-		return null;
-	}
-}
+    public EffectDefinition GetDefinition(string conditionId)
+    {
+        foreach (var effect in effects)
+        {
+            if (effect.conditionId == conditionId)
+            {
+                return effect;
+            }
+        }
 
-[Serializable]
-public enum ConditionType
-{
-    [InspectorName("なし")]
-    None,
+        return null;
+    }
 
-    [InspectorName("HP回復")]
-    HpRecover,
+#if UNITY_EDITOR
+    public void ImportFromCsv()
+    {
+        effects.Clear();
 
-    [InspectorName("MP回復")]
-    MpRecover,
+        if (csvFile == null)
+        {
+            Debug.LogWarning("CSVファイルが設定されていません");
+            return;
+        }
 
-    [InspectorName("毒付与")]
-    AddPoison,
+        string[] lines = csvFile.text.Split('\n');
 
-    [InspectorName("死亡")]
-    Death,
+        for (int i = 1; i < lines.Length; i++)
+        {
+            string line = lines[i].Trim();
 
-    [InspectorName("麻痺")]
-    Paralysis,
+            if (string.IsNullOrEmpty(line))
+            {
+                continue;
+            }
 
-    [InspectorName("スタン")]
-    Stun,
+            string[] columns = line.Split(',');
 
-    [InspectorName("火傷")]
-    Burn,
+            if (columns.Length < 3)
+            {
+                Debug.LogWarning($"CSVの列数が足りません: {line}");
+                continue;
+            }
 
-    [InspectorName("石化")]
-    Petrification,
+            EffectDefinition definition = new EffectDefinition
+            {
+                conditionId = columns[0].Trim(),
+                effectName = columns[1].Trim(),
+                category = columns[2].Trim()
+            };
 
+            effects.Add(definition);
+        }
+
+        UnityEditor.EditorUtility.SetDirty(this);
+        Debug.Log("EffectMaster CSVを読み込みました");
+    }
+#endif
 }

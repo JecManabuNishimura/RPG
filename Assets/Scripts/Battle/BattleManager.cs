@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SubsystemsImplementation;
 using Random = System.Random;
 
 public class BattleManager : MonoBehaviour
@@ -135,16 +136,18 @@ public class BattleManager : MonoBehaviour
 		SoundMaster.Entity.StopBgmSound();
 		cam.StartSnap();
 		await Task.Delay(1);
-
-		screenBreak.SetActive(true);
-		await screenBreak.GetComponent<ScreenBreak>().FastBreak();
+        var obj = Instantiate(screenBreak);
+        DontDestroyOnLoad(obj);
+		
+        await obj.GetComponent<ScreenBreak>().FastBreak();
 
 		BattleManager.Instance.SetupBattle();
 		LoadSceneManager.LoadScene("Battle");
 
 		SoundMaster.Entity.PlayBGMSound(PlaceOfSound.BattleMusic);
-		await screenBreak.GetComponent<ScreenBreak>().StartBreak(2.5f);
-		//await sb.GetComponent<ScreenBreak>().StartBreak(3.0f);
+		await obj.GetComponent<ScreenBreak>().StartBreak(2.5f);
+        await Task.Delay(5000);
+        Destroy(obj);
 	}
 
     public bool CheckBattleStart()

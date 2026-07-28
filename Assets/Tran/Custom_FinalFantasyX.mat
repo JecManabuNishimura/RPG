@@ -30,8 +30,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _Glossiness: -0.19
-    - distortedTime: 4.9987454
+    - distortedTime: 4.9968596
     - metallic: 1.74
     m_Colors:
     - _LightDirection: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

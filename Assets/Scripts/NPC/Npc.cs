@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using NaughtyAttributes;
 
 public class Npc : MonoBehaviour,INpc
 {
     public NPCType npcType;
     public int id;
-    public bool isEnd = true;
-    public ItemShopData data;
+    [HideInInspector]public bool isEnd = true;
+    public bool isShoper;
+    [ShowIf("isShoper")]public ItemShopData data;
 
     public void Talking()
     {

@@ -1,0 +1,9 @@
+﻿conditionId,effectName,category
+hp_recover,HP回復,回復
+mp_recover,MP回復,回復
+add_poison,毒付与,状態異常
+death,死亡,状態異常
+paralysis,麻痺,状態異常
+stun,スタン,状態異常
+burn,火傷,状態異常
+petrification,石化,状態異常

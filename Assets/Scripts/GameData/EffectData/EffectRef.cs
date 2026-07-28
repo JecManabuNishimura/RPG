@@ -4,9 +4,11 @@ using UnityEngine;
 [Serializable]
 public class EffectRef
 {
-    public ConditionType conditionType = ConditionType.None;
+    public string conditionId;
 
     public EffectParameterType parameterTypes = EffectParameterType.None;
+
+    public TargetType targetType;
 
     public int power = 0;
 
@@ -16,7 +18,4 @@ public class EffectRef
 
     [Range(0f, 1f)]
     public float successRate = 1f;
-
-    
 }
-

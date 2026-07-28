@@ -5,7 +5,6 @@ using UnityEditor;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public GameObject sb;
     public int playerMemberNum = 2;
     public Now_Mode mode;
     public Now_State state = Now_State.Active;
@@ -69,8 +68,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        sb.SetActive(false);
-		BattleManager.Instance.screenBreak = sb;
 		state = Now_State.Active;
         
         SoundMaster.Entity.SetSEAudio(gameObject.AddComponent<AudioSource>());
@@ -85,10 +82,6 @@ public class GameManager : MonoBehaviour
         PlayerObj = Instantiate(player,PlayerDataRepository.Instance.playerPos,Quaternion.identity);
         
         cCam.Follow = PlayerObj.GetComponent<PlayerMovement>().gameObject.transform;
-        if (BattleManager.Instance != null)
-        {
-			BattleManager.Instance.screenBreak = sb;
-		}
         
 		//PlayerDataRepository.Instance.playersState[0] = obj.AddComponent<Player>();
 	}

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f8a71a140836245a80f5f892ebfc06, type: 3}
   m_Name: WeaponArmorMaster
   m_EditorClassIdentifier: 
+  csvFile: {fileID: 4900000, guid: c0e944f08f30fd84bb207c8552584c7d, type: 3}
   WeaponArmorDatas:
   - name: "\u3072\u306E\u304D\u306E\u307C\u3046"
     ID: 1
@@ -33,20 +34,20 @@ MonoBehaviour:
       Exp: 0
       DefFlag: 0
     Effect:
-    - conditionType: 0
-      parameterTypes: 16
-      targetType: 0
-      power: 0
+    - conditionId: hp_recover
+      parameterTypes: 1
+      targetType: 4
+      power: 50
       rate: 0
       durationTurn: 0
-      successRate: 0
+      successRate: 1
     isSet: 0
     price: 100
-    Explanation: "\u3088\u308F\u3044\u3093\u3060\u3088\u306A\u3041"
-    sprite: {fileID: 21300000, guid: 64ec682cf12e6a843adf2434dc95aaaa, type: 3}
+    Explanation: 
+    sprite: {fileID: 0}
   - name: "\u304B\u308F\u306E\u3088\u308D\u3044"
     ID: 2
-    equipment: 2
+    equipment: 3
     UpParam:
       MaxHp: 0
       MaxMp: 0
@@ -66,11 +67,11 @@ MonoBehaviour:
     Effect: []
     isSet: 0
     price: 200
-    Explanation: "\u307E\u3082\u308C\u308B\u306E\u304B\u306A\u3041"
-    sprite: {fileID: 21300000, guid: dff3a10ec4b3d6245ac0136df9e8cce7, type: 3}
+    Explanation: 
+    sprite: {fileID: 0}
   - name: "\u306A\u3079\u3076\u305F"
     ID: 3
-    equipment: 3
+    equipment: 4
     UpParam:
       MaxHp: 0
       MaxMp: 0
@@ -90,5 +91,29 @@ MonoBehaviour:
     Effect: []
     isSet: 0
     price: 100
-    Explanation: "\u934B\u306E\u3075\u305F\u3067\u306F\u53D7\u3051\u6B62\u3081\u304D\u308C\u306A\u3044\u3088\u306D"
-    sprite: {fileID: 21300000, guid: dff3a10ec4b3d6245ac0136df9e8cce7, type: 3}
+    Explanation: 
+    sprite: {fileID: 0}
+  - name: "\u4E21\u624B\u6B66\u5668"
+    ID: 4
+    equipment: 2
+    UpParam:
+      MaxHp: 0
+      MaxMp: 0
+      Hp: 0
+      Mp: 0
+      str: 0
+      Res: 0
+      Mga: 0
+      Mgd: 0
+      Atk: 10
+      Def: 0
+      Qui: 0
+      Luc: 0
+      attribute: 0
+      Exp: 0
+      DefFlag: 0
+    Effect: []
+    isSet: 0
+    price: 1000
+    Explanation: 
+    sprite: {fileID: 0}

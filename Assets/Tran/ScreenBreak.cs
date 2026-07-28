@@ -7,16 +7,10 @@ using UnityEngine;
 public class ScreenBreak : MonoBehaviour
 {
     public Material mat;
-    public Camera cameraToUse; // 保存するカメラ
     private string savePath = "Assets/Resources/SavedImage.png"; // 保存先のファイルパス
     public Texture2D tex;
 
     private bool onFlag;
-    async void Start()
-    {
-        GameManager.Instance.sb = this.gameObject;
-        DontDestroyOnLoad(this);
-    }
     
     public async Task FastBreak()
     {
