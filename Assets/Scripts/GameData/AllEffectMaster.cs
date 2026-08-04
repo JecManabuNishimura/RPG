@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "AllEffectMaster", menuName = "Scriptable Objects/AllEffectMaster")]
+[CreateAssetMenu(fileName = "AllEffectMaster", menuName = "Master/AllEffectMaster")]
 public class AllEffectMaster : ScriptableObject
 {
     [SerializeField]

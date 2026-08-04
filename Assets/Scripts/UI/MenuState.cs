@@ -1167,6 +1167,7 @@ public class MagicMenu : MenuData, IMenuState
 
             selectedIndex = veriIndex * 2 + horiIndex;
         }
+
         MenuManager.Instance.nowSelect = State;
         // 1 / (プレイヤーのアイテム総数 / 2) - 画面のアイテム表示数
         WindowObj.ResetItemData();
@@ -1198,12 +1199,14 @@ public class MagicMenu : MenuData, IMenuState
 
     public void Exit()
     {
+        MessageManager.Instance.ClearDialogMessage();
         //MenuManager.Instance.cursorPos.Pop();
     }
 
     public void SelectMenu()
     {
-        switch(GameManager.Instance.mode)
+        MessageManager.Instance.ClearDialogMessage();
+        switch (GameManager.Instance.mode)
         {
             case Now_Mode.Field:
                 /*
@@ -1216,6 +1219,8 @@ public class MagicMenu : MenuData, IMenuState
                 var magic = PlayerDataRepository.Instance.GetMagicData(selectedIndex);
                 if(PlayerDataRepository.Instance.PlayerState.parameter.Mp < magic.mpCost)
                 {
+                    MessageManager.Instance.StartDialogMessage("MPが足りません");
+                    
                     return;
                 }
                 MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
@@ -1255,8 +1260,11 @@ public class MagicMenu : MenuData, IMenuState
                 _menu.ChangeMenu(MenuList.Battle);
                 break;
         }
+        
         WindowObj.openMenu = false;
     }
+
+    
 
     public void CursorUp()
     {
