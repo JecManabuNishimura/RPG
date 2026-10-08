@@ -66,7 +66,7 @@ public class WeaponMasterEditor : Editor
     
     void ReadWeaponData()
     {
-        itemReader.WeaponArmorDatas.Clear();
+        //itemReader.WeaponArmorDatas.Clear();
         var data = DataReader.ReadData(itemReader.csvFile.name);
         for (int i = 1; i < data.Count; i++)
         {
@@ -96,8 +96,21 @@ public class WeaponMasterEditor : Editor
             wad.Explanation = data[i][13];
             wad.Effect = new();
             ReadEffects(data[i], EffectStartIndex, EffectColumnCount, wad.Effect);
+            
+            int index = itemReader.WeaponArmorDatas.FindIndex(x => x.name == data[i][1]);
 
-            itemReader.WeaponArmorDatas.Add(wad);
+            //データがあった場合
+            if (index >= 0)
+            {
+                var sprite = itemReader.WeaponArmorDatas[index].sprite;
+
+                wad.sprite = sprite;
+                itemReader.WeaponArmorDatas[index] = wad;
+            }
+            else
+            {
+                itemReader.WeaponArmorDatas.Add(wad);
+            }
         }
     }
     private void ReadEffects(
