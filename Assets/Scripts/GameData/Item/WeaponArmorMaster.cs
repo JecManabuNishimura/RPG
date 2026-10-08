@@ -61,6 +61,10 @@ public class WeaponMasterEditor : Editor
         {
             ReadWeaponData();
         }
+        if (GUILayout.Button("Clear"))
+        {
+            itemReader.WeaponArmorDatas.Clear();
+        }
     }
     
     
