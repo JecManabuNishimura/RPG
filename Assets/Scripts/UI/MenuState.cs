@@ -437,6 +437,13 @@ public class MenuStateBattle : MenuData,IMenuState
                     MenuManager.Instance.cursorPos.Push((State, veriIndex, horiIndex));
                     _menu.ChangeMenu(MenuList.ItemList);
 					break;
+                case 4:     // 逃げる
+                    PlayerDataRepository.Instance.PlayerState.attackType = AttackType.Escape;
+                    MenuManager.Instance.nowSelect = MenuList.Escape;
+                    PlayerDataRepository.Instance.PlayerState.to.Clear();
+                    BattleManager.Instance.BattleDatas.Add(PlayerDataRepository.Instance.PlayerState);
+                    PlayerDataRepository.Instance.PlayerState.ActionFlag = true;
+                    break;
             }
         }
     }
@@ -473,7 +480,7 @@ public class MenuStateBattle : MenuData,IMenuState
 
     protected override void MoveCursor(int verticalDirection, int horizontalDirection)
     {
-        veriIndex = Mathf.Clamp((veriIndex + verticalDirection),0,3);
+        veriIndex = Mathf.Clamp((veriIndex + verticalDirection),0,4);
         // 上下移動と左右移動を組み合わせて扱う場合
         selectedIndex = veriIndex;
         float yOffset = selectedIndex  * 50; // カーソル間の垂直な間隔（例として50ピクセル）

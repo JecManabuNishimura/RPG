@@ -26,6 +26,7 @@ public class BattleManager : MonoBehaviour
     public event Action OnParamChange;
 
     public bool IsEndMotion;
+    public bool escapeFlag;
 	//public event Action<string,string> OnDialogMessage;
 	//public bool IsEndMessage = false;
 

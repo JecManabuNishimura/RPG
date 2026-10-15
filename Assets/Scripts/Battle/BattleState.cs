@@ -121,7 +121,17 @@ public class BttleStep : IBattleState
                 PlayerDataRepository.Instance.PlusGold(BattleManager.Instance.GetGold);
                 yield break;
             }
-            
+            if(BattleManager.Instance.escapeFlag)
+            {
+                // 戦い終了
+                endFlag = true;
+                foreach (var t in PlayerDataRepository.Instance.playersState)
+                {
+                    t.BattleDataReset();
+                }
+                yield break;
+            }
+
         }
         
         Debug.Log("行動終了");
@@ -144,11 +154,16 @@ public class BattleEnd : IBattleState
         {
             MessageManager.Instance.StartDialogMessage("パーティーがぜんめつした");
         }
+        else if(BattleManager.Instance.escapeFlag)
+        {
+            // リザルトメッセージ
+            MessageManager.Instance.StartDialogMessage("逃げ出した");
+        }
         else
         {
             SoundMaster.Entity.PlaySESound(PlaceOfSound.BattleEndSe);
             // リザルトメッセージ
-            MessageManager.Instance.StartDialogMessage("", "ResultMessage");    
+            MessageManager.Instance.StartDialogMessage("", "ResultMessage");
         }
     }
     

@@ -41,4 +41,5 @@ public enum MenuList : int
     EquipmentMenu,
     EquipmentMenu1,
     EquipmentMenu2,
+    Escape,
 }

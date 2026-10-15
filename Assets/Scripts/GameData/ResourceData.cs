@@ -38,6 +38,8 @@ public class CharacterState: MonoBehaviour, ICharacter
 	}
 
 
+
+
     public bool UseItem(ItemData item)
     {
 		
@@ -70,6 +72,7 @@ public enum AttackType
     Magic,
     Item,
     Guard,
+    Escape,
 }
 
 [Serializable]

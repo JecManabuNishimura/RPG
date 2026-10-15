@@ -9,5 +9,6 @@ namespace Interface
 
         void Damage(int damage,ElementType eType, bool criticalFlag);
         bool UseItem(ItemData item);
+        //void Effect(EffectRef effectR);
     }
 }

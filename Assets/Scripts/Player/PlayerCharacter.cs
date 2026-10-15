@@ -158,6 +158,23 @@ public class PlayerCharacter : CharacterState
                 
                 yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
                 break;
+            case AttackType.Escape:
+                MessageManager.Instance.StartDialogMessage(CharaName + "は逃げ");
+                yield return new WaitForSeconds(1);
+                int rand = Random.Range(0, 100);
+                // 確率 1/2に設定
+                if(rand % 2 == 0)
+                {
+                    MessageManager.Instance.StartDialogMessage("ることに成功した");
+                    yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
+                    BattleManager.Instance.escapeFlag = true;
+                }
+                else
+                {
+                    MessageManager.Instance.StartDialogMessage("れなかった");
+                    yield return new WaitUntil(() => MessageManager.Instance.IsEndMessage);
+                }
+                break;
         }
 
         BattleDataReset();
