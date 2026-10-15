@@ -1,6 +1,8 @@
 using UnityEngine;
 using Cinemachine;
 using UnityEditor;
+using Unity.Multiplayer.PlayMode;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class GameManager : MonoBehaviour
     public bool eventFlag = false;
 	public CinemachineVirtualCamera cCam;
     public GameObject playerStartPos;
+    public GameObject currentPlayer;
 
     private async void Update()
     {
@@ -90,6 +93,68 @@ public class GameManager : MonoBehaviour
     {
         if(ItemDataBase.Entity != null)
             ItemDataBase.Entity.AllCollectReset();
+    }
+    private void SpawnPlayer(Scene scene)
+    {
+        if (player == null)
+        {
+            Debug.LogError("Player Prefabが未設定です");
+            return;
+        }
+
+        string spawnId = SceneTransition.NextSpawnPointId;
+
+        Vector3 spawnPosition =
+            PlayerDataRepository.Instance.playerPos;
+
+        // 出現地点が指定されている場合
+        if (!string.IsNullOrEmpty(spawnId))
+        {
+            MapSpawnPoint point = FindSpawnPoint(scene, spawnId);
+
+            if (point == null)
+            {
+                Debug.LogWarning(
+                    $"SpawnPointが見つかりません: {spawnId}");
+                return;
+            }
+
+            spawnPosition = point.transform.position;
+        }
+
+        // 既存プレイヤーがいるなら削除
+        if (currentPlayer != null)
+            Destroy(currentPlayer);
+
+        // Playerを生成
+        currentPlayer = Instantiate(
+            player,
+            spawnPosition,
+            Quaternion.identity
+        );
+
+        // Repositoryに座標を反映
+        PlayerDataRepository.Instance.playerPos = spawnPosition;
+
+        // 正常に生成できたらリセット
+        SceneTransition.NextSpawnPointId = null;
+    }
+
+    private MapSpawnPoint FindSpawnPoint(Scene scene, string spawnId)
+    {
+        foreach (GameObject root in scene.GetRootGameObjects())
+        {
+            MapSpawnPoint[] points =
+                root.GetComponentsInChildren<MapSpawnPoint>(true);
+
+            foreach (MapSpawnPoint point in points)
+            {
+                if (point.SpawnPointId == spawnId)
+                    return point;
+            }
+        }
+
+        return null;
     }
 }
 

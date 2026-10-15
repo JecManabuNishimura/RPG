@@ -30,7 +30,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Glossiness: -0.19
-    - distortedTime: 4.9962964
+    - distortedTime: 4.9982705
     - metallic: 1.74
     m_Colors:
     - _LightDirection: {r: 0, g: 0, b: 0, a: 0}
