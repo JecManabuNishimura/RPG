@@ -1,4 +1,4 @@
-
+ï»¿
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -36,7 +36,7 @@ public class MapEventTilemapEditor : Editor
 
         bool nextMode = GUILayout.Toggle(
             editMode,
-            editMode ? "ƒCƒxƒ“ƒg•ÒW‚ğI—¹" : "ƒCƒxƒ“ƒg•ÒW‚ğŠJn",
+            editMode ? "ã‚¤ãƒ™ãƒ³ãƒˆç·¨é›†ã‚’çµ‚äº†" : "ã‚¤ãƒ™ãƒ³ãƒˆç·¨é›†ã‚’é–‹å§‹",
             "Button",
             GUILayout.Height(30)
         );
@@ -49,18 +49,20 @@ public class MapEventTilemapEditor : Editor
 
         EditorGUILayout.HelpBox(
             editMode
-                ? "Sceneƒrƒ…[‚ÅƒCƒxƒ“ƒgƒ^ƒCƒ‹‚ğ¶ƒNƒŠƒbƒN‚µ‚Ä‚­‚¾‚³‚¢"
-                : "•ÒWƒ{ƒ^ƒ“‚ÅƒCƒxƒ“ƒgƒ}ƒX‚ğ‘I‘ğ‚Å‚«‚Ü‚·",
+                ? "Sceneãƒ“ãƒ¥ãƒ¼ã§ã‚¤ãƒ™ãƒ³ãƒˆã‚¿ã‚¤ãƒ«ã‚’å·¦ã‚¯ãƒªãƒƒã‚¯ã—ã¦ãã ã•ã„"
+                : "ç·¨é›†ãƒœã‚¿ãƒ³ã§ã‚¤ãƒ™ãƒ³ãƒˆãƒã‚¹ã‚’é¸æŠã§ãã¾ã™",
             MessageType.Info
         );
 
         EditorGUILayout.LabelField(
-            "“o˜^ƒCƒxƒ“ƒg”: " + eventsProp.arraySize
+            "ç™»éŒ²ã‚¤ãƒ™ãƒ³ãƒˆæ•°: " + eventsProp.arraySize
         );
 
         EditorGUILayout.Space(10);
 
+        DrawEventNavigation();
         DrawSelectedEvent();
+        
 
         serializedObject.ApplyModifiedProperties();
     }
@@ -71,7 +73,7 @@ public class MapEventTilemapEditor : Editor
             selectedIndex >= eventsProp.arraySize)
         {
             EditorGUILayout.LabelField(
-                "ƒCƒxƒ“ƒg‚ª‘I‘ğ‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
+                "ã‚¤ãƒ™ãƒ³ãƒˆãŒé¸æŠã•ã‚Œã¦ã„ã¾ã›ã‚“");
             return;
         }
 
@@ -79,23 +81,23 @@ public class MapEventTilemapEditor : Editor
             eventsProp.GetArrayElementAtIndex(selectedIndex);
 
         EditorGUILayout.LabelField(
-            "‘I‘ğƒCƒxƒ“ƒg",
+            "é¸æŠã‚¤ãƒ™ãƒ³ãƒˆ",
             EditorStyles.boldLabel
         );
 
         EditorGUILayout.PropertyField(
             data.FindPropertyRelative("cellPosition"),
-            new GUIContent("ƒ^ƒCƒ‹À•W")
+            new GUIContent("ã‚¿ã‚¤ãƒ«åº§æ¨™")
         );
 
         EditorGUILayout.PropertyField(
             data.FindPropertyRelative("eventName"),
-            new GUIContent("ƒCƒxƒ“ƒg–¼")
+            new GUIContent("ã‚¤ãƒ™ãƒ³ãƒˆå")
         );
 
         EditorGUILayout.PropertyField(
             data.FindPropertyRelative("eventType"),
-            new GUIContent("ƒCƒxƒ“ƒgí—Ş")
+            new GUIContent("ã‚¤ãƒ™ãƒ³ãƒˆç¨®é¡")
         );
 
         SerializedProperty typeProp =
@@ -108,13 +110,13 @@ public class MapEventTilemapEditor : Editor
 
             EditorGUILayout.PropertyField(
                 data.FindPropertyRelative("spawnPointId"),
-                new GUIContent("oŒ»’n“_ID")
+                new GUIContent("å‡ºç¾åœ°ç‚¹ID")
             );
         }
 
         EditorGUILayout.Space(10);
 
-        if (GUILayout.Button("‚±‚ÌƒCƒxƒ“ƒg‚ğíœ"))
+        if (GUILayout.Button("ã“ã®ã‚¤ãƒ™ãƒ³ãƒˆã‚’å‰Šé™¤"))
         {
             eventsProp.DeleteArrayElementAtIndex(
                 selectedIndex);
@@ -122,6 +124,78 @@ public class MapEventTilemapEditor : Editor
             selectedIndex = -1;
             SceneView.RepaintAll();
         }
+    }
+
+    private void DrawEventNavigation()
+    {
+        int count = eventsProp.arraySize;
+
+        if (count == 0)
+            return;
+
+        EditorGUILayout.Space(10);
+
+        EditorGUILayout.BeginHorizontal();
+
+        if (GUILayout.Button("â—€ å‰ã¸"))
+        {
+            SelectEvent(selectedIndex <= 0
+                ? count - 1
+                : selectedIndex - 1);
+        }
+
+        EditorGUILayout.LabelField(
+            $"{(selectedIndex >= 0 ? selectedIndex + 1 : 0)} / {count}",
+            GUILayout.Width(60));
+
+        if (GUILayout.Button("æ¬¡ã¸ â–¶"))
+        {
+            SelectEvent((selectedIndex + 1) % count);
+        }
+
+        EditorGUILayout.EndHorizontal();
+    }
+
+    private void SelectEvent(int index)
+    {
+        if (index < 0 || index >= eventsProp.arraySize)
+            return;
+
+        selectedIndex = index;
+
+        MapEventTilemap mapEvent =
+            (MapEventTilemap)target;
+
+        Tilemap tilemap = mapEvent.EventTilemap;
+
+        if (tilemap == null)
+            return;
+
+        SerializedProperty data =
+            eventsProp.GetArrayElementAtIndex(index);
+
+        Vector3Int cell =
+            data.FindPropertyRelative("cellPosition")
+                .vector3IntValue;
+
+        Vector3 worldPosition =
+            tilemap.GetCellCenterWorld(cell);
+
+        // Sceneãƒ“ãƒ¥ãƒ¼ã®ã‚«ãƒ¡ãƒ©ã‚’å¯¾è±¡åœ°ç‚¹ã¸ç§»å‹•
+        SceneView sceneView = SceneView.lastActiveSceneView;
+
+        if (sceneView != null)
+        {
+            sceneView.LookAt(
+                worldPosition,
+                sceneView.rotation,
+                2f,
+                false
+            );
+            sceneView.Repaint();
+        }
+
+        Repaint();
     }
 
     private void DrawSceneField(SerializedProperty data)
@@ -138,7 +212,7 @@ public class MapEventTilemapEditor : Editor
 
         SceneAsset newScene =
             (SceneAsset)EditorGUILayout.ObjectField(
-                "ˆÚ“®æƒV[ƒ“",
+                "ç§»å‹•å…ˆã‚·ãƒ¼ãƒ³",
                 currentScene,
                 typeof(SceneAsset),
                 false
@@ -155,7 +229,7 @@ public class MapEventTilemapEditor : Editor
             !IsSceneInBuild(pathProp.stringValue))
         {
             EditorGUILayout.HelpBox(
-                "ˆÚ“®æƒV[ƒ“‚ğBuild Profiles‚ÌScene List‚É’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢",
+                "ç§»å‹•å…ˆã‚·ãƒ¼ãƒ³ã‚’Build Profilesã®Scene Listã«è¿½åŠ ã—ã¦ãã ã•ã„",
                 MessageType.Warning
             );
         }
@@ -249,7 +323,7 @@ public class MapEventTilemapEditor : Editor
             }
         }
 
-        // ƒCƒxƒ“ƒg–¢“o˜^‚È‚çV‹Kì¬
+        // ã‚¤ãƒ™ãƒ³ãƒˆæœªç™»éŒ²ãªã‚‰æ–°è¦ä½œæˆ
         int index = eventsProp.arraySize;
         eventsProp.InsertArrayElementAtIndex(index);
 

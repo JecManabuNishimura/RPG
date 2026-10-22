@@ -58,7 +58,7 @@ public class EventDirector : MonoBehaviour
 
         if (targetTrack != null)
         {
-            _director.SetGenericBinding(targetTrack,GameManager.Instance.PlayerObj.transform);
+            _director.SetGenericBinding(targetTrack,GameManager.Instance.currentPlayer.transform);
             
         }
 

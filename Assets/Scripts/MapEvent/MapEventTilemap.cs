@@ -36,6 +36,9 @@ public class MapEventTilemap : MonoBehaviour
     private bool hasPreviousCell;
     private bool transitioning;
 
+    private Vector3Int spawnCell;
+    private bool ignoreSpawnCell;
+
     private void Awake()
     {
         if (eventTilemap == null)
@@ -51,35 +54,43 @@ public class MapEventTilemap : MonoBehaviour
 
 
 
+
     private void Update()
     {
         if (transitioning || eventTilemap == null)
             return;
 
-        // PlayerDataRepositoryから現在位置を取得
         Vector3 playerPos =
             PlayerDataRepository.Instance.playerPos;
 
-        // ワールド座標 → Tilemapのセル座標
         Vector3Int cell = eventTilemap.WorldToCell(playerPos);
 
-        // 同じマスなら処理しない
+        // スポーンしたマスにいる間はイベント無効
+        if (ignoreSpawnCell)
+        {
+            if (cell == spawnCell)
+                return;
+
+            // スポーンしたマスを離れた
+            ignoreSpawnCell = false;
+        }
+
+        // 同じマスなら何もしない
         if (hasPreviousCell && cell == previousCell)
             return;
 
         previousCell = cell;
         hasPreviousCell = true;
 
-        // イベントタイルが存在するか
         if (!eventTilemap.HasTile(cell))
             return;
 
-        // 登録されたイベントを取得
         if (!lookup.TryGetValue(cell, out var data))
             return;
 
         ExecuteEvent(data);
     }
+
 
 
 
@@ -93,34 +104,44 @@ public class MapEventTilemap : MonoBehaviour
         }
     }
 
+
     private void MoveScene(MapEventData data)
     {
         if (string.IsNullOrEmpty(data.scenePath))
-        {
-            Debug.LogWarning("移動先シーンが未設定です");
             return;
-        }
 
-        // Assets/Scenes/town.unity → town
         string sceneName =
             System.IO.Path.GetFileNameWithoutExtension(
-                data.scenePath
-            );
+                data.scenePath);
 
-        // シーンが読み込み可能か確認
         if (!Application.CanStreamedLevelBeLoaded(sceneName))
         {
             Debug.LogError(
-                $"シーンが見つかりません: {sceneName}"
-            );
+                $"シーンが見つかりません: {sceneName}");
             return;
         }
 
         transitioning = true;
 
-        SceneTransition.NextSpawnPointId =
-            data.spawnPointId;
+        // Player生成を予約
+        GameManager.Instance.ReservePlayerSpawn(
+            data.spawnPointId);
 
+        // シーン移動
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void IgnoreSpawnCell()
+    {
+        Vector3 playerPos =
+            PlayerDataRepository.Instance.playerPos;
+
+        spawnCell = eventTilemap.WorldToCell(playerPos);
+
+        ignoreSpawnCell = true;
+
+        // 現在位置を記録
+        previousCell = spawnCell;
+        hasPreviousCell = true;
     }
 }

@@ -3,6 +3,7 @@ using Cinemachine;
 using UnityEditor;
 using Unity.Multiplayer.PlayMode;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class GameManager : MonoBehaviour
     public Now_Mode mode;
     public Now_State state = Now_State.Active;
     public GameObject player;
-    public GameObject PlayerObj;
     public int countStep;
     public int MassCountStep;
     public bool battleFlag = true;
@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
 	public CinemachineVirtualCamera cCam;
     public GameObject playerStartPos;
     public GameObject currentPlayer;
+
+    private Action<Scene> onSceneLoadedAction;
 
     private async void Update()
     {
@@ -54,6 +56,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
 
         ReadEventData.Instance = new ReadEventData();
@@ -66,7 +69,16 @@ public class GameManager : MonoBehaviour
 
         Destroy(playerStartPos);
         FieldIn();
-        
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+    }
+    private void OnDestroy()
+    {
+        if (Instance != this)
+            return;
+
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        Instance = null;
     }
 
     private void Start()
@@ -82,9 +94,10 @@ public class GameManager : MonoBehaviour
 
     private void FieldIn()
     {
-        PlayerObj = Instantiate(player,PlayerDataRepository.Instance.playerPos,Quaternion.identity);
-        
-        cCam.Follow = PlayerObj.GetComponent<PlayerMovement>().gameObject.transform;
+
+        currentPlayer = Instantiate(player,PlayerDataRepository.Instance.playerPos,Quaternion.identity);
+        cCam = FindFirstObjectByType<CinemachineVirtualCamera>();
+        cCam.Follow = currentPlayer.GetComponent<PlayerMovement>().gameObject.transform;
         
 		//PlayerDataRepository.Instance.playersState[0] = obj.AddComponent<Player>();
 	}
@@ -94,67 +107,80 @@ public class GameManager : MonoBehaviour
         if(ItemDataBase.Entity != null)
             ItemDataBase.Entity.AllCollectReset();
     }
-    private void SpawnPlayer(Scene scene)
+
+    // シーンロード後に実行する処理を予約
+    public void ReserveSceneLoaded(Action<Scene> action)
     {
-        if (player == null)
+        onSceneLoadedAction = action;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // 予約された処理を取り出してクリア
+        Action<Scene> action = onSceneLoadedAction;
+        onSceneLoadedAction = null;
+
+        action?.Invoke(scene);
+    }
+    public void ReservePlayerSpawn(string spawnPointId)
+    {
+        ReserveSceneLoaded(scene =>
         {
-            Debug.LogError("Player Prefabが未設定です");
+            PlayerSpawn(scene, spawnPointId);
+        });
+    }
+
+    private void PlayerSpawn(Scene scene, string spawnPointId)
+    {
+        SpawnTilemap spawnTilemap = null;
+
+        foreach (GameObject root in scene.GetRootGameObjects())
+        {
+            spawnTilemap =
+                root.GetComponentInChildren<SpawnTilemap>(true);
+
+            if (spawnTilemap != null)
+                break;
+        }
+
+        if (spawnTilemap == null)
+        {
+            Debug.LogError("SpawnTilemapが見つかりません");
             return;
         }
 
-        string spawnId = SceneTransition.NextSpawnPointId;
-
-        Vector3 spawnPosition =
-            PlayerDataRepository.Instance.playerPos;
-
-        // 出現地点が指定されている場合
-        if (!string.IsNullOrEmpty(spawnId))
+        if (!spawnTilemap.TryGetSpawnPosition(
+            spawnPointId, out Vector3 spawnPosition))
         {
-            MapSpawnPoint point = FindSpawnPoint(scene, spawnId);
-
-            if (point == null)
-            {
-                Debug.LogWarning(
-                    $"SpawnPointが見つかりません: {spawnId}");
-                return;
-            }
-
-            spawnPosition = point.transform.position;
+            Debug.LogError(
+                $"出現地点が見つかりません: {spawnPointId}");
+            return;
         }
 
-        // 既存プレイヤーがいるなら削除
-        if (currentPlayer != null)
-            Destroy(currentPlayer);
-
-        // Playerを生成
+        // Repositoryを先に更新
+        PlayerDataRepository.Instance.playerPos = spawnPosition;
+        
+        Destroy(currentPlayer);
+        // プレイヤー生成
         currentPlayer = Instantiate(
             player,
             spawnPosition,
             Quaternion.identity
         );
+        cCam = FindFirstObjectByType<CinemachineVirtualCamera>();
+        cCam.Follow = currentPlayer.GetComponent<PlayerMovement>().gameObject.transform;
 
-        // Repositoryに座標を反映
+        // 座標を反映
         PlayerDataRepository.Instance.playerPos = spawnPosition;
+        
+        // スポーン地点のイベントを無効化
+        MapEventTilemap mapEvent =
+            FindFirstObjectByType<MapEventTilemap>();
 
-        // 正常に生成できたらリセット
-        SceneTransition.NextSpawnPointId = null;
-    }
-
-    private MapSpawnPoint FindSpawnPoint(Scene scene, string spawnId)
-    {
-        foreach (GameObject root in scene.GetRootGameObjects())
+        if (mapEvent != null)
         {
-            MapSpawnPoint[] points =
-                root.GetComponentsInChildren<MapSpawnPoint>(true);
-
-            foreach (MapSpawnPoint point in points)
-            {
-                if (point.SpawnPointId == spawnId)
-                    return point;
-            }
+            mapEvent.IgnoreSpawnCell();
         }
-
-        return null;
     }
 }
 

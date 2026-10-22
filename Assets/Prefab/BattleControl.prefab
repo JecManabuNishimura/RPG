@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5103582967775539335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3676812256315295018}
+  - component: {fileID: 7060893417972284183}
+  - component: {fileID: 4713991446666853292}
+  m_Layer: 0
+  m_Name: BattleControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 2800000, guid: caffe312a1255a1419b9d25c278fbf24, type: 3}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3676812256315295018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5103582967775539335}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 19.109072, y: 6.1220174, z: -16.719696}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7060893417972284183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5103582967775539335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f47683a1812aed4599fe5bb3e72320a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RegionMap: {fileID: 0}
+  EnemyList:
+  - groupName: "\u304D\u306E\u3053\uFF0A\uFF11"
+    enemy: {fileID: 6650394105056698119, guid: bbbce6e8568dfd44db3244e3216ec836, type: 3}
+    weight: 10
+    RegionId: {x: 0, y: 0, z: 0}
+  - groupName: "\u304D\u306E\u3053\uFF0A\uFF12"
+    enemy: {fileID: 1395935532729950949, guid: 3a16c497c3e71e847bcb3804f4874716, type: 3}
+    weight: 8
+    RegionId: {x: 1, y: 0, z: 0}
+  - groupName: "\u304D\u306E\u3053\uFF0A\uFF13"
+    enemy: {fileID: 3419962236851516783, guid: fd736891489618744a01fb84e9b22964, type: 3}
+    weight: 4
+    RegionId: {x: 2, y: 0, z: 0}
+  encout: 9999
+  nextEnemyEncount: 0
+--- !u!114 &4713991446666853292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5103582967775539335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65dce08c78c1e04dbc2cb367bcd07f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenBreak: {fileID: 919132149155446097, guid: cb4fa1f6449bc4943b38e150dd94f2d4, type: 3}
+  EnemyDataList: []
+  _BattleController: {fileID: 0}
+  EnemyList: []
+  BattleDatas: []
+  State: 0
+  GetExp: 0
+  GetGold: 0
+  IsEndMotion: 0
+  escapeFlag: 0
